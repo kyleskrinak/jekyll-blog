@@ -1,9 +1,10 @@
 ---
-title: Low Carb, High Fat
+title: Low Carb Living
 toc: true
 toc_sticky: true
 layout: single 
-permalink: /pages/my-lchf.html
+permalink: /pages/my-low-carb.html
+redirect_from: /pages/my-lchf
 author_profile: true
 excerpt: "Many ask me if I’ve lost weight. I have and here’s how."
 description: For decades, dieticians, nutritionists, and advocacy groups have poorly advised us &mdash; and most certainly me &mdash; about what is a healthy diet. By ignoring this mainstream nutritional advice, the food pyramid, and other common myths about what’s healthy, and shifting to a nearly inverse paradigm, I’ve been able to lose weight, keep it off, and improve my health markers.
