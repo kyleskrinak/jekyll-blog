@@ -1,7 +1,7 @@
 ---
 layout: reveal
 title: How to Manage Departmental Faculty and Staff Data
-excerpt: TTS’s July 2019 Open Office Hours presentation, revised October 2020
+excerpt: TCA&S’s July 2019 Open Office Hours presentation, revised October 2020
 permalink: /presentations/19-07-tts-profile.html
 comments: false
 ---
@@ -20,13 +20,14 @@ https://bit.ly/2020-04-OpenOffice
 Web Development and Systems Administration  
 https://people.duke.edu/~kds38  
 
-#### Trinity College of Arts &amp; Sciences _at_
+#### Trinity College of Arts &amp; Sciences (TCA&S), _now part of OIT_,
 ### Duke University
 
 ----
 
 #### This presentation:
 https://bit.ly/2020-04-OpenOffice
+
 
 
 # What we’re covering today
@@ -47,12 +48,12 @@ https://bit.ly/2020-04-OpenOffice
 
 ----
 
-* The _content editors_ are responsible for the content of their department or group’s website.
+* _Content editors_ are responsible for the content of their website.
 * Your _power users_ are responsible for updating profile information
   * Any department member may update his or her profile as well
   * The Scholars list of power users is here: https://about.scholars.duke.edu/locate-power-user
-* _Trinity Technology Services_ is responsible for the reliable operation of our directory system
-* The _Scholars team_ manages the Scholars.duke.edu web site and data interaction
+* The _TCA&S team_ is responsible for the reliable operation of our directory 
+* The _Scholars team_ manages the Scholars web site and data interaction
 
 
 
@@ -95,7 +96,7 @@ https://trinity.duke.edu/directory
 ----
 
 trinitywebsupport@duke.edu  
-*And not any single TTS staff member’s address, please.*
+*And not any single TCA&S staff member’s address, please.*
 
 ----
 
