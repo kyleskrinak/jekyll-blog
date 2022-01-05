@@ -26,14 +26,14 @@ All of which reminds me: time to update my vimrc configuration file. Or should I
 
 ## My Windows Configuration
 
-  1. Image machine with the [Trinity Technology Services](https://scholars.duke.edu/display/org50000612) standard image
+  1. Image machine with the Duke enterprise license standard image
   1. Enable my user account with correct privileges 
   1. Uninstall any MS Office via add/remove programs UI. (Part of the TTS image.)
   1. Run [Windows Update](https://windowsupdate.microsoft.com)
       * This can take several restarts
-  1. Install [Lastpass](https://www.lastpass.com/)
+  1. Install [1Password](https://1password.com/)
   1. Install [Chocolatey](https://chocolatey.org/install) using cmd.exe, installation page found <a href="https://chocolatey.org/install">here</a>.
-      * `@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"`
+      * `Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))`
   1. Restart after chocolatey package install. 
   1. Install chocolatey script for my applications
   1. Enable Hyper-V
