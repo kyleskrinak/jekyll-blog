@@ -1,6 +1,7 @@
-I am an IT manager at [Duke University](https://duke.edu). My current focus is Web Development and Systems Administration for the [Trinity College of Arts &amp; Science](https://trinity.duke.edu/) as I transition to Duke's <a href="https://oit.duke.edu/">Office of Information Technology</a>.
+I am a senior manager for I.T. at [Duke University](https://duke.edu) for web development for Duke's <a href="https://oit.duke.edu/">Office of Information Technology</a>.
 
-Please Use <trinitywebsupport@duke.edu> for all support-related correspondence. This will better ensure our team can better help you.
+For the <strong>Trinity College of Arts &amp; Sciences</strong> websites, please use <trinitywebsupport@duke.edu> for all support-related correspondence. This will better ensure our team can better help you.<br><br>
+For all other website support issues, please direct any general inquiries or requests about current projects to <a href="mailto:oit-dws@duke.edu">oit-dws@duke.edu</a>. Urgent issues, such as an outage, should go to the Service Desk at 919-684-2200.
 {: .notice--info}
 
 If you need to schedule time with me, here is my [work calendar]( {{ site.baseurl }}/pages/calendar.html ).

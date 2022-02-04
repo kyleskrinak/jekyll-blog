@@ -6,7 +6,9 @@ author_profile: true
 classes: wide
 ---
 
-Thanks to the COVID pandemic, I stopped going to my Duke-provided office in March 2020. I have been remote working since. I am available via remote technologies, however, such as Zoom or Microsoft Teams. Feel free to schedule time using my "Calendar" page, in the main navigational menu.  
+Due to the COVID pandemic, I have been working remotely since March 2020. I am available via remote technologies, however, such as Zoom or Microsoft Teams. Feel free to schedule time using my "Calendar" page, which you can find in the main navigational menu.  
+
+When I am on-campus, you can find me at the Powerhouse in Durhaml. For more information on the Powerhouse, visit this [URL](https://oit.duke.edu/about/locations).
 
 ## Office Address
 
