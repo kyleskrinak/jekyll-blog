@@ -18,7 +18,7 @@ minimal_mistakes_skin    : "air" # "air", "aqua", "contrast", "dark", "dirt", "n
 locale                   : "en-US"
 title                    : "Kyle Skrinak"
 title_separator          : "-"
-subtitle                 : Senior I.T. Manager, Duke University
+subtitle                 : Senior Manager, I.T., Duke University
 name                     : "Kyle Skrinak"
 description: >- # this means to ignore newlines until "baseurl:"
   Kyle Skrinak, Senior I.T. Manager, Duke University

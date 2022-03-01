@@ -1,6 +1,6 @@
 # Thanks for stopping by
 
-My name is Kyle Skrinak. I am a senior manager for I.T. at [Duke University](https://duke.edu) for web development for Duke's <a href="https://oit.duke.edu/">Office of Information Technology</a>.
+My name is Kyle Skrinak. I am a senior manager, I.T. at [Duke University](https://duke.edu) Web Services (DWS) for web development for Duke's <a href="https://oit.duke.edu/">Office of Information Technology</a>.
 
 For the <strong>Trinity College of Arts &amp; Sciences</strong> websites, please use <trinitywebsupport@duke.edu> for all support-related correspondence. This will better ensure our team can better help you.<br><br>
 For all other website support issues, please direct any general inquiries or requests about current projects to <a href="mailto:oit-dws@duke.edu">oit-dws@duke.edu</a>. Urgent issues, such as an outage, should go to Duke OIT's Service Desk at 919-684-2200.
