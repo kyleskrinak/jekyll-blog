@@ -18,10 +18,10 @@ minimal_mistakes_skin    : "air" # "air", "aqua", "contrast", "dark", "dirt", "n
 locale                   : "en-US"
 title                    : "Kyle Skrinak"
 title_separator          : "-"
-subtitle                 : IT Manager, Duke University 
+subtitle                 : Senior I.T. Manager, Duke University
 name                     : "Kyle Skrinak"
 description: >- # this means to ignore newlines until "baseurl:"
-  Kyle Skrinak, IT Manager, Duke University
+  Kyle Skrinak, Senior I.T. Manager, Duke University
 url                      : "https://people.duke.edu" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "/~kds38" # the subpath of your site, e.g. "/blog"
 repository               : kyleskrinak/duke-blog # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -103,9 +103,9 @@ analytics:
 
 # Site Author
 author:
-  name             : "Kyle Skrinak"
+#  name             : ""
   avatar           : "https://s.gravatar.com/avatar/ff8a556b0c640770c8e933d7b5f57631?s=80"
-  bio              : "IT Manager, <a href=\"http://duke.edu\" title=\"Duke&rsquo;s web site\">Duke University</a>"
+#  bio              : ""
   location         : "<a style=\"display: inline-block\" href=\"https://goo.gl/maps/8TmAf96K2M82\">Durham, NC</a>"
   email            :
   links:
@@ -315,7 +315,7 @@ jekyll_compose:
       description:
       layout: single
       classes: wide
-      excerpt: 
+      excerpt:
       image:
       category:
       tags:
@@ -323,7 +323,7 @@ jekyll_compose:
       description:
       layout: single
       classes: wide
-      excerpt: 
+      excerpt:
       image:
       category:
       tags:
