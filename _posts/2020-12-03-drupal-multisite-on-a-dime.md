@@ -1,5 +1,5 @@
 ---
-layout: reveal
+layout: reveal-duke
 title: Drupal Multisite on a Dime
 excerpt: or How we Adopted CI/CD for TCA&S’s Drupal Multisite Hosting for Trinity’s
   100 Drupal websites
@@ -26,10 +26,10 @@ https://bit.ly/tcas-drupal-multisite
 
 ----
 
-## Kyle Skrinak, I.T. Manager 
-### Trinity College of Arts & Sciences   
+## Kyle Skrinak, I.T. Manager
+### Trinity College of Arts & Sciences
 Web Support (now part of OIT), Duke University
-https://people.duke.edu/~kds38  
+https://people.duke.edu/~kds38
 
 
 
@@ -51,7 +51,7 @@ https://people.duke.edu/~kds38
 
 * Trinity College of Arts & Sciences departments, administrative, labs, etc.
   * 120 active websites
-  * 100+ legacy websites and web applications 
+  * 100+ legacy websites and web applications
 * SLAs and MoUs, *including*
   * divinity.duke.edu
   * dibs.duke.edu
@@ -78,7 +78,7 @@ https://people.duke.edu/~kds38
 * 2013: Apostrophe → Drupal migration starts
 * 2014: Drupal Multi-site *(hosting, version control)*
 * 2015: Base + Sub theme *(branding, gitorius → gitlab)*
-* 2016: FDS → Scholars migration *(profile data, membership)* 
+* 2016: FDS → Scholars migration *(profile data, membership)*
 * 2017: Drupal 8 distribution begins, first D8 website (A→D7 migration ends)
 * 2018: D8 requirements set (hosting, branding, membership)
 * 2019: D8 distribution starts, production begins (CI/CD deployed)
@@ -128,7 +128,7 @@ https://people.duke.edu/~kds38
 
 
 
-# DevOps becomes a real thing 
+# DevOps becomes a real thing
 
 ----
 
@@ -170,9 +170,9 @@ https://people.duke.edu/~kds38
 
 
 
-# Q & A 
+# Q & A
 
 ----
 
 > *thank you*
-{:/} 
+{:/}
