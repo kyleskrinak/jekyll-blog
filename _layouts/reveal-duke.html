@@ -16,6 +16,20 @@
       text-transform: none;
     }
     hr {border-top: 1px solid white;}
+    aside.controls::before{
+      content:"";
+      background-image:url("{{site.baseurl}}/assets/images/Duke-logo.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      opacity: 0.5;
+      width: 155px;
+      height: 100px;
+      display: block;
+      right: 90px;
+      top: -68px;
+      position: absolute;
+    }
+    }
   </style>
 </head>
 
@@ -28,10 +42,6 @@
     <div class="slides">
       <section data-markdown data-separator="^\n\n\n"
         data-separator-vertical="^\n\n" data-separator-notes="^Note:"
-        data-background-image="{{site.baseurl}}/assets/images/Duke-logo.png"
-        data-background-size="min(300px, 30%)"
-        data-background-opacity=50%
-        data-background-position="bottom 1.5em right"
         data-background-color="rgb(11, 34, 103)">
         <textarea data-template>
 		  {{ content }}
