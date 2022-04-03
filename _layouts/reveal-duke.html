@@ -29,7 +29,6 @@
       top: -68px;
       position: absolute;
     }
-    }
   </style>
 </head>
 
@@ -41,7 +40,8 @@
   <div class="reveal">
     <div class="slides">
       <section data-markdown data-separator="^\n\n\n"
-        data-separator-vertical="^\n\n" data-separator-notes="^Note:"
+        data-separator-vertical="^\n\n" 
+        data-separator-notes="^Note:"
         data-background-color="rgb(11, 34, 103)">
         <textarea data-template>
 		  {{ content }}
@@ -56,9 +56,12 @@
   <script
     src="{{ site.baseurl }}/assets/reveal/plugin/markdown/markdown.js"></script>
   <script src="{{ site.baseurl }}/assets/reveal/plugin/menu/menu.js"></script>
+  <script 
+    src="{{ site.baseurl }}/assets/reveal/plugin/notes/notes.js">
+  </script>
   <script>
     Reveal.initialize({
-      plugins: [RevealMarkdown, RevealMenu],
+      plugins: [RevealMarkdown, RevealMenu, RevealNotes],
       // The "normal" size of the presentation, aspect ratio will be preserved
       // when the presentation is scaled to fit different resolutions. Can be
       // specified using percentage units.
