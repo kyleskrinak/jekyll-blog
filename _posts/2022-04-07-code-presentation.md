@@ -56,7 +56,7 @@ This is a placeholder. New video on 4/18
 * A re-org at Duke
 * Office of Information Technology’s call for Code+ project <!-- .element: class="fragment" -->
 * A mutually-beneficial project <!-- .element: class="fragment" -->
-  * Supports the cohort, Drupal, Open Source, and Duke
+  * Supports the Code+ team, Drupal, Open Source, and Duke
 * Duke maintains an internally-developed module on D.O. in need of attention <!-- .element: class="fragment" -->
   * AKA “BasicShib” https://www.drupal.org/project/basicshib
 * A Duke need: integrate Grouper with Shibboleth <!-- .element: class="fragment" -->
@@ -70,10 +70,10 @@ This will only display in the Notes window.
 
 ---
 
-* Meet with prospective students and explain the project.
+* Meet with prospective program applicants at the Code+ info fair.
 * Students apply and pick their top three projects. <!-- .element: class="fragment" -->
-* Code+ sends project leads their new student cohort information. <!-- .element: class="fragment" -->
-* Project leads identify essential training for their cohort. <!-- .element: class="fragment" -->
+* Code+ sends project leads their new student team information. <!-- .element: class="fragment" -->
+* Project leads identify essential training for their team. <!-- .element: class="fragment" -->
 * Identify stakeholders. <!-- .element: class="fragment" -->
 
 
@@ -87,8 +87,8 @@ This will only display in the Notes window.
   * Lando for development.
   * Identify common means for collaboration.
 * Daily check-in and check-out on Microsoft Teams <!-- .element: class="fragment" -->
-  * We have a mix of on-campus and remote students across time zones.
-  * Encourage team collobration on a standard platform.
+  * We had a mix of on-campus and remote students across time zones.
+  * Encourage team collaboration on a standard platform.
 
 
 
@@ -98,7 +98,7 @@ This will only display in the Notes window.
 
 * Weekly individual one-on-ones and daily team scrums
 * The team is to provide regular updates with the stakeholders on progress
-* Encourage cohort to become familiar with project management principals and tools
+* Encourage team to become familiar with project management principals and tools
 
 
 
@@ -106,10 +106,26 @@ This will only display in the Notes window.
 
 ---
 
-* Weeks 1 - 4: Training
-* Weeks 5 - 6: Software discovery, requirements, and first stakeholder’s meeting
+* Weeks 1 - 3: Training
+  * One week more for Symfony and Drupal training
+* Weeks 4 - 6: Software discovery, requirements, and first stakeholder’s meeting
 * Weeks 7 - 9: Software development and presentation of the project’s effort
-* Week 10: The presentation to all Code+ teams
+* Week 10: Practice for and the final presentation to project stakeholders, project leads, and their fellow Code+ members in the cohort
+
+
+
+## Project Challenges
+
+---
+
+* What on earth is Drupal?
+  * Well, about that…
+* Rising sophomores who have never collaborated in this fashion
+  * A highly effective team
+* Uneven engagement and enthusiasm
+  * In the end all were &ldquo;all in.&rdquo;
+* No initial team cohesion
+  * Genuine team bonding and fondness
 
 
 
@@ -121,7 +137,7 @@ I asked for help, and the Drupal community responded!
 
 * Marc Isaacson ([vegantriathlete](https://www.drupal.org/u/vegantriathlete)), Precious McKoy ([mckoypr](https://www.drupal.org/u/mckoypr)), Jay Beaton ([jrb](https://www.drupal.org/u/jrb)), Iain Hadgraft ([iaha](https://drupal.org/u/iaha)), Eric Sembrat ([webbeh](https://drupal.org/u/webbeh))
 
-* The cohort also asked questions on the Slack Drupal channel [#contribute](https://drupal.slack.com/archives/C1BMUQ9U6) with strong community engagement.
+* The team also asked questions on the Slack Drupal channel [#contribute](https://drupal.slack.com/archives/C1BMUQ9U6) with strong community engagement.
 
 
 
@@ -139,7 +155,7 @@ I asked for help, and the Drupal community responded!
 
 * Exhilarating
 * Exhausting
-* Great cohort feedback
+* Great team feedback
 * Learned a great deal
 * Collaborating with generous community
 * My wholehearted endorsement
