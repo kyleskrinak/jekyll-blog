@@ -14,3 +14,7 @@ Click [here]( {{ site.baseurl }}/pages/location.html "link to a Google map of ou
 
 Due to <a href="https://coronavirus.duke.edu/">COVID-19</a> I have been working remotely. Please feel free to use the contact and scheduling information above and I will coordinate a remote Zoom meeting.
 {: .notice--danger}
+
+## Add my contact info
+
+![image-center]({{ site.baseurl }}/assets/images/kds-qr-code.png)
