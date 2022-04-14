@@ -11,7 +11,9 @@ date: 2022-04-06 15:21 -0500
 
 # Duke University's
 
-## Code+ co-curricular program
+## Code+
+
+### co-curricular program
 
 ---
 
@@ -43,9 +45,7 @@ Our team builds, hosts, and maintains over 250 Drupal websites, including multis
 
 ---
 
-<iframe width="780" height="440" src="https://www.youtube.com/embed/UWS0kbl4rVk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-This is a placeholder. New video on 4/18
+<iframe height="585" width="780" src="https://warpwire.duke.edu/w/q8cGAA/?info=0&cc_load_policy=1&controls=0" frameborder="0" scrolling="0" allow="autoplay *; encrypted-media*; fullscreen *; picture-in-picture*;" allowfullscreen></iframe>
 
 
 
@@ -60,9 +60,20 @@ This is a placeholder. New video on 4/18
 * Duke maintains an internally-developed module on D.O. in need of attention <!-- .element: class="fragment" -->
   * AKA “BasicShib” https://www.drupal.org/project/basicshib
 * A Duke need: integrate Grouper with Shibboleth <!-- .element: class="fragment" -->
+* I wrote my proposal and the Code+ team accepted my proposal <!-- .element: class="fragment" -->
 
 Note:
 This will only display in the Notes window.
+
+
+
+## A Code+ Project Initiates
+
+---
+
+### Drupal Module for Software Design and Development
+
+The Drupal open-source software platform provides an opportunity for those who wish to design, develop, release, and finally maintain a non-commercial software project. A team of students will work with Duke’s Office of Information Technology and other partners across campus to develop a Drupal module to extend functionality of the existing framework to create an application. Students will work with Drupal 9 to extend Symfony’s PHP object model paradigm. This allows students to work within a fully compliant Object-Oriented Programming, or OOP, paradigm.
 
 
 
