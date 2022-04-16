@@ -63,11 +63,11 @@ Our team builds, hosts, and maintains over 250 Drupal websites, including multis
 * I wrote my proposal and the Code+ team accepted my proposal <!-- .element: class="fragment" -->
 
 Note:
-This will only display in the Notes window.
+Summer Experience Co-Curricular Project
 
 
 
-## A Code+ Project Initiates
+## A Code+ Project is born
 
 ---
 
@@ -77,10 +77,15 @@ The Drupal open-source software platform provides an opportunity for those who w
 
 
 
-## A Code+ Project Initiates
+## A Code+ Project is Born
 
 ---
 
+![workflow]({{ site.baseurl }}/assets/images/Code+/Code+Workflow-1.svg)
+
+
+Note:
+* Projects submitted, selected, and refined
 * Meet with prospective program applicants at the Code+ info fair.
 * Students apply and pick their top three projects. <!-- .element: class="fragment" -->
 * Code+ sends project leads their new student team information. <!-- .element: class="fragment" -->
@@ -89,15 +94,55 @@ The Drupal open-source software platform provides an opportunity for those who w
 
 
 
+## A Code+ Project is Born
+
+---
+
+![workflow]({{ site.baseurl }}/assets/images/Code+/Code+Workflow-2.svg)
+
+
+
+## A Code+ Project is Born
+
+---
+
+![workflow]({{ site.baseurl }}/assets/images/Code+/Code+Workflow-3.svg)
+
+
+
+## A Code+ Project is Born
+
+---
+
+![workflow]({{ site.baseurl }}/assets/images/Code+/Code+Workflow-4.svg)
+
+
+
+## A Code+ Project is Born
+
+---
+
+![workflow]({{ site.baseurl }}/assets/images/Code+/Code+Workflow-5.svg)
+
+
+
+## A Code+ Project is Born
+
+---
+
+![workflow]({{ site.baseurl }}/assets/images/Code+/Code+Workflow-6.svg)
+
+
 
 ## Project Parameters
 
 ---
 
+* Code+ team assigns five students to project
 * We discuss project, training, and software requirements
   * Lando for development.
   * Identify common means for collaboration.
-* Daily check-in and check-out on Microsoft Teams <!-- .element: class="fragment" -->
+* Daily check-in and check-out on Microsoft Teams and Zoom <!-- .element: class="fragment" -->
   * We had a mix of on-campus and remote students across time zones.
   * Encourage team collaboration on a standard platform.
 
