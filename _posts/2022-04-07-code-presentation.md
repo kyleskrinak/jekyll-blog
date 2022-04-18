@@ -57,13 +57,13 @@ Our team builds, hosts, and maintains over 250 Drupal websites, including multis
 ---
 
 * A re-org at Duke
-* Office of Information Technology’s call for Code+ project <!-- .element: class="fragment" -->
+* Office of Information Technology’s call for Code+ projects <!-- .element: class="fragment" -->
 * A mutually-beneficial project <!-- .element: class="fragment" -->
   * Supports the Code+ team, Drupal, Open Source, and Duke
 * Duke maintains an internally-developed module on D.O. in need of attention <!-- .element: class="fragment" -->
   * AKA “BasicShib” https://www.drupal.org/project/basicshib
 * A Duke need: integrate Grouper with Shibboleth <!-- .element: class="fragment" -->
-* I wrote my proposal and the Code+ team accepted my proposal <!-- .element: class="fragment" -->
+* Code+ administrators accepted my Drupal project proposal <!-- .element: class="fragment" -->
 
 Note:
 Summer Experience Co-Curricular Project
@@ -132,7 +132,7 @@ The Drupal open-source software platform provides an opportunity for those who w
 
 ---
 
-* Code+ team assigns five students to project
+* Code+ administrators assigns five students to project
 * We discuss project, training, and software requirements  <!-- .element: class="fragment" -->
   * Lando for development.
   * Identify common means for collaboration.
@@ -147,7 +147,7 @@ The Drupal open-source software platform provides an opportunity for those who w
 ---
 
 * Weekly individual one-on-ones and daily team scrums
-* The team is to provide regular updates with the stakeholders on progress
+* The team is to provide regular updates to the stakeholders on progress
 * Encourage team to become familiar with project management principals and tools
 
 
@@ -160,7 +160,7 @@ The Drupal open-source software platform provides an opportunity for those who w
   * One week more for Symfony and Drupal training
 * Weeks 4 - 6: Software discovery, requirements, and first stakeholder’s meeting
 * Weeks 7 - 9: Software development and presentation of the project’s effort
-* Week 10: Practice for and the final presentation to project stakeholders, project leads, and their fellow Code+ members in the cohort
+* Week 10: Practice for and the final presentation to project stakeholders, corporate sponsors, project leads, and their fellow Code+ members in the cohort
 
 
 
@@ -217,7 +217,6 @@ I asked for help, and the Drupal community responded!
 
 * The Code+ website: https://codeplus.duke.edu
 * The Code+ LinkedIn page: https://www.linkedin.com/company/duke-code-plus-program/
-* Duke’s DiversifyIT group: https://diversifyit.duke.edu/
 * The BasicShib Drupal.org project page: https://www.drupal.org/project/basicshib
 
 
