@@ -215,8 +215,8 @@ I asked for help, and the Drupal community responded!
 
 # References
 
-* Code+ website: https://codeplus.duke.edu
-* Our LinkedIn page: https://www.linkedin.com/company/duke-code-plus-program/
+* The Code+ website: https://codeplus.duke.edu
+* The Code+ LinkedIn page: https://www.linkedin.com/company/duke-code-plus-program/
 * Duke’s DiversifyIT group: https://diversifyit.duke.edu/
 * The BasicShib Drupal.org project page: https://www.drupal.org/project/basicshib
 
