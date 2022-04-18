@@ -12,20 +12,23 @@ date: 2022-04-06 15:21 -0500
 # Duke University's
 
 ## Code+
-
-### co-curricular program
+co-curricular program
 
 ---
 
-### promoting undergraduate
+promoting undergraduate
 
 ## Diversity / Equity / Inclusion
 
 ---
 
+Link to presentation: https://duke.is/b9tbe
+
 
 
 ## Kyle Skrinak
+
+https://www.drupal.org/u/screenack
 
 ### Senior Manager, I.T.
 
@@ -84,15 +87,6 @@ The Drupal open-source software platform provides an opportunity for those who w
 ![workflow]({{ site.baseurl }}/assets/images/Code+/Code+Workflow-1.svg)
 
 
-Note:
-* Projects submitted, selected, and refined
-* Meet with prospective program applicants at the Code+ info fair.
-* Students apply and pick their top three projects. <!-- .element: class="fragment" -->
-* Code+ sends project leads their new student team information. <!-- .element: class="fragment" -->
-* Project leads identify essential training for their team. <!-- .element: class="fragment" -->
-* Identify stakeholders. <!-- .element: class="fragment" -->
-
-
 
 ## A Code+ Project is Born
 
@@ -139,7 +133,7 @@ Note:
 ---
 
 * Code+ team assigns five students to project
-* We discuss project, training, and software requirements
+* We discuss project, training, and software requirements  <!-- .element: class="fragment" -->
   * Lando for development.
   * Identify common means for collaboration.
 * Daily check-in and check-out on Microsoft Teams and Zoom <!-- .element: class="fragment" -->
@@ -216,6 +210,15 @@ I asked for help, and the Drupal community responded!
 * Collaborating with generous community
 * My wholehearted endorsement
 * Doing another project in 2022
+
+
+
+# References
+
+* Code+ website: https://codeplus.duke.edu
+* Our LinkedIn page: https://www.linkedin.com/company/duke-code-plus-program/
+* Duke’s DiversifyIT group: https://diversifyit.duke.edu/
+* The BasicShib Drupal.org project page: https://www.drupal.org/project/basicshib
 
 
 
