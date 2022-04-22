@@ -9,9 +9,10 @@ date: 2022-04-06 15:21 -0500
 ---
 {::nomarkdown}
 
-# Duke University's
+# Duke University’s
 
 ## Code+
+
 co-curricular program
 
 ---
@@ -22,29 +23,27 @@ promoting undergraduate
 
 ---
 
-Link to presentation: https://duke.is/b9tbe
+Link to presentation: [https://duke.is/b9tbe](https://duke.is/b9tbe)
 
 
 
 ## Kyle Skrinak
 
-https://www.drupal.org/u/screenack
+[https://www.drupal.org/u/screenack](https://www.drupal.org/u/screenack)
 
-### Senior Manager, I.T.
-
-### Duke Web Services Development and Support
+Senior Manager, I.T., Duke Web Services Development and Support
 
 ## Duke University
 
-https://people.duke.edu/~kds38
+[https://people.duke.edu/~kds38](https://people.duke.edu/~kds38)
 
 ---
 
-Our team builds, hosts, and maintains over 250 Drupal websites, including multisite and headless, as well as other websites and applications.
+Our team builds, hosts, and maintains over 250 Drupal websites, including multisite, headless, and other websites and applications.
 
 
 
-# What is Code+?
+## What is Code+?
 
 ---
 
@@ -61,9 +60,8 @@ Our team builds, hosts, and maintains over 250 Drupal websites, including multis
 * A mutually-beneficial project <!-- .element: class="fragment" -->
   * Supports the Code+ team, Drupal, Open Source, and Duke
 * Duke maintains an internally-developed module on D.O. in need of attention <!-- .element: class="fragment" -->
-  * AKA “BasicShib” https://www.drupal.org/project/basicshib
+  * AKA “BasicShib” [https://www.drupal.org/project/basicshib](https://www.drupal.org/project/basicshib)
 * A Duke need: integrate Grouper with Shibboleth <!-- .element: class="fragment" -->
-* Code+ administrators accepted my Drupal project proposal <!-- .element: class="fragment" -->
 
 Note:
 Summer Experience Co-Curricular Project
@@ -74,9 +72,19 @@ Summer Experience Co-Curricular Project
 
 ---
 
+* Draft and submit my proposal 
+* Lots of edits <!-- .element: class="fragment" -->
+* Code+ administrators accepted my proposal <!-- .element: class="fragment" -->
+
+
+
+## A Code+ Project is born
+
+---
+
 ### Drupal Module for Software Design and Development
 
-The Drupal open-source software platform provides an opportunity for those who wish to design, develop, release, and finally maintain a non-commercial software project. A team of students will work with Duke’s Office of Information Technology and other partners across campus to develop a Drupal module to extend functionality of the existing framework to create an application. Students will work with Drupal 9 to extend Symfony’s PHP object model paradigm. This allows students to work within a fully compliant Object-Oriented Programming, or OOP, paradigm.
+The Drupal open-source software platform provides an opportunity for those who wish to design, develop, release, and finally maintain a non-commercial software project. A team of students will work with Duke’s Office of Information Technology and other partners across campus to develop a Drupal module to extend the functionality of the existing framework to create an application. Students will work with Drupal 9 to extend Symfony’s PHP object model paradigm. This allows students to work within a fully compliant Object-Oriented Programming, or OOP, paradigm.
 
 
 
@@ -148,7 +156,7 @@ The Drupal open-source software platform provides an opportunity for those who w
 
 * Weekly individual one-on-ones and daily team scrums
 * The team is to provide regular updates to the stakeholders on progress
-* Encourage team to become familiar with project management principals and tools
+* Encourage the team to become familiar with project management principles and tools
 
 
 
@@ -169,11 +177,11 @@ The Drupal open-source software platform provides an opportunity for those who w
 ---
 
 * What on earth is Drupal?
-  * Well, about that…
+  * Well, about that
 * Rising sophomores who have never collaborated in this fashion
   * A highly effective team
 * Uneven engagement and enthusiasm
-  * In the end all were &ldquo;all in.&rdquo;
+  * In the end, all were “all in.”
 * No initial team cohesion
   * Genuine team bonding and fondness
 
@@ -215,9 +223,10 @@ I asked for help, and the Drupal community responded!
 
 # References
 
-* The Code+ website: https://codeplus.duke.edu
-* The Code+ LinkedIn page: https://www.linkedin.com/company/duke-code-plus-program/
-* The BasicShib Drupal.org project page: https://www.drupal.org/project/basicshib
+* The Code+ website: [https://codeplus.duke.edu](https://codeplus.duke.edu)
+* The Code+ LinkedIn page: [https://www.linkedin.com/company/duke-code-plus-program/](https://www.linkedin.com/company/duke-code-plus-program/)
+* The BasicShib Drupal.org project page: [https://www.drupal.org/project/basicshib](https://www.drupal.org/project/basicshib)
+* The team's presentation on YouTube: [https://youtu.be/CyFxF8fJWUY](https://youtu.be/CyFxF8fJWUY)
 
 
 
