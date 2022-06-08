@@ -1,14 +1,5 @@
 # main links
 main:
-  - title: "Calendar"
-    url: /pages/calendar.html
-
-  - title: "Location"
-    url: /pages/location.html
-
-  - title: "Drupal"
-    url: /pages/tts-drupal.html
-
   - title: "Low Carb"
     url: /pages/my-low-carb.html
 

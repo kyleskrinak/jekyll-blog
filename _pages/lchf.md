@@ -7,28 +7,28 @@ permalink: /pages/my-low-carb.html
 redirect_from: /pages/my-lchf
 author_profile: true
 excerpt: "Many ask me if I’ve lost weight. I have and here’s how."
-description: For decades, dieticians, nutritionists, and advocacy groups have poorly advised us &mdash; and most certainly me &mdash; about what is a healthy diet. By ignoring this mainstream nutritional advice, the food pyramid, and other common myths about what’s healthy, and shifting to a nearly inverse paradigm, I’ve been able to lose weight, keep it off, and improve my health markers.
+description: For decades, dieticians, nutritionists, and advocacy groups have poorly advised us — and most certainly me — about what is a healthy diet. By ignoring this mainstream nutritional advice, the food pyramid, and other common myths about what’s healthy, and shifting to a nearly inverse paradigm, I’ve been able to lose weight, keep it off, and improve my health markers.
 comments: true
 categories:
   - LCHF
 header:
   overlay_image: /assets/images/181008-butter.JPG
   overlay_filter: 0.5 # same as adding an opacity of 0.5 to a black background
-  og_image: /assets/images/fourth-year-keto-1200.jpg
+  og_image: /assets/images/2022-bass-to-bass.jpg
   caption: "Delicious melty butter, awaiting food enhancement."
 ---
 
-{% include figure image_path="/assets/images/fourth-year-keto-1200.jpg" alt="Me, through the years, from obesity and sore joints to health management" caption="Me, through the years, from obesity and sore joints to health management." %}
+{% include figure image_path="/assets/images/2022-bass-to-bass.jpg" alt="Celebrating my fifth ketoversary on June 8th, 2022. Me, left, June 8th, 2017; right, June 5th, 2022" caption="Celebrating my fifth ketoversary on June 8th, 2022. Me, left, June 8th, 2017; right, June 5th, 2022" %}
 
 ## Summary
 
-For decades, dieticians, nutritionists, and advocacy groups have poorly advised us &mdash; and most certainly me &mdash; about what is a healthy diet. By ignoring this mainstream nutritional advice, the food pyramid, and other common myths about what’s healthy, and shifting to a nearly inverse paradigm, I’ve been able to lose weight, keep it off, and improve my health markers. 
+For decades, dieticians, nutritionists, and advocacy groups have poorly advised us — and most certainly me — about what is a healthy diet. By ignoring this mainstream nutritional advice, the food pyramid, and other common myths about what’s healthy, and shifting to a nearly inverse paradigm, I’ve been able to lose weight, keep it off, and improve my health markers.
 
-I’m describing a low carbohydrate, high fat diet, or LCHF.
+I’m describing a low carbohydrate diet.
 
 ## Introduction
 
-Many people have been kind to me, commenting on my weight-loss. I often hear; “You look great! You must be hitting the gym pretty hard?” My answer is, it’s not the gym. I’ve been hitting the gym “pretty hard” for at least a decade, if not longer. I started my running habit in college, back in 1982. In my youth, exercise seemed to be the key to weight management. However, as I aged, my amount of activity ceased to benefit my weight management. Indeed, I found it had nearly no benefit at all.
+Many people have been kind to me, commenting on my weight loss. I often hear; “You look great! You must be hitting the gym pretty hard?” My answer is, that it’s not the gym. I’ve been hitting the gym “pretty hard” for at least a decade, if not longer. I started my running habit in college, back in 1982. In my youth, exercise seemed to be the key to weight management. However, as I aged, my amount of activity ceased to benefit my weight management. Indeed, I found it had nearly no benefit at all.
 
 I had been obese my whole life. In high school, I was the kid who was four laps behind the slowest kid in Phys Ed class. The term in the ’70s for us overweight teens was “husky.” Since then, I’ve been on nearly every diet, from Weight Watchers, Shaklee, Nutrisystem, Jenny Craig, South Beach, standard calories-in, calories-out diets, Dr. Atkins, to finally, LCHF. 
 
@@ -37,6 +37,8 @@ I had been obese my whole life. In high school, I was the kid who was four laps 
 In the spring of 2016, after my yearly checkup, my general practitioner had noted on my chart that I was obese, with a Latin term that meant “belly fat.” My weight was 295. His dietary prescription was essentially mirroring all the failed advice I listed above. Despite my numerous previous failures, I resolved to try again. That summer, I meticulously, if compulsively, tracked what I ate with an online macro and calorie counter. I tried reducing sugar while including generous servings of “healthy” starches, such as corn or whole wheat. I dramatically increased protein, most usually by way of whey shakes. I saw moderate weight loss, 20 pounds, but the holiday triumvirate of Thanksgiving, Christmas, and New Year’s Day cause my weight loss to stall and then climb into January and February. It was the return of an old and familiar pattern.
 
 Quite serendipitously, while browsing the official [Duke University](https://www.youtube.com/user/Duke "Duke University YouTube video channel") video feed, I found a presentation featuring Dr. Westman, of Duke University, giving a talk on [“The Science and Practice of Low Carb Diets.”](https://www.youtube.com/watch?v=toLvGpk3HLE "Dr. Westman presents on LCHF") I had done the Atkins diet with great weight-loss success, only to backslide after the Atkin’s maintenance plan failed, to the point of complete remission. (In retrospect, I now understand that I failed to follow Dr. Atkin's guidance.) What if I had the help of a doctor? My GP gave me a referral to see Dr. Westman.
+
+{% include figure image_path="/assets/images/fourth-year-keto-1200.jpg" alt="Me, through the years, from obesity and sore joints to health management" caption="Me, through the years, from obesity and sore joints to health management." %}
 
 ## The Road to Damascus
 
@@ -52,7 +54,7 @@ I continue to enjoy sustained weight loss and improved health, and I’m only ge
 
 I love this way of eating and despise all the misinformation that has messed up an entire nation’s culture and understanding of something as essential and necessary as food.
 
-I came for the weight-loss and found a healthier way of living.
+I came for weight loss and found a healthier way of living.
 
 *Last updated: 21/01/18 01:17 PM*
 

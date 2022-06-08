@@ -1,20 +1,18 @@
 # Thanks for stopping by
 
-My name is Kyle Skrinak. I am a senior manager, I.T. at [Duke University](https://duke.edu) Web Services (DWS) for web development for Duke's <a href="https://oit.duke.edu/">Office of Information Technology</a>.
+My name is Kyle Skrinak. I manage web development and system administration. I started this blog while Duke University was my employer. I plan to continue this at Gilead Sciences, with changes to come.
+
+---
+
+## ⚠ Important note
+
+**My last day at Duke University is June 8th, 2022.**
+{: .notice--warning}
+
+I will be working for [Gilead Sciences,](https://www.gilead.com/) starting June 13th, 2022. I will provide more information on my new role shortly.
+
+I ~~am~~ was a senior manager, I.T. at [Duke University](https://duke.edu) Web Services (DWS) for web development for Duke's <a href="https://oit.duke.edu/">Office of Information Technology</a>. 
 
 For the <strong>Trinity College of Arts &amp; Sciences</strong> websites, please use <trinitywebsupport@duke.edu> for all support-related correspondence. This will better ensure our team can better help you.<br><br>
 For all other website support issues, please direct any general inquiries or requests about current projects to <a href="mailto:oit-dws@duke.edu">oit-dws@duke.edu</a>. Urgent issues, such as an outage, should go to Duke OIT's Service Desk at 919-684-2200.
 {: .notice--info}
-
-If you need to schedule time with me, here is my [work calendar]( {{ site.baseurl }}/pages/calendar.html ).
-{: .notice--success}
-
-Click [here]( {{ site.baseurl }}/pages/location.html "link to a Google map of our office.") for a map view of our office and what you need to go to get here.
-{: .notice--info}
-
-Due to <a href="https://coronavirus.duke.edu/">COVID-19</a> I have been working remotely. Please feel free to use the contact and scheduling information above and I will coordinate a remote Zoom meeting.
-{: .notice--danger}
-
-## Add my contact info
-
-![image-center]({{ site.baseurl }}/assets/images/kds-qr-code.png)

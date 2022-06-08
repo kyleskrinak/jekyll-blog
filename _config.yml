@@ -18,12 +18,12 @@ minimal_mistakes_skin    : "air" # "air", "aqua", "contrast", "dark", "dirt", "n
 locale                   : "en-US"
 title                    : "Kyle Skrinak"
 title_separator          : "-"
-subtitle                 : Senior Manager, I.T., Duke University
+subtitle                 : In transition to new role
 name                     : "Kyle Skrinak"
 description: >- # this means to ignore newlines until "baseurl:"
-  Kyle Skrinak, Senior I.T. Manager, Duke University
-url                      : "https://people.duke.edu" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
-baseurl                  : "/~kds38" # the subpath of your site, e.g. "/blog"
+  Kyle Skrinak, in transition to new role
+url                      : "https://kyle.skrinak.com" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : kyleskrinak/duke-blog # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
@@ -106,12 +106,12 @@ author:
 #  name             : ""
   avatar           : "https://s.gravatar.com/avatar/ff8a556b0c640770c8e933d7b5f57631?s=80"
 #  bio              : ""
-  location         : "<a style=\"display: inline-block\" href=\"https://goo.gl/maps/8TmAf96K2M82\">Durham, NC</a>"
+  location         : "<a style=\"display: inline-block\" href=\"https://www.google.com/maps/place/Apex,+NC/@35.7275871,-78.8999849,13z/data=!3m1!4b1!4m5!3m4!1s0x89ac92a3c19280d1:0x85cd817e17e28015!8m2!3d35.732652!4d-78.8502856\">Apex, NC</a>"
   email            :
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      url: mailto:kyle.skrinak@duke.edu
+      url: mailto:kyle.skrinak@gmail.com
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
@@ -124,9 +124,6 @@ author:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/kyleskrinak"
-    - label: "Drupal"
-      icon: "fab fa-fw fa-drupal"
-      url: "https://www.drupal.org/u/screenack"
     - label: "StackOverflow"
       icon: "fab fa-fw fa-stack-overflow"
       url: "https://www.stackoverflow.com/users/479709/screenack"
