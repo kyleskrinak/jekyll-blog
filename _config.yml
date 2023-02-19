@@ -18,13 +18,13 @@ minimal_mistakes_skin    : "air" # "air", "aqua", "contrast", "dark", "dirt", "n
 locale                   : "en-US"
 title                    : "Kyle Skrinak"
 title_separator          : "-"
-subtitle                 : In transition to new role
+subtitle                 : Senior Manager, Digital Experience Platform for Gilead Sciences
 name                     : "Kyle Skrinak"
 description: >- # this means to ignore newlines until "baseurl:"
-  Kyle Skrinak, in transition to new role
+ Kyle Skrinak, Senior Manager, Digital Experience Platform for Gilead Sciences
 url                      : "https://kyle.skrinak.com" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : kyleskrinak/duke-blog # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+repository               : kyleskrinak/kyleskrinak.github.io # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
@@ -63,6 +63,8 @@ atom_feed:
 search                   : # true, false (default)
 search_full_content      : # true, false (default)
 search_provider          : # lunr (default), algolia, google
+lunr:
+  search_within_pages    : # true, false (default)
 algolia:
   application_id         : # YOUR_APPLICATION_ID
   index_name             : # YOUR_INDEX_NAME

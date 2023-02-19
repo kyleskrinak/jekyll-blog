@@ -1,18 +1,7 @@
 # Thanks for stopping by
 
-My name is Kyle Skrinak. I manage web development and system administration. I started this blog while Duke University was my employer. I plan to continue this at Gilead Sciences, with changes to come.
+Hello and thanks for stopping by. Despite being a full-on Drupal fan, I [started this blog in 2016](/personal%20productivity/first-blog-post/) as an exercise in using [Jekyll,](https://jekyllrb.com/) a static website generator and with the [Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/) theme. I discover I could easily create a feature-rich web blog only serving HTML resouces. No PHP, Python, or the like, running on the server. Plus, Duke offered free static hosting to staff. As in, hey! Free web hosting! Though I left Duke, and their free webhosting, I ended up loving Jekyll as a content platform. At least for now. You know how ephemeral web technologies are.
 
----
+As for my interests; by day, I manage web development and system administration. Otherwise I am a fan for low-carb eating, as the pages of this blog reflect. I use these topics as excuses for writing on my blog as an excuse to write in Markdown and NeoVim. And write.
 
-## ⚠ Important note
-
-**My last day at Duke University is June 8th, 2022.**
-{: .notice--warning}
-
-I will be working for [Gilead Sciences,](https://www.gilead.com/) starting June 13th, 2022. I will provide more information on my new role shortly.
-
-I ~~am~~ was a senior manager, I.T. at [Duke University](https://duke.edu) Web Services (DWS) for web development for Duke's <a href="https://oit.duke.edu/">Office of Information Technology</a>. 
-
-For the <strong>Trinity College of Arts &amp; Sciences</strong> websites, please use <trinitywebsupport@duke.edu> for all support-related correspondence. This will better ensure our team can better help you.<br><br>
-For all other website support issues, please direct any general inquiries or requests about current projects to <a href="mailto:oit-dws@duke.edu">oit-dws@duke.edu</a>. Urgent issues, such as an outage, should go to Duke OIT's Service Desk at 919-684-2200.
-{: .notice--info}
+Currently I am the Senior Manager of the Digital Experience Platform Team for [Gilead Sciences,](https://www.gilead.com/). Our team is responsible for the reliable hosting and management of Gilead's websites. Our main Content Management System is Sitecore and Azure and we also support PHP and static websites on Amazon Web Services. 

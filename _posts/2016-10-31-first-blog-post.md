@@ -1,5 +1,6 @@
 ---
 title: Static Sites&#58; Everything Old Is New Again
+excerpt: Making static pages like Grandpa used to
 categories:
   - Personal productivity
 ---
