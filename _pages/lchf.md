@@ -18,11 +18,12 @@ header:
   caption: "Delicious melty butter, awaiting food enhancement."
 ---
 
-{% include figure image_path="/assets/images/2022-bass-to-bass.jpg" alt="Celebrating my fifth ketoversary on June 8th, 2022. Me, left, June 8th, 2017; right, June 5th, 2022" caption="Celebrating my fifth ketoversary on June 8th, 2022. Me, left, June 8th, 2017; right, June 5th, 2022" %}
+{% include figure image_path="/assets/images/60th-birthday.jpg" alt="A self-portrait. Left, me when I was 40. Right, me, at 60." caption="A self-portrait. Left, me when I was 40. Right, me, at 60." %}
 
 ## Summary
 
-For decades, dieticians, nutritionists, and advocacy groups have poorly advised us — and most certainly me — about what is a healthy diet. By ignoring this mainstream nutritional advice, the food pyramid, and other common myths about what’s healthy and shifting to a nearly inverse paradigm, I’ve lost weight, kept it off, and improved my health markers.
+For decades, general physicians, nurse practitioners, dieticians, nutritionists, and advocacy groups have poorly advised us — and most certainly me — about what is a healthy diet. By ignoring this mainstream nutritional advice, the food pyramid, and other common myths about what’s healthy and shifting to a nearly opposite way of eating, I’ve lost weight, kept it off, and improved my health markers.
+
 I’m describing a low-carbohydrate diet.
 
 ## Introduction
@@ -39,7 +40,7 @@ In the spring of 2016, after my yearly checkup, my general practitioner noted on
 
 Quite serendipitously, while browsing the official [Duke University](https://www.youtube.com/user/Duke "Duke University YouTube video channel") video feed, I found a presentation featuring Dr. Westman of Duke University, giving a talk on [“The Science and Practice of Low Carb Diets.”](https://www.youtube.com/watch?v=toLvGpk3HLE "Dr. Westman presents on LCHF") I had done the Atkins diet with great weight-loss success, only to backslide after I failed to correctly follow the Atkin’s maintenance plan, to the point of complete remission. I guessed that I needed expert help. What if I had the help of a doctor, especially a doctor who had taken the mantle from Dr. Atkns? My GP gave me a referral to see Dr. Westman.
 
-{% include figure image_path="/assets/images/fourth-year-keto-1200.jpg" alt="Me, through the years, from obesity and sore joints to health management" caption="Me, through the years, from obesity and sore joints to health management." %}
+{% include figure image_path="/assets/images/fifth-year-keto-dates.jpg" alt="Me, through the years, from obesity and sore joints to health management" caption="Me, through the years, from obesity and sore joints to health management." %}
 
 ## The Road to Damascus
 
