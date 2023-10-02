@@ -17,7 +17,7 @@ hidden: true
 ## “Did you know you brighten my day? You are like sunshine to me.”
 
 <figure style="float: right; padding-left: 1em;">
-  <img style="width: 300px" src="/~kds38/assets/images/in memorandum.svg" alt="Lorraine Barbara Kubik Skrinak">
+  <img style="width: 300px" src="/assets/images/in memorandum.svg" alt="Lorraine Barbara Kubik Skrinak">
 </figure>
 
  

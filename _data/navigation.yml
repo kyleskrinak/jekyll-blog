@@ -4,7 +4,7 @@ main:
     url: /pages/my-low-carb.html
 
   - title: "Archive"
-    url: /year-archive
+    url: /year-archive/index.html
 
   - title: "Categories"
     url: /categories/index.html
