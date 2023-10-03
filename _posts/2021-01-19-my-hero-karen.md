@@ -9,8 +9,10 @@ header:
   overlay_image: "/assets/images/skrinak-sibs-60s.jpg"
   caption: My sister and hero, Karen, far left, and the boy she saved, far right, circa the early 1960s
 image: 
-category: Personal
-tags: Story-telling 
+category: 
+  - Personal
+tags: 
+  - Story-telling 
 published: true
 hidden: true
 ---

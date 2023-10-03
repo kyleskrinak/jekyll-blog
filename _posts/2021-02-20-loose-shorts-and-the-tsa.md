@@ -4,8 +4,10 @@ title: Loose Shorts and the TSA
 date: 2021-02-20 18:45 -0500
 excerpt: “Sir, you better grab those shorts tightly, *no one wants them to drop*.” Thank you, captain O.
 classes: wide
-category: Personal
-tags: Story-telling
+category: 
+  - Personal
+tags: 
+  - Story-telling
 published: true
 hidden: true
 ---

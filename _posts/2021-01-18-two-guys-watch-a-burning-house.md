@@ -9,8 +9,10 @@ header:
   overlay_image: "/assets/images/88-e-walnut-st.jpg"
   caption: 88 E. Walnut Street, Kingston, PA, today-ish
 image: 
-category: Personal 
-tags: Story-telling
+category: 
+  - Personal 
+tags: 
+  - Story-telling
 hidden: true
 published: true 
 ---

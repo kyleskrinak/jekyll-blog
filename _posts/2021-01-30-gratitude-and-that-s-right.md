@@ -6,8 +6,10 @@ description: Another day in the life of Kyle Skrinak
 classes: wide
 excerpt: Another day in the life of Kyle Skrinak
 image: 
-category: Personal
-tags: Story-telling
+category: 
+  - Personal
+tags: 
+  - Story-telling
 published: true
 hidden: true
 ---

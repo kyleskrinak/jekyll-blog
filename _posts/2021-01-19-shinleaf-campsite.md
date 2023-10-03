@@ -8,8 +8,10 @@ excerpt: When I was 8, I played alongside a lake, against a star-splattered nigh
 header:
   overlay_image: "/assets/images/starry-night.jpg"
   caption: image, thanks to "epSos.de", from [here](https://commons.wikimedia.org/wiki/File:Bright_Stars_of_Milky_Way_on_the_Dark_blue_Sky_of_Astronomy.jpg)
-category: Personal
-tags: Story-telling
+category: 
+  - Personal
+tags: 
+  - Story-telling
 hidden: true
 ---
 

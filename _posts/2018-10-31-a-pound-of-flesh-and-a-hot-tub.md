@@ -8,7 +8,8 @@ header:
   caption: image from [here](https://commons.wikimedia.org/wiki/File:Bagby_hot_springs_oregon.jpg#file)
 categories:
   - LCHF
-tags: Story-telling
+tags: 
+  - Story-telling
 classes: wide
 date: 2018-10-31 12:15 -0400
 ---

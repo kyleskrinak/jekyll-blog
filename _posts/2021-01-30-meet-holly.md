@@ -9,8 +9,10 @@ header:
   overlay_image: "/assets/images/holly-pup.jpg"
   caption: The catalog image for Holly before her adaption
 image: 
-category: Personal
-tags: Story-telling
+category: 
+  - Personal
+tags: 
+  - Story-telling
 published: true
 hidden: true
 ---
