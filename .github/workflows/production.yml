@@ -1,0 +1,113 @@
+name: Production (AWS S3 + CloudFront)
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+concurrency:
+  group: prod-deploy
+  cancel-in-progress: true
+
+env:
+  # keep logs quiet but useful
+  JEKYLL_ENV: production
+
+jobs:
+  build-and-deploy:
+    name: Build, verify, deploy
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: https://kyle.skrinak.com
+    permissions:
+      contents: read
+      id-token: write # needed for OIDC -> AWS
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby 3.2.9
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.2.9"
+
+      - name: Bundle install (include :test, exclude :development)
+        run: |
+          bundle lock --add-platform x86_64-linux || true
+          bundle config set path vendor/bundle
+          bundle config set without 'development'
+          bundle install --jobs 4 --retry 3
+
+      - name: Build site
+        run: bundle exec jekyll build --trace
+
+      # OPTIONAL sanity check (Option A):
+      # If you created scripts/proof_subset.rb per our micro-tests, we run it.
+      # Otherwise we do a tiny fallback check on the homepage only.
+      - name: Proof homepage (fallback)
+        run: |
+          if [ -f scripts/proof_subset.rb ]; then
+            echo "Running scripts/proof_subset.rb..."
+            bundle exec ruby scripts/proof_subset.rb _site/index.html
+          else
+            echo "Subset script not found; doing a tiny homepage check."
+            bundle exec ruby -e '
+              require "html-proofer"
+              ignores = [
+                %r{\Ahttps?://(www\.)?linkedin\.com/.*\z},
+                %r{\Ahttps?://(www\.)?nytimes\.com/.*\z},
+                %r{\Ahttps?://(www\.)?autohotkey\.com/.*\z},
+                %r{\Ahttps?://(www\.)?pixabay\.com/.*\z},
+                %r{\Ahttps?://(www\.)?parade\.com/.*\z},
+                %r{\Ahttps?://(www\.)?ninateicholz\.com/.*\z},
+                %r{\Ahttps?://thebigfatsurprise\.com/.*\z},
+                %r{\Ahttps?://(www\.)?ncbi\.nlm\.nih\.gov/.*\z},
+                %r{\Ahttps?://app\.prezentt\.com/.*\z},
+                %r{\Ahttps?://live-seattle-hes\.pantheonsite\.io/.*\z},
+                %r{\Ahttps?://127\.0\.0\.1(?::\d+)?/.*\z},
+                # treat our own production host as "internal" to avoid bot-blocking 403s in CI
+                %r{\Ahttps?://(www\.)?kyle\.skrinak\.com/.*\z},
+                # and the GitHub Pages host if it ever shows up in the built HTML
+                %r{\Ahttps?://kyleskrinak\.github\.io/.*\z}
+              ]
+              HTMLProofer.check_file(
+                "_site/index.html",
+                enforce_https: false,
+                ignore_urls: ignores,
+                typhoeus: { timeout: 20, connecttimeout: 10, followlocation: true }
+              ).run
+            '
+          fi
+
+      - name: Show OIDC token claims
+        uses: actions/github-script@v7
+        with:
+          script: |
+            // core is already provided by github-script
+            const token = await core.getIDToken('sts.amazonaws.com');
+            const payloadB64Url = token.split('.')[1];
+            const b64 = payloadB64Url.replace(/-/g, '+').replace(/_/g, '/')
+              + '='.repeat((4 - (payloadB64Url.length % 4)) % 4);
+            const claims = JSON.parse(Buffer.from(b64, 'base64').toString('utf8'));
+            console.log('OIDC claims:\n' + JSON.stringify(claims, null, 2));
+
+      - name: Configure AWS credentials (OIDC)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::${{ vars.AWS_ACCOUNT_ID }}:role/${{ vars.AWS_DEPLOY_ROLE }}
+          aws-region: ${{ vars.AWS_REGION }}
+
+      # Simple, safe sync. (We can split HTML vs assets for cache headers later.)
+      - name: Sync to S3
+        run: |
+          aws s3 sync "_site/" "s3://${{ vars.AWS_S3_BUCKET }}/" \
+            --delete \
+            --only-show-errors \
+            --cache-control "max-age=60,public"
+
+      - name: Invalidate CloudFront
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id "${{ vars.AWS_CLOUDFRONT_DISTRIBUTION_ID }}" \
+            --paths "/*"

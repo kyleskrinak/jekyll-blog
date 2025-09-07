@@ -163,6 +163,7 @@ footer:
 include:
   - .htaccess
   - _pages
+  - .well-known # include .well-known for webfinger, security, etc.
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
@@ -305,6 +306,10 @@ defaults:
     values:
       layout: reveal
       comments: false
+  - scope:
+      path: ".well-known"
+    values:
+      layout: null
 
 # Jekyll compose defaults
 jekyll_compose:

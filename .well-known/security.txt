@@ -1,0 +1,4 @@
+Contact: https://github.com/kyleskrinak/kyleskrinak.github.io/security/advisories/new
+Preferred-Languages: en
+Policy: https://github.com/kyleskrinak/kyleskrinak.github.io/blob/main/SECURITY.md
+Expires: 2026-09-07T00:00:00Z
