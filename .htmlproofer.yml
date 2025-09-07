@@ -1,0 +1,10 @@
+checks:
+  - Links
+  - Images
+  - Scripts
+  - Favicon
+  - OpenGraph
+
+ignore_files:
+  - ^reveallinks\.html$                 # fragment, no head
+  - ^assets/reveal/plugin/notes/speaker-view\.html$  # vendor file

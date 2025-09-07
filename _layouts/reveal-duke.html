@@ -1,88 +1,77 @@
 <!doctype html>
-<html lang="{{ site.locale | slice: 0,2 | default: " en" }}" class="no-js">
-
+<html lang="{{ site.locale | default: 'en' | slice: 0, 2 }}" class="no-js">
 <head>
   {% include head.html %}
   {% include head/custom.html %}
+
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/reveal/reveal.css">
-  <link rel="stylesheet" href="{{ site.baseurl }}/assets/reveal/theme/black.css"
-    id="theme">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/reveal/theme/black.css" id="theme">
+
   <style>
-    .reveal h1,
-    .reveal h2,
-    .reveal h3,
-    .reveal h4,
-    .reveal h5 {
-      text-transform: none;
-    }
-    hr {border-top: 1px solid white;}
-    aside.controls::before{
-      content:"";
-      background-image:url("{{site.baseurl}}/assets/images/Duke-logo.png");
+    .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5 { text-transform: none; }
+    hr { border-top: 1px solid white; }
+    aside.controls::before {
+      content: "";
+      background-image: url("{{ site.baseurl }}/assets/images/Duke-logo.png");
       background-size: contain;
       background-repeat: no-repeat;
       opacity: 0.5;
-      width: 155px;
-      height: 100px;
-      display: block;
-      right: 90px;
-      top: -68px;
-      position: absolute;
+      width: 155px; height: 100px;
+      display: block; right: 90px; top: -68px; position: absolute;
     }
   </style>
 </head>
 
-<body
-  class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}">
-
+<body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}">
   {% include_cached browser-upgrade.html %}
 
   <div class="reveal">
     <div class="slides">
-      <section data-markdown data-separator="^\n\n\n"
-        data-transition="fade-in none"
+      <section
+        data-markdown
+        data-separator="^\n\n\n"
         data-separator-vertical="^\n\n"
         data-separator-notes="^Note:"
+        data-transition="fade-in none"
         data-background-color="rgb(11, 34, 103)">
         <textarea data-template>
-		  {{ content }}
-		</textarea>
+{{ content }}
+        </textarea>
       </section>
     </div>
   </div>
 
+  <!-- Hidden template: this is the custom “Links” panel content -->
+  <template id="reveal-links-template">
+    {% include reveallinks.html %}
+  </template>
+
   <script src="{{ site.baseurl }}/assets/reveal/reveal.js"></script>
-  <script
-    src="{{ site.baseurl }}/assets/reveal/plugin/markdown/marked.min.js"></script>
-  <script
-    src="{{ site.baseurl }}/assets/reveal/plugin/markdown/markdown.js"></script>
+  <script src="{{ site.baseurl }}/assets/reveal/plugin/markdown/marked.min.js"></script>
+  <script src="{{ site.baseurl }}/assets/reveal/plugin/markdown/markdown.js"></script>
   <script src="{{ site.baseurl }}/assets/reveal/plugin/menu/menu.js"></script>
-  <script
-    src="{{ site.baseurl }}/assets/reveal/plugin/notes/notes.js">
-  </script>
+  <script src="{{ site.baseurl }}/assets/reveal/plugin/notes/notes.js"></script>
+
   <script>
+    const revealLinks = (document.getElementById('reveal-links-template') || {}).innerHTML || '';
+
     Reveal.initialize({
       plugins: [RevealMarkdown, RevealMenu, RevealNotes],
-      // The "normal" size of the presentation, aspect ratio will be preserved
-      // when the presentation is scaled to fit different resolutions. Can be
-      // specified using percentage units.
-      width: 1300,
-      height: 860,
 
-      // Factor of the display size that should remain empty around the content
-      margin: 0.05,
-      center: false,
+      // Base sizing
+      width: 1300, height: 860, margin: 0.05, center: false,
 
-      // Bounds for smallest/largest possible scale to apply to content
-      minScale: 0.2,
-      maxScale: 1.0,
+      // Scale bounds
+      minScale: 0.2, maxScale: 1.0,
+
       history: true,
+
       menu: {
         custom: [
           {
             title: 'Links',
-            icon: '<i class="fa fa-link">',
-            src: '{{ site.baseurl }}/reveallinks.html'
+            icon: '<i class="fa fa-link"></i>',
+            content: revealLinks
           }
         ]
       }
@@ -90,7 +79,5 @@
   </script>
 
   {% include scripts.html %}
-
 </body>
-
 </html>

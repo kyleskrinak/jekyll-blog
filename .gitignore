@@ -37,3 +37,10 @@ docs
 test
 vendor/bundle
 .github
+tmp/*git
+*.log
+build.log
+
+# Scratch dir for scripts
+scripts/tmp/*
+!scripts/tmp/.gitkeep

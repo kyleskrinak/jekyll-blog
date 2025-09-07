@@ -33,6 +33,6 @@ header:
 * How the [OCR](https://www.hhs.gov/ocr/index.html) is impacting our response, and assigning priorities
 * Everyone wants accessibility, but funding implementation efforts remains problematic
 
-See my preparation links for more details on my notes for the day [here]({{ site.baseurl }}/tags/#drupalcon-nashville-2018/)
+See my preparation links for more details on my notes for the day [here]({{ site.baseurl }}/tags/#drupalcon-nashville-2018)
 
 Event page for [Higher Ed Summit](https://events.drupal.org/nashville2018/higher-ed-summit)

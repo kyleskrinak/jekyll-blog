@@ -1,0 +1,5 @@
+/* assets/css/_custom-variables.scss */
+@use "sass:color";
+/* override variables the skin sets with !default */
+$link-color: #3a7afe !default;
+$brand-color: color.mix(#3a7afe, #111, 20%) !default;

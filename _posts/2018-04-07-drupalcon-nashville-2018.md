@@ -57,7 +57,7 @@ How would you like to extend your CI/CD adoption?
 ## Session 2; 1:30 AM &ndash; 2:30 PM
 ### Web Accessibility, led by Joel Crawford-Smith
 
-Led by my fellow Dukie, [Joel,](http://joelcrawfordsmith.com/) with whom we collaborate frequently. Looking forward to his session.
+Led by my fellow Dukie, [Joel,](https://joelcrawfordsmith.com/) with whom we collaborate frequently. Looking forward to his session.
 
 You can find his session notes [here](https://docs.google.com/document/d/1xOq9NTtG8qaSjdmymFplZR0RCtQ4usgELM5MvHUYgjQ/edit?usp=sharing)
 

@@ -48,8 +48,8 @@ Easily the best non-Dries keynote I’ve attended yet.
 ### Session summary by presenter:
 I’ll admit it, I love spreadsheets.  So when I attended a session by Sean Larkin* called, [“Scaling your business starts with the right spreadsheets: performance metrics”](https://events.drupal.org/losangeles2015/sessions/scaling-your-business-starts-right-spreadsheets-performance-metrics) at Drupalcon LA, I was excited to take what I had learned and apply it to my own agency.   I was inspired.   I immediately adopted these same spreadsheets and started adapting them to fit my needs as Chief Operating Officer.
 
-* [Billable hours matrix](https://docs.google.com/spreadsheets/d/1FORnelNjLv-g8uLoHThcn-036l5-kOboC5e3Y4qUngg/edit#gid=1114492661)
-* [Megasheet](https://docs.google.com/spreadsheets/d/1FORnelNjLv-g8uLoHThcn-036l5-kOboC5e3Y4qUngg/edit#gid=1114492661)
+* [Billable hours matrix](https://docs.google.com/spreadsheets/d/1FORnelNjLv-g8uLoHThcn-036l5-kOboC5e3Y4qUngg/edit)
+* [Megasheet](https://docs.google.com/spreadsheets/d/1FORnelNjLv-g8uLoHThcn-036l5-kOboC5e3Y4qUngg/edit)
 
 * Stepping through measurements and their impact on constraints
 * Cost recovery and profit focused, but still valid capacity, capability and status measures

@@ -42,7 +42,7 @@ Yes, I want butter, not a *frankenbutter.* I'm not a child. The last response si
 
 ## What to do?
 
-<blockquote markdown="block" class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/biiimurray/status/608336023098167298?lang=en">Life is too short for fake butter, cheese or people. &mdash; Bill Murray</a></p><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></blockquote>
+<blockquote markdown="block" class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/biiimurray/status/608336023098167298?lang=en">Life is too short for fake butter, cheese or people. &mdash; Bill Murray</a></p><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></blockquote>
 
 
 Try to call in advance, and ask this question before you go. Be prepared to wait. Most staff that answer the phones won’t know. If they don&#39;t have butter, you may be able to steer clear of the restaurant. If you cannot change venue, it may be an opportunity to fast or limit what you eat. If you ask at the time you&#39;re there, you might make others uncomfortable with your seemingly orthorexic-like questions on ingredients.

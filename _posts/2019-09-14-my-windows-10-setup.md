@@ -41,7 +41,7 @@ All of which reminds me: time to update my vimrc configuration file. Or should I
   1. Enable [Windows Subsystem for Linux (WSL)](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
       * `Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux`
   1. Establish [Microsoft OneDrive](https://onedrive.live.com) user configuration
-  1. Install [Microsoft/Terminal: The new Windows Terminal](https://github.com/Microsoft/Terminal) and [Ubuntu](http://www.ubuntu.com/) from the [Online Microsoft Store](https://www.microsoft.com/en-us/store)
+  1. Install [Microsoft/Terminal: The new Windows Terminal](https://github.com/Microsoft/Terminal) and [Ubuntu](https://www.ubuntu.com/) from the [Online Microsoft Store](https://www.microsoft.com/en-us/store)
       * Use either `cmd.exe` or `powershell` to run the `ubuntu` command to create your user account for the ubuntu instance. Afterwards, you’ll be able to access the `ubuntu` shell profile within `Windows Terminal`, now my favorite Windows shell.
   1. Install [Homebrew on Linux](https://docs.brew.sh/Homebrew-on-Linux) into WSL
       * Install ssh keys

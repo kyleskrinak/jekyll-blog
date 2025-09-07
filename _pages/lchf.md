@@ -67,7 +67,7 @@ I came for weight loss and found a healthier way of living.
 * **Dr. Eric C Westman’s** [ Scholars@Duke profile ](https://scholars.duke.edu/person/ewestman "Dr. Westman’s Scholars at Duke profile page")
 * **Dr. Westman’s** [Facebook group](https://www.facebook.com/groups/DukeLowCarbSupportGroup "Dr. Westman’s facebook group page") page.
 * [**Adapt Your Life**](https://www.adaptyourlife.com "Adapt Your Life weblink") shares LCHF information with the public, with Dr. Westman and others in the medical or scientific community leading on various related topics. They maintain an active [YouTube channel](https://www.youtube.com/channel/UCni9TCw0YPwTdu7BYF3j0Eg "Ask Adapt YouTube video channel.") as well.
-* **Amy Berger**, [Tuit Nutrition](http://www.tuitnutrition.com "Amy Berger's website"), a Certified Nutrition Specialist, and her focus on "Keto without the Crazy," and the crazy is getting worse at an increasingly crazy rate. Not everyone who studies or promotes low-carb eating sufficiently overlaps in their protocol, but it's my experience that she and Dr. Westman's protocols overlap quite well.
+* **Amy Berger**, [Tuit Nutrition](https://www.tuitnutrition.com "Amy Berger's website"), a Certified Nutrition Specialist, and her focus on "Keto without the Crazy," and the crazy is getting worse at an increasingly crazy rate. Not everyone who studies or promotes low-carb eating sufficiently overlaps in their protocol, but it's my experience that she and Dr. Westman's protocols overlap quite well.
 
 ### Podcasts
 
@@ -84,7 +84,7 @@ I came for weight loss and found a healthier way of living.
 > 
 > They have! Eric Westman, MD, has over twenty years of experience as an internal medicine doctor and obesity medicine specialist. He’s helped patients at his Keto Medicine Clinic at Duke University lose over 26,000 pounds and reverse conditions like type 2 diabetes, PCOS, high blood pressure, and more. In End Your Carb Confusion, he shares his time-tested and science-backed strategy with YOU! 
 
-* Anything by [Gary Taubes](http://garytaubes.com/ "Gary Taubes’ website").
+* Anything by [Gary Taubes](https://garytaubes.com/ "Gary Taubes’ website").
   *  If you only read one work of his, make it his New York Times article ["What If It’s All Been a Big Fat Lie?"](https://www.nytimes.com/2002/07/07/magazine/what-if-it-s-all-been-a-big-fat-lie.html "Gary Taubes’ launching salvo against the standard American diet") This article kicked off broader acknowledgment that we're dangerously heading down the wrong path on the science and practice of nutrition.
 * Anything by [Nina Teicholz](https://ninateicholz.com/ "Nina Teicholz’s website")
   * I highly recommend her book, [“THE BIG FAT SURPRISE; Why Butter, Meat & Cheese Belong in a Healthy Diet”](https://thebigfatsurprise.com/ "website for her Big Fat Surprise book") which explains how we got here and offers possible remedies.

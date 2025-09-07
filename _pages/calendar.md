@@ -16,5 +16,5 @@ However, if you’re merely browsing my availability, here is my calendar, below
 
 Please note: the outlook calendar may take up to 20 seconds to load.
 
-<div class="iframe-wrapper"><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="600" src="//outlook.office365.com/owa/calendar/kyle.skrinak@duke.edu/Calendar/calendar.html" onload="this.height=this.contentWindow.document.body.scrollHeight;"></iframe></div>
+<div class="iframe-wrapper"><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="600" src="https://outlook.office365.com/owa/calendar/kyle.skrinak@duke.edu/Calendar/calendar.html" onload="this.height=this.contentWindow.document.body.scrollHeight;"></iframe></div>
 </div>

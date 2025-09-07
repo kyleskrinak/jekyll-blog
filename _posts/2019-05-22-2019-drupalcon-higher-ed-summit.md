@@ -32,12 +32,12 @@ The summit organizer’s have posted the day’s schedule, [here](https://live-s
 
 ## EduDU
 
-* We strongly encourage using the [EduDU Slack group](//edudu.org/) and the #drupalcon channel to connect with other higher-ed professionals at DrupalCon, plan BoFs and braindates, and keep in touch with attendees after the conference.
-* Please fill out the form at the [EduDU website](//edudu.org/) to receive an invite link. Non-edu email addresses will be removed from the Slack team, so make sure to use your work email addresses when signing up.
+* We strongly encourage using the [EduDU Slack group](https://edudu.org/) and the #drupalcon channel to connect with other higher-ed professionals at DrupalCon, plan BoFs and braindates, and keep in touch with attendees after the conference.
+* Please fill out the form at the [EduDU website](https://edudu.org/) to receive an invite link. Non-edu email addresses will be removed from the Slack team, so make sure to use your work email addresses when signing up.
 
 ## Opening session
 
-* [Paul Grotevant](//sites.utexas.edu/drupal/author/pfg/ "Paul Grotevant's blog at U.T. Austin") presents on new summit format
+* [Paul Grotevant](https://sites.utexas.edu/drupal/author/pfg/ "Paul Grotevant's blog at U.T. Austin") presents on new summit format
 * “Braindates” continue the conversation afterwards
   *  Connection opportunities.
 * The Solution problem
