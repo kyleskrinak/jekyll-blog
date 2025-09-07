@@ -9,7 +9,6 @@
 # Ruby Gem
 *.gem
 .bundle
-Gemfile.lock
 **/vendor/bundle
 
 # Node.js and NPM
@@ -30,13 +29,11 @@ _site
 *.swp
 codekit-config.json
 example/_site
-Gemfile.lock
 node_modules
 npm-debug.log*
 docs
 test
 vendor/bundle
-.github
 tmp/*git
 *.log
 build.log
@@ -44,3 +41,4 @@ build.log
 # Scratch dir for scripts
 scripts/tmp/*
 !scripts/tmp/.gitkeep
+tmp
