@@ -5,55 +5,92 @@ on:
     branches: [ "main" ]
   workflow_dispatch:
 
-permissions:
-  id-token: write   # for OIDC
-  contents: read
+concurrency:
+  group: prod-deploy
+  cancel-in-progress: true
 
 env:
-  AWS_REGION: ${{ vars.AWS_REGION }}
-  AWS_S3_BUCKET: ${{ vars.AWS_S3_BUCKET }}
-  AWS_CLOUDFRONT_DISTRIBUTION_ID: ${{ vars.AWS_CLOUDFRONT_DISTRIBUTION_ID }}
-  AWS_ROLE_ARN: arn:aws:iam::${{ vars.AWS_ACCOUNT_ID }}:role/${{ vars.AWS_DEPLOY_ROLE }}
+  # keep logs quiet but useful
+  JEKYLL_ENV: production
 
 jobs:
-  deploy:
-    name: Build & Deploy to AWS
+  build-and-deploy:
+    name: Build, verify, deploy
     runs-on: ubuntu-latest
     environment:
       name: production
       url: https://kyle.skrinak.com
+    permissions:
+      contents: read
+      id-token: write   # needed for OIDC -> AWS
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - uses: ruby/setup-ruby@v1
+      - name: Set up Ruby 3.2.9
+        uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.2'
-          bundler-cache: true
+          ruby-version: "3.2.9"
 
-      - name: Build Jekyll (production)
-        env:
-          JEKYLL_ENV: production
-        run: bundle exec jekyll build --trace --verbose
+      - name: Bundle install (include :test, exclude :development)
+        run: |
+          bundle lock --add-platform x86_64-linux || true
+          bundle config set path vendor/bundle
+          bundle config set without 'development'
+          bundle install --jobs 4 --retry 3
+
+      - name: Build site
+        run: bundle exec jekyll build --trace
+
+      # OPTIONAL sanity check (Option A):
+      # If you created scripts/proof_subset.rb per our micro-tests, we run it.
+      # Otherwise we do a tiny fallback check on the homepage only.
+      - name: Verify (html-proofer subset if present)
+        run: |
+          if [ -f scripts/proof_subset.rb ]; then
+            echo "Running scripts/proof_subset.rb..."
+            bundle exec ruby scripts/proof_subset.rb _site/index.html || exit 1
+          else
+            echo "Subset script not found; doing a tiny homepage check."
+            bundle exec ruby -e '
+              require "html-proofer";
+              HTMLProofer.check_files(
+                ["_site/index.html"],
+                enforce_https: false,
+                ignore_urls: [
+                  %r{\Ahttps?://(www\.)?linkedin\.com/.*\z},
+                  %r{\Ahttps?://(www\.)?nytimes\.com/.*\z},
+                  %r{\Ahttps?://(www\.)?autohotkey\.com/.*\z},
+                  %r{\Ahttps?://(www\.)?pixabay\.com/.*\z},
+                  %r{\Ahttps?://(www\.)?parade\.com/.*\z},
+                  %r{\Ahttps?://(www\.)?ninateicholz\.com/.*\z},
+                  %r{\Ahttps?://thebigfatsurprise\.com/.*\z},
+                  %r{\Ahttps?://(www\.)?ncbi\.nlm\.nih\.gov/.*\z},
+                  %r{\Ahttps?://app\.prezentt\.com/.*\z},
+                  %r{\Ahttps?://live-seattle-hes\.pantheonsite\.io/.*\z},
+                  %r{\Ahttps?://127\.0\.0\.1(?::\d+)?/.*\z}
+                ],
+                typhoeus: { timeout: 20, connecttimeout: 10, followlocation: true }
+              ).run
+            '
+          fi
 
       - name: Configure AWS credentials (OIDC)
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: ${{ env.AWS_ROLE_ARN }}
-          aws-region: ${{ env.AWS_REGION }}
+          role-to-assume: arn:aws:iam::${{ vars.AWS_ACCOUNT_ID }}:role/${{ vars.AWS_DEPLOY_ROLE }}
+          aws-region: ${{ vars.AWS_REGION }}
 
-      # Long cache for non-HTML (immutable assets)
-      - name: Sync assets with long cache
+      # Simple, safe sync. (We can split HTML vs assets for cache headers later.)
+      - name: Sync to S3
         run: |
-          aws s3 sync _site "s3://${AWS_S3_BUCKET}" \
-            --delete --exclude "*.html" \
-            --cache-control "public,max-age=31536000,immutable"
-
-      # Short cache for HTML
-      - name: Sync HTML with short cache
-        run: |
-          aws s3 sync _site "s3://${AWS_S3_BUCKET}" \
-            --delete --exclude "*" --include "*.html" \
-            --cache-control "public,max-age=300"
+          aws s3 sync "_site/" "s3://${{ vars.AWS_S3_BUCKET }}/" \
+            --delete \
+            --only-show-errors \
+            --cache-control "max-age=60,public"
 
       - name: Invalidate CloudFront
-        run: aws cloudfront create-invalidation --distribution-id "${AWS_CLOUDFRONT_DISTRIBUTION_ID}" --paths "/*"
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id "${{ vars.AWS_CLOUDFRONT_DISTRIBUTION_ID }}" \
+            --paths "/*"
