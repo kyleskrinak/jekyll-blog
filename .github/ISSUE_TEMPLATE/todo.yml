@@ -1,17 +1,33 @@
 name: To-Do
-description: Small task for the blog/site
-title: "TODO: "
-labels: ["todo"]
+description: Small task / follow-up
+title: "TODO: <short title>"
+labels: [todo]
 body:
   - type: textarea
-    id: task
+    id: summary
     attributes:
-      label: What to do
-      description: One clear sentence.
+      label: Task
+      description: What needs to be done?
+      placeholder: e.g., Review html-proofer ignore list and document ignores
     validations:
       required: true
-  - type: textarea
-    id: notes
+
+  - type: dropdown
+    id: priority
     attributes:
-      label: Notes
-      description: Context, links, URLs, etc.
+      label: Priority
+      options:
+        - Low
+        - Medium
+        - High
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: Add to CHANGELOG if user-facing
+        - label: Reference/close issue from PR (e.g., Fixes #123)
+        - label: Verify in staging
