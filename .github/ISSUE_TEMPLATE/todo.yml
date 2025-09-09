@@ -1,0 +1,17 @@
+name: To-Do
+description: Small task for the blog/site
+title: "TODO: "
+labels: ["todo"]
+body:
+  - type: textarea
+    id: task
+    attributes:
+      label: What to do
+      description: One clear sentence.
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Context, links, URLs, etc.
