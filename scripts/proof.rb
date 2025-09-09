@@ -3,22 +3,24 @@
 
 require "html-proofer"
 
-dir = ARGV[0] || "_site"
+path = ARGV[0] || "_site"
 
-# Internal-only: ignore ALL absolute http(s) links (externals),
-# plus noisy schemes we don't want to validate.
 ignores = [
-  %r{\Ahttps?://}i,     # ignore every absolute external
+  %r{\Ahttps?://}i,  # ignore all absolute externals
   %r{\Amailto:}i,
   %r{\Atel:}i,
   %r{\Ajavascript:}i
 ]
 
-HTMLProofer.check_directory(
-  dir,
+opts = {
   checks: %w[Links Images Scripts],
-  enforce_https: false,            # don't fail on http links (e.g., localhost, canonicals)
+  enforce_https: false,
   ignore_urls: ignores,
-  # curl options (harmless even if we ignore externals; keeps defaults explicit)
   typhoeus: { timeout: 20, connecttimeout: 10, followlocation: true }
-).run
+}
+
+if File.directory?(path)
+  HTMLProofer.check_directory(path, **opts).run
+else
+  HTMLProofer.check_file(path, **opts).run
+end

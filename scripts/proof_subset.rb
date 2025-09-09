@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
-# scripts/proof_subset.rb
+# frozen_string_literal: true
+
 require "html-proofer"
 
 path = ARGV[0] || "_site/index.html"
@@ -20,6 +21,7 @@ ignores = [
 ]
 
 opts = {
+  checks: %w[Links Images Scripts],
   enforce_https: false,
   ignore_urls: ignores,
   typhoeus: { timeout: 20, connecttimeout: 10, followlocation: true }

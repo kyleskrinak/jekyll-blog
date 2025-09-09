@@ -25,6 +25,7 @@ env:
 
 jobs:
   build:
+    timeout-minutes: 15
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -42,8 +43,18 @@ jobs:
       - name: Build site (Jekyll)
         run: bundle exec jekyll build --trace -c $CONFIG_FILES
 
-      - name: HTMLProofer (internal-only checks)
-        run: bundle exec ruby scripts/proof.rb _site
+      - name: HTMLProofer (internal-only)
+        run: |
+          bundle exec ruby -e '
+            require "html-proofer"
+            HTMLProofer.check_directory(
+              "_site",
+              enforce_https: false,
+              url_swap: { %r{\Ahttps?://kyleskrinak\.github\.io} => "" },
+              ignore_urls: [ %r{\Ahttps?://}, %r{\Amailto:} ],
+              typhoeus: { timeout: 20, connecttimeout: 10, followlocation: true }
+            ).run
+          '
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
