@@ -1,20 +1,112 @@
-# Vendored plugin: reveal.js-menu
+===============================================================================
+Reveal.js “menu” plugin — Maintainer Note (vendored copy)
+===============================================================================
 
-- **Plugin**: reveal.js-menu
-- **Pinned version**: 2.1 (unmaintained)
-- **Source**: https://github.com/denehyg/reveal.js-menu
-- **Vendored**: kept in repo for stability with Reveal 5.x
-- **Local changes**: none
-- **Last verified**: 2025-09-10 with Reveal 5.2.0
+What & Why
+----------
+This directory vendors the reveal.js “menu” plugin (https://github.com/denehyg/reveal.js-menu),
+pinned at **v2.1**. The plugin is effectively unmaintained; we vendor a known-good
+version for stability and to avoid runtime/CDN drift. Our presentations use
+**Reveal.js 5.x** (ESM), while the menu plugin predates 5.x but still works.
 
-## Why vendored?
-The plugin is no longer actively maintained but works for our needs. Keeping it vendored prevents flaky CDN/npm drift and ensures predictable builds.
+Pinned Versions
+---------------
+- Reveal core:            5.2.0   (assets/reveal/*)
+- Menu plugin (vendored): 2.1     (assets/reveal/plugin/menu/)
 
-## Update procedure
-1. Check upstream (or maintained forks) for fixes or security updates.
-2. Replace files in `assets/reveal/plugin/menu/` from upstream (notably `menu.esm.js` and related assets).
-3. Local test:
-   - `bundle exec jekyll build && bundle exec jekyll serve`
-   - Open a Reveal page; verify **Menu** opens and that **Links → Home** appears.
-   - Exercise keyboard shortcuts and submenu navigation.
-4. Commit with message:
+Files kept
+----------
+- menu.esm.js        ← used by layouts via ESM imports
+- (optional) README or LICENSE from upstream if you choose to include them
+
+Checksum (fill after updates)
+-----------------------------
+Update this whenever you replace the file:
+    $ shasum -a 256 assets/reveal/plugin/menu/menu.esm.js
+    SHA256: <paste-result-here>
+
+Layouts that depend on this
+---------------------------
+- _layouts/reveal.html
+- _layouts/reveal-duke.html
+
+Both layouts import the plugin as an ESM module and register it:
+  import Reveal from  '{{ site.baseurl }}/assets/reveal/reveal.esm.js';
+  import RevealMarkdown from '{{ site.baseurl }}/assets/reveal/plugin/markdown/markdown.esm.js';
+  import RevealNotes    from '{{ site.baseurl }}/assets/reveal/plugin/notes/notes.esm.js';
+  import RevealMenu     from '{{ site.baseurl }}/assets/reveal/plugin/menu/menu.esm.js';
+  const deck = new Reveal({ plugins: [RevealMarkdown, RevealNotes, RevealMenu], ... });
+  deck.initialize(...);
+
+Compatibility Notes
+-------------------
+- Menu v2.1 works with Reveal 5.x in practice, but upstream is not tracking 5.x.
+- If a future Reveal upgrade breaks this plugin:
+  1) temporarily remove the import and the plugin entry from the layouts, or
+  2) pin Reveal to the last known-good version, or
+  3) fork the plugin and apply a minimal fix.
+
+Testing Checklist
+-----------------
+1) Build site:
+     $ bundle exec jekyll build
+2) Serve the built site (from _site) to avoid module import CORS issues:
+     $ ruby -run -e httpd _site -p 4000   # or: python3 -m http.server -d _site 4000
+3) Open a Reveal page (e.g. /bundle-test/), verify:
+   - The Menu button appears (≡).
+   - “Slides” tab lists slide titles.
+   - “Links” tab includes “Home” (site base URL).
+4) CI sanity (non-blocking external links, internal links blocking):
+     $ bundle exec ruby scripts/proof_subset.rb _site/index.html
+   or
+     $ bundle exec ruby scripts/proof.rb _site
+
+Updating This Plugin
+--------------------
+- Source: https://github.com/denehyg/reveal.js-menu (last known v2.1)
+- If upstream has no ESM file:
+    * Prefer the ESM build shipped in this repo (menu.esm.js).
+    * If you must refresh, compare upstream code and manually port minimal changes.
+- After replacing:
+    * Update the checksum above.
+    * Re-run the Testing Checklist.
+    * Commit: docs(reveal-menu): refresh vendored plugin + checksum
+
+Rollback Procedure
+------------------
+Option A: Disable the menu (quick)
+  - Remove the ESM import line for menu.esm.js from both layouts.
+  - Remove RevealMenu from the plugins array.
+  - Rebuild and serve.
+
+Option B: Pin Reveal core to last known-good
+  - Replace assets/reveal/* with the previous version (see Git history).
+  - Keep the current menu.esm.js.
+  - Rebuild and test.
+
+Option C: Git revert
+  - Find the commit that introduced the menu update and:
+      $ git revert <commit-sha>
+  - Rebuild and test.
+
+Known Limitations
+-----------------
+- Plugin is unmaintained; future Reveal internals may require small shims.
+- If Menu crashes early, Reveal may still render slides; check browser console.
+
+License
+-------
+- reveal.js-menu is MIT-licensed by its author(s). Maintain upstream license headers.
+
+Last verified against
+---------------------
+- Reveal: 5.2.0
+- Menu:   2.1
+- Date:   <fill-in-when-verified>
+
+Maintainer Tips
+---------------
+- Keep this file close to the vendored code (this directory).
+- Add a comment at the top of the layouts pointing to this note.
+- Treat upgrades as “opt-in”; test a presentation locally before merging.
+===============================================================================
