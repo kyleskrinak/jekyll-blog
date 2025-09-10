@@ -41,22 +41,22 @@
     </div>
   </div>
 
-  <!-- Hidden template: this is the custom “Links” panel content -->
+  <!-- Hidden template: custom “Links” panel content -->
   <template id="reveal-links-template">
     {% include reveallinks.html %}
   </template>
 
-  <script src="{{ site.baseurl }}/assets/reveal/reveal.js"></script>
-  <script src="{{ site.baseurl }}/assets/reveal/plugin/markdown/marked.min.js"></script>
-  <script src="{{ site.baseurl }}/assets/reveal/plugin/markdown/markdown.js"></script>
-  <script src="{{ site.baseurl }}/assets/reveal/plugin/menu/menu.js"></script>
-  <script src="{{ site.baseurl }}/assets/reveal/plugin/notes/notes.js"></script>
+  <!-- ESM setup -->
+  <script type="module">
+    import Reveal   from "{{ site.baseurl }}/assets/reveal/reveal.esm.js";
+    import Markdown from "{{ site.baseurl }}/assets/reveal/plugin/markdown/markdown.esm.js";
+    import Menu     from "{{ site.baseurl }}/assets/reveal/plugin/menu/menu.esm.js";
+    import Notes    from "{{ site.baseurl }}/assets/reveal/plugin/notes/notes.esm.js";
 
-  <script>
     const revealLinks = (document.getElementById('reveal-links-template') || {}).innerHTML || '';
 
-    Reveal.initialize({
-      plugins: [RevealMarkdown, RevealMenu, RevealNotes],
+    const deck = new Reveal({
+      plugins: [ Markdown, Menu, Notes ],
 
       // Base sizing
       width: 1300, height: 860, margin: 0.05, center: false,
@@ -76,6 +76,8 @@
         ]
       }
     });
+
+    deck.initialize();
   </script>
 
   {% include scripts.html %}

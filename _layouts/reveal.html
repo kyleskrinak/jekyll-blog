@@ -1,68 +1,71 @@
 <!doctype html>
-<html lang="{{ site.locale | slice: 0,2 | default: "en" }}" class="no-js">
-  <head>
-    {% include head.html %}
-    {% include head/custom.html %}
-    <link rel="stylesheet" href="{{ site.baseurl }}/assets/reveal/reveal.css">
-    <link rel="stylesheet" href="{{ site.baseurl }}/assets/reveal/theme/black.css" id="theme">
-    <style>
-    .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5 {
-                  text-transform: none;
-          }
-    </style>
-  </head>
+<html lang="{{ site.locale | default: 'en' | slice: 0, 2 }}" class="no-js">
+<head>
+  {% include head.html %}
+  {% include head/custom.html %}
 
-  <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/reveal/reveal.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/reveal/theme/black.css" id="theme">
 
-    {% include_cached browser-upgrade.html %}
+  <style>
+    /* Keep headings as written (no automatic uppercase) */
+    .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5 { text-transform: none; }
+  </style>
+</head>
 
-    <div class="reveal">
-      <div class="slides">
-        <section data-markdown
-                 data-separator="^\n\n\n"
-                 data-separator-vertical="^\n\n"
-                 data-separator-notes="^Note:">
-		<textarea data-template>
-		  {{ content }}
-		</textarea>
-        </section>
-      </div>
+<body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}">
+  {% include_cached browser-upgrade.html %}
+
+  <div class="reveal">
+    <div class="slides">
+      <section
+        data-markdown
+        data-separator="^\n\n\n"
+        data-separator-vertical="^\n\n"
+        data-separator-notes="^Note:">
+        <textarea data-template>
+{{ content }}
+        </textarea>
+      </section>
     </div>
+  </div>
 
-    <script src="{{ site.baseurl }}/assets/reveal/reveal.js"></script>
-    <script src="{{ site.baseurl }}/assets/reveal/plugin/markdown/marked.min.js"></script>
-    <script src="{{ site.baseurl }}/assets/reveal/plugin/markdown/markdown.js"></script>
-    <script src="{{ site.baseurl }}/assets/reveal/plugin/menu/menu.js"></script>
-    <script>
-      Reveal.initialize({
-	  plugins: [ RevealMarkdown, RevealMenu ],
-        	// The "normal" size of the presentation, aspect ratio will be preserved
-          // when the presentation is scaled to fit different resolutions. Can be
-          // specified using percentage units.
-          width: 1300,
-          height: 760,
+  <!-- Hidden template: custom “Links” panel content -->
+  <template id="reveal-links-template">
+    {% include reveallinks.html %}
+  </template>
 
-          // Factor of the display size that should remain empty around the content
-          margin: 0.05,
-          center: false,
+  <!-- ESM setup -->
+  <script type="module">
+    import Reveal   from "{{ site.baseurl }}/assets/reveal/reveal.esm.js";
+    import Markdown from "{{ site.baseurl }}/assets/reveal/plugin/markdown/markdown.esm.js";
+    import Menu     from "{{ site.baseurl }}/assets/reveal/plugin/menu/menu.esm.js";
+    import Notes    from "{{ site.baseurl }}/assets/reveal/plugin/notes/notes.esm.js";
 
-          // Bounds for smallest/largest possible scale to apply to content
-          minScale: 0.2,
-          maxScale: 1.0,
-          history: true,
-	  menu: {
-		  custom: [
-			  {
-				  title: 'Links',
-				  icon: '<i class="fa fa-link">',
-				  src: '{{ site.baseurl }}/assets/reveal/reveallinks.html'
-			  }
-		  ]
-	  }
-      });
-    </script>
+    const revealLinks = (document.getElementById('reveal-links-template') || {}).innerHTML || '';
 
-    {% include scripts.html %}
+    const deck = new Reveal({
+      plugins: [ Markdown, Menu, Notes ],
 
-  </body>
+      /* Match your previous sizing/behavior (adjust as you like) */
+      width: 1300, height: 760, margin: 0.05, center: false,
+      minScale: 0.2, maxScale: 1.0,
+      history: true,
+
+      menu: {
+        custom: [
+          {
+            title: 'Links',
+            icon: '<i class="fa fa-link"></i>',
+            content: revealLinks
+          }
+        ]
+      }
+    });
+
+    deck.initialize();
+  </script>
+
+  {% include scripts.html %}
+</body>
 </html>

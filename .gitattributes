@@ -1,10 +1,21 @@
-assets/fonts/*                  linguist-vendored
-assets/js/main.min.js           linguist-vendored
-assets/js/lunr/*                linguist-vendored
-assets/js/plugins/*             linguist-vendored
-assets/js/vendor/*              linguist-vendored
-_sass/minimal-mistakes/vendor/* linguist-vendored
-CHANGELOG.md                    text merge=union
-docs/_docs/18-history.md        text merge=union
+# ── Vendored third-party code (excluded from GitHub language stats)
+assets/fonts/**                  linguist-vendored
+assets/js/lunr/**                linguist-vendored
+assets/js/plugins/**             linguist-vendored
+assets/js/vendor/**              linguist-vendored
+_sass/minimal-mistakes/vendor/** linguist-vendored
+assets/reveal/**                 linguist-vendored
 
-*.md                            text
+# ── Generated/minified artifacts (don’t count toward stats; optional)
+*.min.js   linguist-generated
+*.min.css  linguist-generated
+*.map      -diff   
+# .map - optional: avoid noisy diffs for sourcemaps
+
+# ── Merge niceties
+CHANGELOG.md             text merge=union
+docs/_docs/18-history.md text merge=union
+
+# ── Normalize text files
+*.md   text
+*.yml  text
