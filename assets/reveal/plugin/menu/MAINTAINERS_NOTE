@@ -1,0 +1,20 @@
+# Vendored plugin: reveal.js-menu
+
+- **Plugin**: reveal.js-menu
+- **Pinned version**: 2.1 (unmaintained)
+- **Source**: https://github.com/denehyg/reveal.js-menu
+- **Vendored**: kept in repo for stability with Reveal 5.x
+- **Local changes**: none
+- **Last verified**: 2025-09-10 with Reveal 5.2.0
+
+## Why vendored?
+The plugin is no longer actively maintained but works for our needs. Keeping it vendored prevents flaky CDN/npm drift and ensures predictable builds.
+
+## Update procedure
+1. Check upstream (or maintained forks) for fixes or security updates.
+2. Replace files in `assets/reveal/plugin/menu/` from upstream (notably `menu.esm.js` and related assets).
+3. Local test:
+   - `bundle exec jekyll build && bundle exec jekyll serve`
+   - Open a Reveal page; verify **Menu** opens and that **Links → Home** appears.
+   - Exercise keyboard shortcuts and submenu navigation.
+4. Commit with message:
