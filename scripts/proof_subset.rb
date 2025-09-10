@@ -1,11 +1,10 @@
 #!/usr/bin/env ruby
-# frozen_string_literal: true
-
+# Single-file html-proofer that understands absolute paths like /assets/...
 require "html-proofer"
 
-path = ARGV[0] || "_site/index.html"
-abort "Path not found: #{path}" unless File.exist?(path)
+target  = ARGV[0] || "_site/index.html"
 
+# Same noisy externals we ignore elsewhere
 ignores = [
   %r{\Ahttps?://(www\.)?linkedin\.com/.*\z},
   %r{\Ahttps?://(www\.)?nytimes\.com/.*\z},
@@ -21,14 +20,10 @@ ignores = [
 ]
 
 opts = {
-  checks: %w[Links Images Scripts],
   enforce_https: false,
   ignore_urls: ignores,
   typhoeus: { timeout: 20, connecttimeout: 10, followlocation: true }
 }
 
-if File.directory?(path)
-  HTMLProofer.check_directory(path, **opts).run
-else
-  HTMLProofer.check_file(path, **opts).run
-end
+root = File.expand_path("_site") # real site root for absolute paths
+HTMLProofer.check_file(target, opts.merge(root_dir: root)).run
