@@ -1,5 +1,15 @@
 # Changelog
 
+## 2025-09-10
+### Changed
+- Upgrade Reveal.js to 5.2 and migrate layouts to ESM imports.
+- Keep `reveal.js-menu` pinned at 2.1; documented rationale and rollback notes.
+- Mark `assets/reveal/**` as vendored in `.gitattributes`.
+
+### Fixed
+- Parity between `reveal.html` and `reveal-duke.html`: working custom **Links** panel.
+- CI: refined proofer scripts and staging workflow.
+
 ## 2025-09-09
 
 ### FEAT
