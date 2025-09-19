@@ -13,8 +13,6 @@ assets/reveal/**                 linguist-vendored
 # .map - optional: avoid noisy diffs for sourcemaps
 
 # ── Merge niceties
-CHANGELOG.md             text merge=union
-docs/_docs/18-history.md text merge=union
 
 # ── Normalize text files
 *.md   text
