@@ -23,7 +23,7 @@ hidden: true
 
 *This was my post the day after we adopted Holly from the <a href="https://spcawake.org">Wake County SPCA</a>. It is essentially copied from the SPCA pet catalog.*
 
-{% include figure image_path="/assets/images/holly-pup.jpg" alt="Meet Holly Skrinak" caption="Meet Holly Skrinak" %} 
+{% include figure image_path="/assets/images/holly-pup.jpg" alt="Meet Holly Skrinak" caption="Meet Holly Skrinak" %}
 
 ### Original catalog text
 
