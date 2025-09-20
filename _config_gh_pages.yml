@@ -1,2 +1,4 @@
 url                      : "https://kyleskrinak.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # path for GitHub pages
+noindex                  : true
+canonical_base           : "https://kyle.skrinak.com"

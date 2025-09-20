@@ -24,6 +24,7 @@ description: >- # this means to ignore newlines until "baseurl:"
  Kyle Skrinak, Senior Manager, Digital Experience Platform for Gilead Sciences
 url                      : "https://kyle.skrinak.com" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
+noindex                  : false
 repository               : kyleskrinak/kyleskrinak.github.io # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
@@ -114,21 +115,21 @@ author:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       url: mailto:kyle.skrinak@gmail.com
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
+    - # label: "Website"
+      # icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/screenack"
+    - # label: "Twitter"
+      # icon: "fab fa-fw fa-twitter-square"
+      # url: "https://twitter.com/screenack"
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://linkedin.com/in/kyleskrinak"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/kyleskrinak"
-    - label: "StackOverflow"
-      icon: "fab fa-fw fa-stack-overflow"
-      url: "https://www.stackoverflow.com/users/479709/screenack"
+    - # label: "StackOverflow"
+      # icon: "fab fa-fw fa-stack-overflow"
+      # url: "https://www.stackoverflow.com/users/479709/screenack"
     - # label: "Flickr"
       # icon: "fab fa-fw fa-flickr"
       # url: "https://www.flickr.com/photos/screenack"
@@ -139,8 +140,8 @@ author:
 # Site Footer
 footer:
   links:
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
+    - # label: "Twitter"
+      # icon: "fab fa-fw fa-twitter-square"
       # url:
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
