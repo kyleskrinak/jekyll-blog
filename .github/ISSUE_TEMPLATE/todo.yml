@@ -2,6 +2,7 @@ name: To-Do
 description: Small task / follow-up
 title: "TODO: <short title>"
 labels: [todo]
+assignees: [kyleskrinak]
 body:
   - type: textarea
     id: summary
