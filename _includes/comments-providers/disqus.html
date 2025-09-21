@@ -31,12 +31,11 @@
 </p>
 
 <script>
-  // Reveal fallback if the thread container stays empty (blocked or failed)
+  // Reveal fallback if Disqus never initializes (blocked or network failure)
   setTimeout(function () {
-    var thread = document.getElementById('disqus_thread');
-    var fb = document.getElementById('disqus-fallback');
-    if (fb && thread && thread.children.length === 0) {
-      fb.hidden = false;
+    if (!window.DISQUS) {
+      var fb = document.getElementById('disqus-fallback');
+      if (fb) fb.hidden = false;
     }
   }, 2500);
 </script>
