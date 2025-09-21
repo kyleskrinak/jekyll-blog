@@ -1,6 +1,14 @@
 # Changelog
 
-## [2025-09-19]
+## 2025-09-21
+
+Changes released on 2025-09-21.
+
+### Fixed
+
+- Disqus: removed hard-coded “Leave a Comment” heading from dispatcher; provider include now controls heading and fallback. (refs #27)
+
+## 2025-09-19
 
 ### Added
 
