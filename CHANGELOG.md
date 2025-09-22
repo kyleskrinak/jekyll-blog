@@ -6,6 +6,14 @@ Changes released on 2025-09-21.
 
 ### Fixed
 
+- Disqus: single `#disqus_thread` container from dispatcher; provider handles embed/fallback only. Verified locally under JEKYLL_ENV=production with JS test. (refs #27)
+
+## 2025-09-21
+
+Changes released on 2025-09-21.
+
+### Fixed
+
 - Disqus: removed hard-coded “Leave a Comment” heading from dispatcher; provider include now controls heading and fallback. (refs #27)
 
 ## 2025-09-19

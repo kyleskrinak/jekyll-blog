@@ -20,16 +20,6 @@
   })();
 </script>
 
-<p id="disqus-fallback" hidden>
-  Comments load from Disqus and might be blocked by a privacy tool.
-  You can
-  <a href="https://{{ site.comments.disqus.shortname }}.disqus.com/?url={{ page.url | absolute_url }}"
-     rel="nofollow noopener" target="_blank">
-    open the discussion on Disqus
-  </a>
-  or permit <code>{{ site.comments.disqus.shortname }}.disqus.com</code> for this site.
-</p>
-
 <script>
   // Reveal fallback if Disqus never initializes (blocked or network failure)
   setTimeout(function () {
