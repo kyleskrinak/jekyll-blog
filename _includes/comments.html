@@ -5,9 +5,15 @@
       <h4 class="page__comments-title">{{ comments_label }}</h4>
       <section id="discourse-comments"></section>
     {% when "disqus" %}
-      <h4 class="page__comments-title"></h4>
       <section id="disqus_thread"></section>
-    {% when "facebook" %}
+      <p id="disqus-fallback" hidden>
+        Comments load from Disqus and might be blocked by a privacy tool.
+        You can
+        <a href="https://{{ site.comments.disqus.shortname }}.disqus.com/?url={{ page.url | absolute_url }}" rel="nofollow noopener" target="_blank">
+          open the discussion on Disqus
+        </a>
+        or permit <code>{{ site.comments.disqus.shortname }}.disqus.com</code> for this site.
+      </p>   {% when "facebook" %}
       <h4 class="page__comments-title">{{ comments_label }}</h4>
       <section class="fb-comments" data-href="{{ page.url | absolute_url }}" data-mobile="true" data-num-posts="{{ site.comments.facebook.num_posts | default: 5 }}" data-width="100%" data-colorscheme="{{ site.comments.facebook.colorscheme | default: 'light' }}"></section>
     {% when "staticman_v2" %}
