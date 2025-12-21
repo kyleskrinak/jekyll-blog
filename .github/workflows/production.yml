@@ -1,6 +1,7 @@
+---
 name: Production (AWS S3 + CloudFront)
 
-on:
+"on":
   push:
     branches: ["main"]
   workflow_dispatch:
@@ -22,7 +23,7 @@ jobs:
       url: https://kyle.skrinak.com
     permissions:
       contents: read
-      id-token: write # needed for OIDC -> AWS
+      id-token: write  # needed for OIDC -> AWS
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -86,16 +87,30 @@ jobs:
           role-to-assume: arn:aws:iam::${{ vars.AWS_ACCOUNT_ID }}:role/${{ vars.AWS_DEPLOY_ROLE }}
           aws-region: ${{ vars.AWS_REGION }}
 
-      # Simple, safe sync. (We can split HTML vs assets for cache headers later.)
-      - name: Sync to S3
+      # Step 1: push long-lived assets first
+      - name: Sync assets to S3 (1y immutable)
         run: |
           aws s3 sync "_site/" "s3://${{ vars.AWS_S3_BUCKET }}/" \
             --delete \
             --only-show-errors \
-            --cache-control "max-age=60,public"
+            --exclude "*" \
+            --include "assets/*" \
+            --include "assets/**" \
+            --cache-control "max-age=31536000,public,immutable"
+
+      # Step 2: push everything else (HTML + non-asset files) with a short cache
+      # Excluding assets prevents this step from overwriting the long-lived headers from step 1.
+      - name: Sync HTML to S3 (5m cache)
+        run: |
+          aws s3 sync "_site/" "s3://${{ vars.AWS_S3_BUCKET }}/" \
+            --delete \
+            --only-show-errors \
+            --exclude "assets/*" \
+            --exclude "assets/**" \
+            --cache-control "max-age=300,public"
 
       - name: Invalidate CloudFront
         run: |
           aws cloudfront create-invalidation \
             --distribution-id "${{ vars.AWS_CLOUDFRONT_DISTRIBUTION_ID }}" \
-            --paths "/*"
+            --paths "/" "/index.html" "/sitemap.xml" "/feed.xml"
