@@ -1,5 +1,5 @@
 ---
-name: Production (AWS S3 + CloudFront)
+name: Production (AWS S3 + CloudFront, with longer timeout for GH URL check)
 
 "on":
   push:
@@ -76,7 +76,7 @@ jobs:
                 "_site/index.html",
                 enforce_https: false,
                 ignore_urls: ignores,
-                typhoeus: { timeout: 20, connecttimeout: 10, followlocation: true }
+                typhoeus: { timeout: 60, connecttimeout: 10, followlocation: true }
               ).run
             '
           fi
