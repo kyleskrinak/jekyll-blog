@@ -1,5 +1,15 @@
 # Changelog
 
+## 2025-12-23
+
+Changes released on 2025-12-24.
+
+### Fixed
+
+- Cache: set short-lived `Cache-Control` for HTML and long-lived immutable caching for versioned assets in S3/CloudFront sync. (refs #11)
+- 404 UX: configure CloudFront to serve the themed `/404.html` for missing paths instead of the S3 XML error page. Note that this will also work on GitHub pages as well. (refs #14)
+- Documented the main → feature → staging → main workflow, including branch‑naming, issue‑linking, and pre‑PR QA steps, as the canonical reference for future scripted and assistant‑driven workflows
+
 ## 2025-09-21
 
 Changes released on 2025-09-21.
