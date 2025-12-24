@@ -1,5 +1,5 @@
 ---
-name: Production (AWS S3 + CloudFront, with longer timeout for GH URL check)
+name: Production (AWS S3 + CloudFront)
 
 "on":
   push:
