@@ -43,6 +43,44 @@ jobs:
       - name: Build site
         run: bundle exec jekyll build --trace
 
+      # OPTIONAL sanity check (Option A):
+      # If you created scripts/proof_subset.rb per our micro-tests, we run it.
+      # Otherwise we do a tiny fallback check on the homepage only.
+      - name: Proof homepage (fallback)
+        run: |
+          if [ -f scripts/proof_subset.rb ]; then
+            echo "Running scripts/proof_subset.rb..."
+            bundle exec ruby scripts/proof_subset.rb _site/index.html
+          else
+            echo "Subset script not found; doing a tiny homepage check."
+            bundle exec ruby -e '
+              require "html-proofer"
+              ignores = [
+                %r{\Ahttps?://(www\.)?linkedin\.com/.*\z},
+                %r{\Ahttps?://(www\.)?nytimes\.com/.*\z},
+                %r{\Ahttps?://(www\.)?autohotkey\.com/.*\z},
+                %r{\Ahttps?://(www\.)?pixabay\.com/.*\z},
+                %r{\Ahttps?://(www\.)?parade\.com/.*\z},
+                %r{\Ahttps?://(www\.)?ninateicholz\.com/.*\z},
+                %r{\Ahttps?://thebigfatsurprise\.com/.*\z},
+                %r{\Ahttps?://(www\.)?ncbi\.nlm\.nih\.gov/.*\z},
+                %r{\Ahttps?://app\.prezentt\.com/.*\z},
+                %r{\Ahttps?://live-seattle-hes\.pantheonsite\.io/.*\z},
+                %r{\Ahttps?://127\.0\.0\.1(?::\d+)?/.*\z},
+                # treat our own production host as "internal" to avoid bot-blocking 403s in CI
+                %r{\Ahttps?://(www\.)?kyle\.skrinak\.com/.*\z},
+                # and the GitHub Pages host if it ever shows up in the built HTML
+                %r{\Ahttps?://kyleskrinak\.github\.io/.*\z}
+              ]
+              HTMLProofer.check_file(
+                "_site/index.html",
+                enforce_https: false,
+                ignore_urls: ignores,
+                typhoeus: { timeout: 60, connecttimeout: 10, followlocation: true }
+              ).run
+            '
+          fi
+
       - name: Configure AWS credentials (OIDC)
         uses: aws-actions/configure-aws-credentials@v4
         with:

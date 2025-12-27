@@ -55,10 +55,6 @@ This is the single flow used for all changes: branch from  main , stage on  s
 2. Do the work on the feature branch
    - For issue or TODO-driven work, follow the convention in "Work Items," below.
    - Update README and CHANGELOG at the start of the branch so docs travel with the code.
-   - CHANGELOG policy (unmistakable):
-     - For this repo, **released = merged to `main`**.
-     - Add CHANGELOG entries under a dated heading for the day the change is merged to `main`.
-     - Do not maintain an “Unreleased” section.
    - Make all changes for this unit of work: (post content, assets, config, docs).
    - Before any PR:
      - Run `scripts/clean-build-proof.zsh`.
