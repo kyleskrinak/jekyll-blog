@@ -12,7 +12,7 @@ Why this change is needed.
 
 ## How tested
 - [ ] Built locally (`bundle exec jekyll build`)
-- [ ] Proofer subset passed (`bundle exec ruby scripts/proof_subset.rb _site/index.html`)
+- [ ] Proofer internal passed (PROOF_MODE=internal bundle exec ruby scripts/proof.rb _site)  
 
 ## Risks / Deploy notes
 Any gotchas or follow-ups.

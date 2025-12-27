@@ -1,8 +1,15 @@
 # Changelog
 
-## 2025-12-23
+## 2025-12-26
 
-Changes released on 2025-12-24.
+- Added a nightly “Linkwatch” GitHub Actions workflow (`.github/workflows/linkwatch.yml`) to monitor external link rot (non-blocking) and file/update a single “External link rot report” issue on failures. (Issue #15)
+- Consolidated HTMLProofer into a single runner (`scripts/proof.rb`) controlled via `PROOF_MODE=internal|subset|staging`, and wired all proof entrypoints to it (staging CI, Linkwatch, and the local helper `scripts/clean-build-proof.zsh`, defaulting to `PROOF_MODE=internal`). (Issue #15)
+- CI/CD: removed HTMLProofer checks from the production deploy workflow (proofing is handled pre-production; production focuses on build + deploy). (Issue #15)
+- Docs: refactored repo documentation so `README.md` focuses on local dev/tooling/ops, while workflow rules live in `.github/CONTRIBUTING.md` (main → feature → staging → main). (Issue #16)
+- Docs: added Reveal Menu maintainer documentation at `assets/reveal/plugin/menu/MAINTAINERS_NOTE.md`, including vendoring rationale, version pinning notes, rollback procedure, and the repo-specific “Links” tab wiring. (Issue #16)
+- Legal: added `NOTICE` file clarifying ownership of original site content vs third-party/theme licenses, and pointing to vendor license files under `assets/`. (Issue #16)
+
+## 2025-12-24.
 
 ### Fixed
 

@@ -28,6 +28,7 @@ ok "Ensured tmp/ exists."
 # ---------- prerequisite checks ----------
 need ruby
 need bundle
+need rg
 
 if [[ ! -f Gemfile ]]; then
   err "No Gemfile found in $REPO_ROOT"
@@ -37,8 +38,9 @@ fi
 # Check gems we rely on
 msg "Checking Bundler gems…"
 bundle exec jekyll -v >/dev/null 2>&1 || { err "Jekyll not available via Bundler. Run: bundle install"; exit 1; }
-bundle exec htmlproofer --version >/dev/null 2>&1 || { err "html-proofer not available via Bundler. Run: bundle install"; exit 1; }
-ok "Required gems available."
+[[ -f scripts/proof.rb ]] || { err "scripts/proof.rb not found."; exit 1; }
+bundle exec ruby -c scripts/proof.rb >/dev/null 2>&1 || { err "scripts/proof.rb has a Ruby syntax error."; exit 1; }
+ok "Required tooling available."
 
 # Basic project sanity
 [[ -f _config.yml ]] || { err "_config.yml is missing at repo root."; exit 1; }
@@ -68,7 +70,7 @@ timestamp="$(date +%F_%H-%M-%S)"
 LAST_BUILD_LOG="tmp/build.$timestamp.log"
 msg "Building site (JEKYLL_ENV=production)…"
 JEKYLL_ENV=production bundle exec jekyll build --verbose 2>&1 | tee "$LAST_BUILD_LOG" >/dev/null
-build_ec=$?
+build_ec=${pipestatus[1]}
 if [[ $build_ec -ne 0 ]]; then
   err "Jekyll build failed. See $LAST_BUILD_LOG"
   exit $build_ec
@@ -78,18 +80,12 @@ ok "Build complete."
 # ---------- html proofer ----------
 LAST_PROOF_LOG="tmp/proof.$timestamp.log"
 msg "Running HTML Proofer…"
-bundle exec htmlproofer ./_site \
-  --checks "Links,Images,Scripts,Favicon,OpenGraph" \
-  --ignore-urls "/^mailto:/,/^tel:/" \
-  --ignore-files ".*/assets/reveal/plugin/.*" \
-  --ignore-status-codes "0,302,403,417,429,999" \
-  --hydra '{"max_concurrency":20}' \
-  --typhoeus '{"timeout":45,"connecttimeout":10}' 2>&1 | tee "$LAST_PROOF_LOG" >/dev/null
-proof_ec=$?
+PROOF_MODE=internal bundle exec ruby scripts/proof.rb _site |& tee "$LAST_PROOF_LOG"
+proof_ec=${pipestatus[1]}
 if [[ $proof_ec -ne 0 ]]; then
   err "HTML Proofer reported issues. See $LAST_PROOF_LOG"
   exit $proof_ec
 fi
 ok "HTML Proofer passed."
 
-print -P "\n%F{green}All done.%f Logs:\n  Build:  $LAST_BUILD_LOG\n  Proofer:$LAST_PROOF_LOG"
+print -P "\n%F{green}All done.%f Logs:\n  Build:  $LAST_BUILD_LOG\n Proofer: $LAST_PROOF_LOG"

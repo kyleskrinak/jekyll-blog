@@ -1,0 +1,9 @@
+NOTICE
+
+Copyright (©️) 2013-2025 Kyle Skrinak
+
+All original site content (posts, images, pages, and site-specific configuration) is © Kyle Skrinak and is not covered by the theme or third-party code licenses.
+
+Theme and third-party code used in this repository (for example: Minimal Mistakes by Michael Rose, Reveal.js by Hakim El Hattab, jQuery, Font Awesome, fonts, and plugins) are licensed separately. See the root `LICENSE` and the license files under `assets/` for full details (for example: `assets/reveal/.../LICENSE`, `assets/reveal/theme/fonts/.../LICENSE`, `assets/reveal/plugin/menu/LICENSE`).
+
+If you reuse code from this repository, please keep vendor license files intact and credit upstream authors where required.
