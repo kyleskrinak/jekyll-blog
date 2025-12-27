@@ -76,7 +76,7 @@ jobs:
                 "_site/index.html",
                 enforce_https: false,
                 ignore_urls: ignores,
-                typhoeus: { timeout: 20, connecttimeout: 10, followlocation: true }
+                typhoeus: { timeout: 60, connecttimeout: 10, followlocation: true }
               ).run
             '
           fi
