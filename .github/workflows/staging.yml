@@ -3,6 +3,8 @@ name: Staging (GitHub Pages)
 on:
   push:
     branches: [ "staging" ]
+  pull_request:
+    branches: ["staging"]
   workflow_dispatch:
 
 permissions:
@@ -44,17 +46,7 @@ jobs:
         run: bundle exec jekyll build --trace -c $CONFIG_FILES
 
       - name: HTMLProofer (internal-only)
-        run: |
-          bundle exec ruby -e '
-            require "html-proofer"
-            HTMLProofer.check_directory(
-              "_site",
-              enforce_https: false,
-              url_swap: { %r{\Ahttps?://kyleskrinak\.github\.io} => "" },
-              ignore_urls: [ %r{\Ahttps?://}, %r{\Amailto:} ],
-              typhoeus: { timeout: 20, connecttimeout: 10, followlocation: true }
-            ).run
-          '
+        run: PROOF_MODE=staging bundle exec ruby scripts/proof.rb _site
 
       - name: Configure Pages
         uses: actions/configure-pages@v5

@@ -30,7 +30,7 @@ bundle exec jekyll serve --livereload --drafts \
 
 ### Clean build + link proof (one-shot)
 ```zsh
-# Cleans caches and _site, builds, then runs HTMLProofer using .htmlproofer.yml
+# Cleans caches and _site, builds, then runs HTMLProofer via scripts/proof.rb
 scripts/clean-build-proof.zsh
 ```
 
@@ -107,7 +107,7 @@ scripts/
   clean-build-proof.zsh
   find-unreferenced-assets.zsh
   tmp/.gitkeep            # Scratch dir; content ignored by Git
-.htmlproofer.yml          # Proofer settings (timeouts, ignores, etc.)
+  proof.rb                # HTMLProofer runner (PROOF_MODE=internal|subset|staging)
 _config.yml               # Main Jekyll config
 _config_dev.yml           # Dev-only overrides (e.g., baseurl, URLs, excludes)
 ```
@@ -146,23 +146,32 @@ HTMLProofer from treating it as a missing-favicon page.
 
 ## HTMLProofer
 
-We use `.htmlproofer.yml` to centralize settings (timeouts, ignored URLs, etc.).
+HTMLProofer settings live in scripts/proof.rb (selected via PROOF_MODE).
 You can run proofer directly or via the helper script.
 
-**Direct:**
+**Internal-only (fast, no externals):**
 ```zsh
-bundle exec htmlproofer ./_site
+PROOF_MODE=internal bundle exec ruby scripts/proof.rb _site
 ```
 
-**Via script (recommended):**
+**Subset (single file, allows externals but ignores known noisy hosts):**
 ```zsh
-scripts/clean-build-proof.zsh
+PROOF_MODE=subset bundle exec ruby scripts/proof.rb _site/index.html
 ```
+
+**Staging (CI parity):**
+```zsh
+PROOF_MODE=staging bundle exec ruby scripts/proof.rb _site
+```
+
+### External links (nightly monitoring)
+
+External link checking is handled by a scheduled GitHub Actions workflow (`.github/workflows/linkwatch.yml`). It runs link-only HTMLProofer against the built `_site` output and, on failure, files/updates a single “External link rot report” issue for visibility. This check does **not** block production deployments.
 
 The script:
 1. Cleans `_site/` and Jekyll caches.
 2. Builds the site (`bundle exec jekyll build`).
-3. Runs HTMLProofer with sensible defaults and ignores from `.htmlproofer.yml`.
+3. Runs HTMLProofer via  scripts/proof.rb (see PROOF_MODE).
 
 ---
 
@@ -221,7 +230,7 @@ or reuse code:
   Ensure `_includes/reveallinks.html` exists. The `reveal-duke` layout requires it.
 
 - **HTMLProofer timeouts/403s on external sites**  
-  Adjust `.htmlproofer.yml` timeouts or add specific `ignore_urls` entries.
+  Adjust the settings inside scripts/proof.rb (timeouts, ignore_urls, etc.).  
   Avoid blanket disables.
 
 - **Stale output**  

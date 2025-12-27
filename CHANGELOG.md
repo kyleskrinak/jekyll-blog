@@ -1,5 +1,13 @@
 # Changelog
 
+## 2025-12-26
+
+- Added a nightly “Linkwatch” GitHub Actions workflow (`.github/workflows/linkwatch.yml`) to monitor external link rot (non-blocking) and file/update a single “External link rot report” issue on failures. (Issue #15) 
+- Simplified HTMLProofer execution by consolidating prior proofer entrypoints into a single, more manageable runner script: `scripts/proof.rb`, controlled via `PROOF_MODE=internal|subset|staging` (used by staging CI and Linkwatch). (Issue #15) 
+- Updated the local helper `scripts/clean-build-proof.zsh` to run HTMLProofer through `scripts/proof.rb` (default `PROOF_MODE=internal`) after a clean production build. (Issue #15) 
+- CI/CD: removed HTMLProofer checks from the production deploy workflow (proofing is handled pre-production; production focuses on build + deploy). (Issue #15) 
+- Continued refining `README.md` workflow guidance for clarity and unambiguous repo hygiene rules (including CHANGELOG policy). (Issue #15)
+
 ## 2025-12-23
 
 Changes released on 2025-12-24.
