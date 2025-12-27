@@ -36,80 +36,32 @@ scripts/clean-build-proof.zsh
 
 ## Workflow (repo hygiene)
 
-This is the single flow used for all changes: branch from  main , stage on  staging , then promote back to  main .
-
-### Workflow: main → feature → staging → main
-
-1. Start from `main`
-   - Use the helper to create a fresh branch from an up‑to‑date `main`:
-     ```
-     # scripts/new-post.zsh <prefix> "<slug>"
-     scripts/new-post.zsh feature "todo-27-disqus-improvements"
-     ```
-   - The script:
-     - Fetches `origin`
-     - Switches to `main`
-     - Fast‑forwards with `git pull --ff-only origin main`
-     - Creates and switches to `<prefix>-YYYY-MM-DD-<slug>`
-
-2. Do the work on the feature branch
-   - For issue or TODO-driven work, follow the convention in "Work Items," below.
-   - Update README and CHANGELOG at the start of the branch so docs travel with the code.
-   - Make all changes for this unit of work: (post content, assets, config, docs).
-   - Before any PR:
-     - Run `scripts/clean-build-proof.zsh`.
-     - Run a local `jekyll serve` to spot obvious issues.
-
-3. Promote feature → `staging`
-   - Push the feature branch to GitHub.
-   - Open a PR with **base = `staging`**, **head = feature branch**.
-   - Let CI run (if configured) and then manually verify the staging site.
-
-4. Promote `staging` → `main`
-   - Once staging looks correct, open a PR with **base = `main`**, **head = `staging`**.
-   - Merge using the allowed method (typically squash or merge commit, per repo rules).
-   - Accept that commit SHAs may differ between branches; what matters is that file content matches.
-
-5. Guard rails
-   - Always branch from `main`, never from `staging`.
-   - Do not force‑push protected branches.
-   - Avoid rebasing or cherry‑picking on shared branches; if branches drift, realign them with PRs instead of history edits.
-
-### Work items
-
-For changes tied to a GitHub Issue or TODO:
-
-- Include the issue number in the branch slug where practical  
-  (for example: `feature-2025-12-21-todo-14-and-doc-updates`).
-- Reference the issue number in the commit message.  
-- Reference the issue number in the pull request title or description.
-
-This keeps the code, documentation (README), and CHANGELOG updates
-for a given piece of work grouped cleanly under a single branch and PR.
+Workflow: main → feature → staging → main. Create a feature branch from main, PR to staging to verify, then PR staging to main to ship. More detail: .github/CONTRIBUTING.md.
 
 ---
 
 ## Project layout (high level)
 ```
-_includes/
-  reveallinks.html        # Fragment used by Reveal.js menu (not published on its own)
-_layouts/
-  reveal-duke.html        # Slide layout (Reveal.js integration)
-  ...                     # Other Minimal Mistakes layouts
-_pages/                   # Regular site pages
-_posts/                   # Blog posts
-_sass/                    # Theme skin and style overrides
-assets/
-  css/_custom-variables.scss
-  css/_custom.scss
-  reveal/                 # Reveal.js distribution (js/plugins/css)
-scripts/
-  clean-build-proof.zsh
-  find-unreferenced-assets.zsh
-  tmp/.gitkeep            # Scratch dir; content ignored by Git
-  proof.rb                # HTMLProofer runner (PROOF_MODE=internal|subset|staging)
-_config.yml               # Main Jekyll config
-_config_dev.yml           # Dev-only overrides (e.g., baseurl, URLs, excludes)
+/
+├─ _includes/               # Reusable HTML fragments (headers, footers, reveal menu, etc.)
+├─ _layouts/                # Page layouts (Minimal Mistakes + custom layouts like `reveal-duke`)
+├─ _pages/                  # Site pages (about, archive, etc.)
+├─ _posts/                  # Blog posts (files named `YYYY-MM-DD-title.md`)
+├─ _drafts/                 # Draft posts (not published unless --drafts)
+├─ _sass/                   # Theme overrides and skins
+├─ assets/                  # Static assets (css, images, reveal/ distribution, JS)
+│  ├─ css/_custom.scss
+│  └─ reveal/               # Reveal.js assets and plugins
+├─ _data/                   # YAML data files (navigation, ui text, etc.)
+├─ scripts/                 # Helper scripts (clean/build/proof, asset checks)
+├─ docs/                    # Docs, notes, or exportable site docs (optional)
+├─ _site/                   # Generated site output (ignored in Git)
+├─ .github/workflows/       # CI workflows (linkwatch, nightly jobs)
+├─ Gemfile                  # Ruby/Gems for Jekyll + tools
+├─ package.json             # Node tooling (if used)
+├─ Dockerfile, docker-compose.yml # Optional containerized dev/build environment
+├─ _config.yml              # Main Jekyll config
+├─ _config_dev.yml          # Dev override config (e.g., local baseurl)
 ```
 
 ---
@@ -131,16 +83,8 @@ Write your slides as Markdown in the page body. Separators are already set in
 the layout (`data-separator` / `data-separator-vertical`) to break slides.
 
 ### “Links” menu in Reveal
-The slides expose a **Links** menu item using the Reveal Menu plugin. The menu’s
-HTML is **inlined** into the presentation (so we don’t publish a separate
-standalone HTML page).
 
-- Edit the fragment at `_includes/reveallinks.html` (simple HTML list).  
-- The layout loads this include into a hidden `<template id="reveal-links-template">`,
-  and passes its markup to `RevealMenu`’s `custom` option at runtime.
-
-This design avoids publishing `assets/reveal/reveallinks.html` and keeps
-HTMLProofer from treating it as a missing-favicon page.
+Presentations include a ‘Links’ menu (Reveal Menu plugin). Maintainer details (vendored plugin + custom Links tab wiring): assets/reveal/plugin/menu/MAINTAINERS_NOTE.md.
 
 ---
 
@@ -171,7 +115,7 @@ External link checking is handled by a scheduled GitHub Actions workflow (`.gith
 The script:
 1. Cleans `_site/` and Jekyll caches.
 2. Builds the site (`bundle exec jekyll build`).
-3. Runs HTMLProofer via  scripts/proof.rb (see PROOF_MODE).
+3. Runs HTMLProofer via scripts/proof.rb
 
 ---
 
