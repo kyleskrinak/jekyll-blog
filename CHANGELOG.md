@@ -2,6 +2,14 @@
 
 ## 2025-12-30
 
+### Fixed
+
+- **CSS Color Corrections**: Fixed Air skin background colors to match live site values. Added custom SCSS overrides in `assets/css/_custom.scss`:
+  - Home page background: `#fff` → `#eeeeee` (Air skin default)
+  - Footer background: light gray → `#0092ca` (Air skin blue)
+  - Navigation bar background: `#fff` → `transparent` (for seamless header integration)
+  - These overrides use the module-aware `_custom.scss` file loaded last in the cascade to ensure they take precedence over theme defaults.
+
 ### Major Features
 
 - **Asset Vendoring**: Self-hosted **Reveal.js 5.2.1** and **Font Awesome 5.15.4** from npm into `assets/reveal/` and `assets/fontawesome/` respectively. Eliminates external CDN dependencies. Added `npm run vendor:reveal` and `npm run vendor:fontawesome` helper scripts; CI automatically runs these before Jekyll build.

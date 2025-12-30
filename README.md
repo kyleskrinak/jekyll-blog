@@ -131,6 +131,20 @@ scripts/find-unreferenced-assets.zsh
 
 ---
 
+## CSS Customization
+
+Custom SCSS overrides live in `assets/css/_custom.scss` and are loaded **last** in the cascade, ensuring they take precedence over theme defaults. This file uses the SASS `@use` module system and currently includes:
+
+- **Color corrections** for the Air skin (`#eeeeee` home bg, `#0092ca` footer, transparent nav bar)
+- Additional theme overrides (reveal.js styles, minimal-mistakes customizations)
+
+To add or modify CSS:
+1. Edit `assets/css/_custom.scss`
+2. Run `bundle exec jekyll build` locally to verify
+3. CSS is automatically compiled into `_site/assets/css/main.css` (minified)
+
+---
+
 ## Asset Vendoring Philosophy
 
 This repo uses **self-hosted assets** to reduce external dependencies and improve performance:
