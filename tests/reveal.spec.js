@@ -34,7 +34,12 @@ for (const vp of viewports) {
         const el = await page.$('.reveal');
         let screenshot;
         if (el) {
-          screenshot = await el.screenshot();
+          try {
+            screenshot = await el.screenshot({ timeout: 30000 });
+          } catch (err) {
+            // fallback to full-page when element screenshot fails
+            screenshot = await page.screenshot({ fullPage: true });
+          }
         } else {
           screenshot = await page.screenshot({ fullPage: true });
         }
