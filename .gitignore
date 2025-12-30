@@ -42,3 +42,7 @@ build.log
 scripts/tmp/*
 !scripts/tmp/.gitkeep
 tmp
+
+# Playwright test artifacts
+test-results/
+playwright-report/

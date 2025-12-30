@@ -54,6 +54,37 @@ for (const vp of viewports) {
         // allow small rendering differences (subpixel/font differences)
         expect(screenshot).toMatchSnapshot(name, { maxDiffPixelRatio: 0.02 });
       });
+
+      test(`${p} - menu functionality`, async ({ page }) => {
+        try {
+          await page.goto(p, { waitUntil: 'networkidle', timeout: 15000 });
+        } catch (err) {
+          test.skip();
+          return;
+        }
+
+        // Wait for Reveal to initialize
+        await page.waitForFunction(() => window.Reveal && window.Reveal.isReady(), { timeout: 10000 });
+
+        // Check if menu button exists (hamburger icon, usually in lower left)
+        const menuButton = page.locator('.slide-menu-button');
+        await expect(menuButton).toBeVisible();
+
+        // Click the menu button to open it
+        await menuButton.click();
+
+        // Wait for menu panel to appear
+        const menuPanel = page.locator('.slide-menu');
+        await expect(menuPanel).toBeVisible({ timeout: 5000 });
+
+        // Verify menu has content (links, navigation items, etc.)
+        const menuHasContent = await menuPanel.locator('ul, ol, a').count() > 0;
+        expect(menuHasContent).toBeTruthy();
+
+        // Close menu (click button again or press ESC)
+        await page.keyboard.press('Escape');
+        await expect(menuPanel).toBeHidden({ timeout: 2000 });
+      });
     }
   });
 }

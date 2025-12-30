@@ -84,7 +84,7 @@ the layout (`data-separator` / `data-separator-vertical`) to break slides.
 
 ### “Links” menu in Reveal
 
-Presentations include a ‘Links’ menu (Reveal Menu plugin). Maintainer details (vendored plugin + custom Links tab wiring): assets/reveal/plugin/menu/MAINTAINERS_NOTE.md.
+Presentations use Reveal.js without custom menu plugins. To add custom presentation features, modify the layouts in `_layouts/reveal.html` or `_layouts/reveal-duke.html`.
 
 ---
 
@@ -131,16 +131,84 @@ scripts/find-unreferenced-assets.zsh
 
 ---
 
+## Asset Vendoring Philosophy
+
+This repo uses **self-hosted assets** to reduce external dependencies and improve performance:
+
+- **Font Awesome**: Vendored from npm (`@fortawesome/fontawesome-free@5.15.4`) to `assets/fontawesome/`. Removes CDN dependency.
+- **Reveal.js**: Vendored from npm (`reveal.js@5.2.1`) to `assets/reveal/`. Includes ESM build, plugins, and theme files.
+
+### Vendor scripts
+
+After updating versions in `package.json`, run:
+
+```zsh
+npm run vendor:fontawesome    # Copy Font Awesome files
+npm run vendor:reveal         # Copy Reveal.js distribution
+```
+
+Both scripts clean old assets before copying, ensuring clean builds. CI automatically runs these steps before Jekyll build.
+
+**See also:** [Reveal.js Vendoring & Attribution](assets/reveal/MAINTAINERS.md)
+
+---
+
+## Minimal Mistakes customizations
+
+### Include structure
+
+The repo uses only **5 customized includes** (most theme defaults removed):
+
+- `head.html` – Self-hosted Font Awesome CSS link
+- `masthead.html` – Subtitle display for custom branding
+- `page__hero.html` – CTA compatibility fix
+- `reveallinks.html` – Reveal.js presentation menu wiring
+- `seo.html` – Custom JSON-LD structured data
+
+This minimal set reduces maintenance burden and update complexity.
+
+---
+
+## Visual Regression Testing
+
+Presentation pages are monitored via **Playwright snapshot tests** (`tests/reveal.spec.js`). Tests run automatically in CI and can be run locally:
+
+```zsh
+npx playwright test                # Run all visual tests
+npx playwright test --ui           # Interactive mode
+npx playwright test --update-snapshots  # Update baselines after intentional changes
+```
+
+**Test coverage:**
+- Visual snapshots (regression detection)
+- Menu functionality (button visibility, open/close, content verification)
+- Reveal.js API initialization
+
+**Snapshots stored in:** `tests/reveal.spec.js-snapshots/`
+
+---
+
 ## Custom styling
 
 Place site-specific overrides here:
 
-- `assets/css/_custom-variables.scss` – variables/tokens
-- `assets/css/_custom.scss` – light CSS overrides imported by the theme
+- `assets/css/_vars.scss` – SASS variables and design tokens (shared via @use modules)
+- `assets/css/_custom.scss` – Light CSS overrides imported by the theme
 
 Theme skin experiments (e.g., custom Minimal Mistakes skins) live under
 `_sass/minimal-mistakes/skins/`. Keep them minimal and in sync with upstream
 where possible.
+
+### SASS module system
+
+All SASS files use the `@use` module system (no `@import`):
+
+```scss
+@use "vars";           // Import design tokens
+@use "minimal-mistakes/themes/light";  // Theme imports
+```
+
+Prefer adding variables/tokens to `assets/css/_vars.scss` rather than duplicating across files.
 
 ---
 

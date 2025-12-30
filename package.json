@@ -31,6 +31,7 @@
     "onchange": "^7.1.0",
     "playwright": "^1.42.0",
     "reveal.js": "^5.2.1",
+    "reveal.js-menu": "^2.1.0",
     "uglify-js": "^3.13.6"
   },
   "scripts": {
