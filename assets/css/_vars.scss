@@ -1,0 +1,7 @@
+/* assets/css/_vars.scss - centralized design tokens */
+@use "sass:color";
+
+// Override variables the skin sets with !default
+$background-color: #eeeeee;  // Air skin background (matching live site)
+$link-color: #3a7afe !default;
+$brand-color: color.mix(#3a7afe, #111, 20%) !default;

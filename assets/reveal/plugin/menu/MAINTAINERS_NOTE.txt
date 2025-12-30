@@ -1,0 +1,229 @@
+# Reveal.js Menu Plugin - Maintainer Notes
+
+## Overview
+
+This site uses reveal.js-menu v2.1.0 (pinned) to provide slide navigation and custom "Links" panels in presentations. The plugin is **deprecated** upstream but remains functional and necessary for this site's presentation features.
+
+## Why Pinned at v2.1.0?
+
+- **Breaking API changes in v3.x**: Menu 3.x has a completely different initialization signature and data structure that would require rewriting all presentation layouts and custom Links integration.
+- **Bundle size**: v3.x is significantly larger (~3x the file size) with features this site doesn't need.
+- **Stability**: v2.1.0 is stable, battle-tested across dozens of presentations, and proven reliable.
+- **Custom integration**: The custom "Links" tab feature (see _includes/reveallinks.html) is tightly coupled to v2.1.0's data structure and menu API.
+
+## Custom "Links" Tab Integration
+
+This site extends the reveal.js-menu plugin with a custom "Links" panel that displays site-specific resources in each presentation. 
+
+**Implementation:**
+- `_includes/reveallinks.html` - Defines the Links panel HTML content
+- Layouts inject this content via a template element: `<template id="reveal-links-template">`
+- Menu initialization reads this template and adds it as a custom panel
+
+**Data source:**
+- Links are manually maintained in `_includes/reveallinks.html`
+- No dynamic data file (unlike some earlier implementations that may have used _data/reveal_links.yml)
+
+**Example Links panel content:**
+- Home page link
+- Blog archive
+- Presentation list
+- Author contact info
+
+## Vendoring Strategy
+
+The menu plugin is vendored from npm (`reveal.js-menu@2.1.0`) into `assets/reveal/plugin/menu/` via the `npm run vendor:reveal` script.
+
+**Why vendor instead of CDN?**
+1. Build reproducibility - assets are pinned and committed
+2. No external dependency failures during presentations
+3. Offline capability for local development
+4. Custom CSS/JS modifications if needed
+
+**Files included:**
+- `menu.js` / `menu.esm.js` - Plugin code
+- `menu.css` - Menu styling (hamburger button, panel, transitions)
+- `font-awesome/` - Icons for menu UI
+- `LICENSE`, `README.md`, etc. - Attribution files
+
+## Update Procedure (if needed)
+
+**Before updating:** Test thoroughly! Menu plugin updates have broken presentations in the past.
+
+1. **Update package.json:**
+   ```json
+   "reveal.js-menu": "2.1.1"  // or whatever new version
+   ```
+
+2. **Re-vendor:**
+   ```bash
+   npm install
+   npm run vendor:reveal
+   ```
+
+3. **Test locally:**
+   ```bash
+   bundle exec jekyll serve
+   ```
+   Visit several presentations and verify:
+   - Hamburger menu button appears (lower left)
+   - Menu opens on click
+   - Custom "Links" tab is present
+   - All menu panels work (Slides, Themes, Transitions, Links)
+   - ESC key closes menu
+   - No JavaScript console errors
+
+4. **Run visual tests:**
+   ```bash
+   npm run test:visual
+   ```
+   If snapshots differ, review carefully. Update only if changes are intentional.
+
+5. **Check menu functionality tests:**
+   The test suite includes explicit menu interaction tests that verify:
+   - Menu button visibility
+   - Panel opens/closes
+   - Menu contains expected content
+
+6. **Commit if successful:**
+   ```bash
+   git add package.json package-lock.json assets/reveal/plugin/menu/
+   git commit -m "chore: Update reveal.js-menu to X.Y.Z"
+   ```
+
+## Rollback Procedure
+
+If a menu plugin update breaks presentations:
+
+1. **Revert package.json:**
+   ```bash
+   git checkout HEAD~1 package.json package-lock.json
+   ```
+
+2. **Reinstall and re-vendor:**
+   ```bash
+   npm install
+   npm run vendor:reveal
+   ```
+
+3. **Rebuild and test:**
+   ```bash
+   bundle exec jekyll build
+   npm run test:visual
+   ```
+
+4. **Commit rollback:**
+   ```bash
+   git add package.json package-lock.json assets/reveal/plugin/menu/
+   git commit -m "Revert reveal.js-menu to 2.1.0 due to [reason]"
+   ```
+
+5. **Document the issue:**
+   - Note why the update failed in this file or in a GitHub issue
+   - Check upstream repo for similar issues or workarounds
+
+## Migration Path (Future)
+
+If reveal.js-menu becomes incompatible or unmaintained:
+
+**Option 1: Fork and maintain**
+- Fork the v2.1.0 codebase
+- Apply security patches as needed
+- Keep custom Links integration
+
+**Option 2: Replace with built-in Reveal features**
+- Use native Reveal.js slide overview (ESC key, grid view)
+- Remove custom Links panel, add links directly to slides
+- Lose hamburger menu UI but gain simplicity
+
+**Option 3: Upgrade to menu v3.x**
+- Rewrite all presentation layouts for new API
+- Rebuild custom Links integration
+- Test exhaustively (50+ presentations in repo)
+- Accept larger bundle size
+
+**Recommendation:** Stick with v2.1.0 until forced to migrate. It works well and requires no maintenance.
+
+## Troubleshooting
+
+### Menu button doesn't appear
+
+**Check:**
+1. `menu.css` is linked in layout: `grep menu.css _site/presentations/[slug]/index.html`
+2. Menu plugin is imported: `grep "Menu" _layouts/reveal*.html`
+3. Plugin files exist: `ls assets/reveal/plugin/menu/menu.esm.js`
+
+**Fix:**
+- Re-run `npm run vendor:reveal`
+- Clear browser cache
+- Check browser console for 404s
+
+### Menu opens but Links tab is missing
+
+**Check:**
+1. `_includes/reveallinks.html` exists and has content
+2. Template element is in layout: `<template id="reveal-links-template">`
+3. Layout passes template content to Reveal initialization
+
+**Fix:**
+- Verify reveallinks.html include is not empty
+- Check that layout reads template: `const revealLinks = (document.getElementById('reveal-links-template') || {}).innerHTML`
+
+### Menu styling broken
+
+**Check:**
+1. Font Awesome icons loading (menu uses FA for icons)
+2. CSS conflicts with site theme
+3. Z-index issues with other page elements
+
+**Fix:**
+- Check Network tab for failed CSS/font requests
+- Inspect menu button element for style issues
+- Adjust menu.css if needed (rare)
+
+### ESC key doesn't close menu
+
+**Possible cause:** JavaScript error preventing event handlers from working
+
+**Fix:**
+- Check browser console for errors
+- Verify Reveal.js initialized properly: `window.Reveal.isReady()`
+- Test with different browser
+
+## Testing Strategy
+
+**Manual testing:**
+- Open 3-5 representative presentations
+- Click menu button
+- Navigate through all tabs (Slides, Themes, Transitions, Links)
+- Verify custom Links content displays correctly
+- Test on desktop and mobile viewports
+
+**Automated testing:**
+- `npm run test:visual` includes menu functionality tests
+- Tests verify menu button exists, opens, contains content, and closes
+- Visual regression snapshots catch unintended style changes
+
+**Before production deployment:**
+- Test on staging branch
+- Verify HTMLProofer passes
+- Check Playwright test results in CI
+
+## References
+
+- **reveal.js-menu v2.1.0:** https://github.com/denehyp/reveal.js-menu/tree/2.1.0
+- **Main Reveal.js docs:** https://revealjs.com/
+- **This site's Reveal layouts:** `_layouts/reveal.html`, `_layouts/reveal-duke.html`
+- **Custom Links include:** `_includes/reveallinks.html`
+- **Vendor script:** `scripts/copy-reveal.js`
+
+## Maintenance Log
+
+- **2025-12-30:** Restored reveal.js-menu v2.1.0 after accidental deletion during Reveal.js vendoring refactor. Added menu.css links to layouts. Created comprehensive test suite for menu functionality. This file created to document maintenance procedures.
+- **2025-12-26:** (per CHANGELOG) Added menu maintainer documentation (file was empty/placeholder at that time).
+
+---
+
+**Last updated:** 2025-12-30  
+**Maintainer:** See repo CONTRIBUTORS  
+**Questions?** File an issue tagged with `reveal.js` or `presentations`

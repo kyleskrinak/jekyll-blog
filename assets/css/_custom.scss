@@ -1,4 +1,20 @@
 /* assets/css/_custom.scss */
 
-.post-title { letter-spacing: .2px; }
-.btn { border-radius: .75rem; }
+@use "reveal_overrides";
+@use "minimal_mistakes_overrides";
+
+// Fix Air skin background color (matches live site)
+html {
+  background-color: #eeeeee;
+}
+
+// Fix Air skin footer background color (matches live site)
+.page__footer {
+  background-color: #0092ca;
+}
+
+// Make navigation bar background transparent
+.greedy-nav {
+  background: transparent;
+}
+
