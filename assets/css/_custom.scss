@@ -3,3 +3,13 @@
 @use "reveal_overrides";
 @use "minimal_mistakes_overrides";
 
+// Fix Air skin background color (matches live site)
+html {
+  background-color: #eeeeee;
+}
+
+// Fix Air skin footer background color (matches live site)
+.page__footer {
+  background-color: #0092ca;
+}
+
