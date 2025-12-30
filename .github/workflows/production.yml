@@ -40,6 +40,18 @@ jobs:
           bundle config set without 'development'
           bundle install --jobs 4 --retry 3
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install Node dependencies
+        run: npm ci
+
+      - name: Vendor Reveal.js
+        run: npm run vendor:reveal
+
       - name: Build site
         run: bundle exec jekyll build --trace
 

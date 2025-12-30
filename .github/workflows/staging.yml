@@ -42,6 +42,18 @@ jobs:
       - name: Ensure Linux platform in lockfile (no-op if present)
         run: bundle lock --add-platform x86_64-linux || true
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install Node dependencies
+        run: npm ci
+
+      - name: Vendor Reveal.js
+        run: npm run vendor:reveal
+
       - name: Build site (Jekyll)
         run: bundle exec jekyll build --trace -c $CONFIG_FILES
 
