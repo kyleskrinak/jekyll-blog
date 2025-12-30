@@ -46,7 +46,8 @@ for (const vp of viewports) {
 
         // snapshot name uses sanitized path and viewport
         const name = `${p.replace(/\//g, '_')}-${vp.name}.png`;
-        expect(screenshot).toMatchSnapshot(name);
+        // allow small rendering differences (subpixel/font differences)
+        expect(screenshot).toMatchSnapshot(name, { maxDiffPixelRatio: 0.02 });
       });
     }
   });
