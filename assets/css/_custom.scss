@@ -1,5 +1,5 @@
 /* assets/css/_custom.scss */
 
-@import "minimal_mistakes_overrides";
-@import "reveal_overrides";
+@use "reveal_overrides";
+@use "minimal_mistakes_overrides";
 
