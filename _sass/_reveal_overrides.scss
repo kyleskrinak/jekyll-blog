@@ -1,13 +1,14 @@
 .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5 { text-transform: none; }
 hr { border-top: 1px solid white; }
 
-/* Reveal controls logo */
-aside.controls::before {
+/* Reveal controls logo — only for reveal-duke layout */
+.layout--reveal-duke .reveal { position: relative; }
+.layout--reveal-duke .reveal::before {
   content: "";
-  background-image: url('{{ "/assets/images/Duke-logo.png" | relative_url }}');
+  background-image: url('/assets/images/Duke-logo.png');
   background-size: contain;
   background-repeat: no-repeat;
   opacity: 0.5;
   width: 155px; height: 100px;
-  display: block; right: 90px; top: -68px; position: absolute;
+  position: absolute; right: 1rem; bottom: 1rem; pointer-events: none; z-index: 10;
 }
