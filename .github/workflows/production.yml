@@ -52,6 +52,9 @@ jobs:
       - name: Vendor Reveal.js
         run: npm run vendor:reveal
 
+      - name: Vendor Font Awesome
+        run: npm run vendor:fontawesome
+
       - name: Build site
         run: bundle exec jekyll build --trace
 

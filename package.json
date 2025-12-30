@@ -22,6 +22,7 @@
     "node": ">= 0.10.0"
   },
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
     "@playwright/test": "^1.57.0",
     "glob": "^13.0.0",
     "http-server": "^14.1.1",
@@ -40,6 +41,7 @@
     "visual:reveal": "node scripts/visual-reveal.js",
     "test:visual:update": "playwright test --update-snapshots",
     "test:visual": "playwright test",
-    "vendor:reveal": "node scripts/copy-reveal.js"
+    "vendor:reveal": "node scripts/copy-reveal.js",
+    "vendor:fontawesome": "node scripts/copy-fontawesome.js"
   }
 }
