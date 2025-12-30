@@ -1,6 +1,5 @@
 /* assets/css/_custom.scss */
 
+@import "minimal_mistakes_overrides";
 @import "reveal_overrides";
 
-.post-title { letter-spacing: .2px; }
-.btn { border-radius: .75rem; }
