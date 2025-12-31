@@ -185,11 +185,13 @@ This minimal set reduces maintenance burden and update complexity.
 
 ## Visual Regression Testing
 
-Presentation pages are monitored via **Playwright snapshot tests** (`tests/reveal.spec.js`). Tests run automatically in CI and can be run locally:
+Presentation pages have **Playwright snapshot tests** for local visual regression detection (`tests/reveal.spec.js`). **These tests run locally only** and are not part of CI/CD workflows.
+
+### Running locally:
 
 ```zsh
 npx playwright test                # Run all visual tests
-npx playwright test --ui           # Interactive mode
+npx playwright test --ui           # Interactive mode (recommended)
 npx playwright test --update-snapshots  # Update baselines after intentional changes
 ```
 
@@ -197,6 +199,8 @@ npx playwright test --update-snapshots  # Update baselines after intentional cha
 - Visual snapshots (regression detection)
 - Menu functionality (button visibility, open/close, content verification)
 - Reveal.js API initialization
+
+**Before updating snapshots**: Run tests in a clean checkout and visually review changes.
 
 **Snapshots stored in:** `tests/reveal.spec.js-snapshots/`
 
