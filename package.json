@@ -22,15 +22,27 @@
     "node": ">= 0.10.0"
   },
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
+    "@playwright/test": "^1.57.0",
+    "glob": "^13.0.0",
+    "http-server": "^14.1.1",
+    "mkdirp": "^3.0.1",
     "npm-run-all": "^4.1.5",
     "onchange": "^7.1.0",
+    "playwright": "^1.42.0",
     "reveal.js": "^5.2.1",
+    "reveal.js-menu": "^2.1.0",
     "uglify-js": "^3.13.6"
   },
   "scripts": {
     "uglify": "uglifyjs assets/js/vendor/jquery/jquery-3.6.0.js assets/js/plugins/jquery.fitvids.js assets/js/plugins/jquery.greedy-navigation.js assets/js/plugins/jquery.magnific-popup.js assets/js/plugins/jquery.ba-throttle-debounce.js assets/js/plugins/smooth-scroll.js assets/js/plugins/gumshoe.js assets/js/_main.js -c -m -o assets/js/main.min.js",
     "add-banner": "node banner.js",
     "watch:js": "onchange \"assets/js/**/*.js\" -e \"assets/js/main.min.js\" -- npm run build:js",
-    "build:js": "npm run uglify && npm run add-banner"
+    "build:js": "npm run uglify && npm run add-banner",
+    "visual:reveal": "node scripts/visual-reveal.js",
+    "test:visual:update": "playwright test --update-snapshots",
+    "test:visual": "playwright test",
+    "vendor:reveal": "node scripts/copy-reveal.js",
+    "vendor:fontawesome": "node scripts/copy-fontawesome.js"
   }
 }

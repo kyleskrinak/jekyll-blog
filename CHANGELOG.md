@@ -1,5 +1,42 @@
 # Changelog
 
+## 2025-12-30
+
+### Fixed
+
+- **CSS Color Corrections**: Fixed Air skin background colors to match live site values. Added custom SCSS overrides in `assets/css/_custom.scss`:
+  - Home page background: `#fff` → `#eeeeee` (Air skin default)
+  - Footer background: light gray → `#0092ca` (Air skin blue)
+  - Navigation bar background: `#fff` → `transparent` (for seamless header integration)
+  - These overrides use the module-aware `_custom.scss` file loaded last in the cascade to ensure they take precedence over theme defaults.
+
+### Major Features
+
+- **Asset Vendoring**: Self-hosted **Reveal.js 5.2.1** and **Font Awesome 5.15.4** from npm into `assets/reveal/` and `assets/fontawesome/` respectively. Eliminates external CDN dependencies. Added `npm run vendor:reveal` and `npm run vendor:fontawesome` helper scripts; CI automatically runs these before Jekyll build.
+- **SASS Migration**: Converted all stylesheets to `@use` module system (ES6-style imports, no more `@import`). Added centralized `assets/css/_vars.scss` design token module for consistent color/variable management. Updated root SASS imports in `_config.yml` to use new module structure.
+- **Visual Regression Testing**: Added Playwright test suite for Reveal.js presentation pages (`tests/reveal.spec.js`, `playwright.config.js`). 8 snapshot tests cover key presentations with timeout handling and fallback page detection. Tests run in CI via `.github/workflows/visual-reveal.yml` and locally via `npx playwright test`. Test suite verifies visual consistency, menu functionality (hamburger button, open/close, content), and Reveal API initialization.
+- **Branch Protection**: Staging branch (`staging`) now requires PR approval, passing status checks, and prevents force-push. Documented in `.github/BRANCH_PROTECTION.md`.
+
+### Refactoring
+
+- **Includes Cleanup**: Removed 29 theme-default overrides from `_includes/`, retaining only 5 truly customized files (`head.html`, `masthead.html`, `page__hero.html`, `reveallinks.html`, `seo.html`). Verified metadata integrity (SEO, analytics, structured data) via diff comparison before each removal.
+- **Browser Upgrade Removal**: Deleted outdated IE9 warning include (`browser-upgrade.html`) and references from Reveal layouts (`reveal.html`, `reveal-duke.html`).
+
+### Dependencies Added
+
+- `@fortawesome/fontawesome-free@5.15.4` (for self-hosted Font Awesome)
+- `@playwright/test@latest` (for visual regression testing)
+- `reveal.js@5.2.1` (already bundled via copy scripts; now explicit in `package.json`)
+
+### Maintenance Notes
+
+- All local Jekyll builds, HTMLProofer checks, and visual tests pass without errors.
+- No breaking changes; site behaves identically to end users.
+- Upgrade recommended for improved build reproducibility and reduced external dependency surface.
+- See `.github/CONTRIBUTING.md` for branch workflow and `README.md` for asset vendoring details.
+
+---
+
 ## 2025-12-26
 
 - Added a nightly “Linkwatch” GitHub Actions workflow (`.github/workflows/linkwatch.yml`) to monitor external link rot (non-blocking) and file/update a single “External link rot report” issue on failures. (Issue #15)

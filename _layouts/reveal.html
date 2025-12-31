@@ -6,6 +6,7 @@
 
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/reveal/reveal.css">
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/reveal/theme/black.css" id="theme">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/reveal/plugin/menu/menu.css">
 
   <style>
     /* Keep headings as written (no automatic uppercase) */
@@ -14,7 +15,6 @@
 </head>
 
 <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}">
-  {% include_cached browser-upgrade.html %}
 
   <div class="reveal">
     <div class="slides">
