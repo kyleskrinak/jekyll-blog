@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+### Removed
+
+- **Visual Regression Workflow**: Removed `.github/workflows/visual-reveal.yml` from CI pipeline. Visual regression testing should be run locally via `npx playwright test` only, not in GitHub Actions automated workflows.
+
 ## 2025-12-30
 
 ### Fixed
