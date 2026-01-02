@@ -6,7 +6,7 @@ header:
   overlay_image: /assets/images/hot_tub.jpg
   overlay_filter: rgba(128, 0, 0, 0.5)
   caption: image from [here](https://commons.wikimedia.org/wiki/File:Bagby_hot_springs_oregon.jpg#file)
-categories:
+category:
   - LCHF
 tags: 
   - Story-telling

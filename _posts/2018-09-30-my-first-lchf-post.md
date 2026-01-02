@@ -1,7 +1,7 @@
 ---
 layout: single
 title: From My Wife’s Kitchen
-categories:
+category:
   - LCHF
 excerpt: "Posts and logs from Kyle about food"
 header:

@@ -5,7 +5,7 @@ excerpt: Busy staying steady
 header:
   overlay_image: "/assets/images/190831-megaphone.jpg"
   overlay_filter: rgba(128, 96, 0, 0.5)
-categories:
+category:
 - LCHF
 classes: wide
 date: 2019-09-02 15:46 -0400

@@ -4,6 +4,7 @@ layout: single
 permalink: /pages/location.html
 author_profile: true
 classes: wide
+published: false
 ---
 
 Due to the COVID pandemic, I have been working remotely since March 2020. I am available via remote technologies such as Zoom or Microsoft Teams. Feel free to schedule time using my "Calendar" page, which you can find in the main navigational menu.  

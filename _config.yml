@@ -176,6 +176,8 @@ exclude:
   - assets/js/plugins
   - assets/js/_main.js
   - assets/js/vendor
+  - assets/files
+  - assets/reveal/plugin/notes/speaker-view.html
   - Capfile
   - CHANGELOG
   - config
@@ -241,6 +243,16 @@ plugins:
   - jekyll-redirect-from
   - jekyll-seo-tag
   - jekyll-sitemap
+
+# jekyll-sitemap configuration
+jekyll_sitemap:
+  skip_files:
+    - /sitemap.xml
+    - /robots.txt
+  skip_patterns:
+    - \.(pdf|docx|xlsx|pptx)$
+    - /assets/reveal/plugin/notes/
+    - /assets/files/
 
 # mimic GitHub Pages with --safe
 whitelist:

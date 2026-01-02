@@ -2,7 +2,7 @@
 title: 5 DrupalCon Nashville Take Aways
 comments: true
 date: 2018-05-21 13:05 -0400
-categories:
+category:
   - Drupal
 tags:
   - Drupalcon Nashville 2018

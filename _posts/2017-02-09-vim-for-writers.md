@@ -1,6 +1,6 @@
 ---
 title: Vim for writers
-categories:
+category:
   - Personal productivity
 tags:
   - Vim editor

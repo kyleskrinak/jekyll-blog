@@ -2,7 +2,7 @@
 title: DrupalCon Nashville 2018 -- 04-11-2018 Wednesday
 comments: true
 date: 2018-04-11 09:00 -0500
-categories:
+category:
   - Drupal
 tags:
   - Drupalcon Nashville 2018

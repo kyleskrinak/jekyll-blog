@@ -2,6 +2,7 @@
 title: My calendar
 layout: default 
 permalink: /pages/calendar.html
+published: false
 ---
 <div markdown="1" id="main" role="main">
 # My calendar

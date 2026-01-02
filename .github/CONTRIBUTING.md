@@ -196,7 +196,82 @@ Tests cover key Reveal.js presentations and verify:
 - Menu functionality (hamburger button, open/close, content verification)
 - Reveal.js API initialization
 
-**Note:** Snapshots are stored in `tests/reveal.spec.js-snapshots/` and committed to Git for CI parity.
+**Note:** Snapshots are stored in `tmp/playwright/snapshots/` and should be reviewed before committing.
+
+### Full-Page Visual Regression Testing
+
+For comprehensive color/style validation across all pages, run the full-page visual regression test:
+
+```zsh
+npx playwright test tests/full-visual-regression.spec.js
+```
+
+This test:
+1. Fetches sitemap from local and production
+2. Compares screenshots of each page at 2% pixel tolerance
+3. Hides dynamic elements (comments, dates, social share)
+4. Waits for full DOM content load (15s timeout)
+5. Reports pass/fail for each page
+
+**Typical output:**
+```
+✓ 54 pages compared and passed
+⏭ 1 page skipped (PDF timeout)
+```
+
+**When to run:**
+- After CSS changes (colors, fonts, spacing)
+- Before publishing to staging/production
+- When notified of visual discrepancies
+
+**Output location:** `tmp/playwright/output/` (diffs) and `tmp/playwright/snapshots/` (baselines)
+
+### Interactive Side-by-Side Comparison
+
+For manual visual QA during development, use the built-in comparison tool:
+
+```zsh
+bundle exec jekyll serve --config _config.yml,_config_dev.yml --detach
+# Then navigate to: http://localhost:4000/compare/
+```
+
+**Features:**
+- Left pane: local version
+- Right pane: production version
+- Navigate with **Previous/Next** buttons or arrow keys
+- Full page screenshots for side-by-side review
+- Excludes itself from sitemap
+
+**Important:** This page is development-only. It's excluded from:
+- Sitemaps (via `sitemap: false`)
+- Production builds (via `_config_gh_pages.yml` exclusion)
+- Staging builds (via `_config_staging.yml` exclusion)
+
+**Use cases:**
+- Verify color fixes match production RGB values
+- Spot unexpected styling changes
+- Compare layouts before/after CSS edits
+
+---
+
+## Before opening a PR (full checklist)
+
+1. **Code review:**
+   - `scripts/clean-build-proof.zsh` (builds + link checks)
+   - Local preview: `bundle exec jekyll serve --livereload --config _config.yml,_config_dev.yml`
+
+2. **If CSS changed:**
+   - Run: `npx playwright test tests/full-visual-regression.spec.js`
+   - Verify all 54+ pages pass (or review diffs if not)
+   - Use `/compare/` tool for manual spot-checking if needed
+
+3. **If Reveal presentations changed:**
+   - Run: `npx playwright test tests/reveal.spec.js`
+   - Update snapshots if changes are intentional: `npx playwright test tests/reveal.spec.js --update-snapshots`
+
+4. **Commit & push:**
+   - Keep commits focused and descriptive
+   - Reference issues in commit messages when applicable
 
 ## Code Standards
 
