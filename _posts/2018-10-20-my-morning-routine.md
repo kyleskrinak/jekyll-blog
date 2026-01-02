@@ -3,7 +3,7 @@ layout: single
 toc: true
 toc_sticky: true
 title: My Morning Routine
-categories:
+category:
   - LCHF
   - Personal productivity
 excerpt: How stumbling into a morning routine became surprisingly transformative and motivational

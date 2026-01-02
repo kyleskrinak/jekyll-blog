@@ -2,7 +2,7 @@
 title: DrupalCon Nashville 2018 -- Higher Education Summit Notes
 comments: true
 date: 2018-04-07 12:36 -0400
-categories:
+category:
   - Drupal
 tags:
   - Drupalcon Nashville 2018

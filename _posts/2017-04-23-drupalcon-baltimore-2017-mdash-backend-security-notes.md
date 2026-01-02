@@ -1,7 +1,7 @@
 ---
 title: DrupalCon Baltimore 2017 &mdash; Backend Security notes
 comments: true
-categories:
+category:
   - Drupal
 tags:
   - Drupalcon Baltimore 2017

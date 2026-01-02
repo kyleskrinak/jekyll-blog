@@ -8,7 +8,7 @@ header:
   overlay_filter: rgba(0, 0, 128, 0.5)
   caption: Mom and me, circa 2016, pre-stroke
   og_image: "/assets/images/Mom-memorandum.jpg"
-categories:
+category:
 - Personal
 classes: wide
 date: 2019-10-31 17:30 -0400

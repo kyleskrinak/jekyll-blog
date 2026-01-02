@@ -1,7 +1,7 @@
 ---
 title: Drupal @ Duke meetup notes
 comments: true
-categories:
+category:
   - Drupal
 tags:
   - Drupal @ Duke

@@ -5,7 +5,7 @@ header:
   overlay_image: "/assets/images/20160619-fathersday.jpg"
   overlay_filter: rgba(0, 0, 128, 0.5)
   caption: A very sweet pre-LCHF father's day gift to me
-categories:
+category:
 - LCHF
 classes: wide
 title: Don't You Miss Carbs?

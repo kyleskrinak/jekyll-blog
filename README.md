@@ -37,7 +37,9 @@ scripts/clean-build-proof.zsh
 ### Post front matter (best practice)
 - Posts inherit defaults from `_config.yml` (layout: `single`, header overlay, author profile, read_time, comments, share, related).
 - Use `layout: single` (or omit) plus `classes: wide` when you want full-width content.
-- Include `title`, `categories`, `tags`, and an `excerpt`; rely on defaults for the rest.
+- Include `title`, `category` (single value, e.g., `category: DevOps`), `tags` (array), and an `excerpt`; rely on defaults for the rest.
+- **Always use a single category value** to maintain clean URL paths (`/category/post-slug/` instead of nested paths).
+- **Exception:** Posts with custom `permalink:` values (e.g., Reveal presentations at `/presentations/...`) should **not** include a `category` field, as the category field overrides custom permalinks.
 - For a custom social preview image, set `image: /assets/...` (otherwise the default header overlay is used for OG/Twitter meta).
 - Only override defaults for special cases (e.g., Reveal layouts use `layout: reveal`).
 

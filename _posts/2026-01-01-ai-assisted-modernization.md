@@ -1,10 +1,12 @@
+---
 layout: single
 title: "AI-Assisted Modernization: Two Days, Ten Years Strong"
 date: 2026-01-01
 classes: wide
-categories: [DevOps, Jekyll]
+category: DevOps
 tags: [ai, copilot, minimal-mistakes, revealjs, workflow, testing]
 excerpt: "How an AI-assisted sprint refreshed my decade-old Jekyll stack: asset vendoring, visual tests, workflow guardrails, and a renewed commitment to Minimal Mistakes."
+---
 
 I have had my personal blog for many years now. It will be 10 years old next October. They grow up so fast, don’t they? What started as a way to share my thoughts, wins, and work notes has now become a “skin in the game” playground for me. I host it entirely in the cloud (minus local dev), which lets me ply my trade for my own edification.
 
