@@ -7,9 +7,8 @@ classes: wide
 excerpt: The Skrinaks adopt Holly from the Wake County SPCA
 header:
   overlay_image: "/assets/images/holly-pup.jpg"
-  caption: The catalog image for Holly before her adaption
-image: 
-category: 
+  caption: The catalog image for Holly before her adoption
+categories:
   - Personal
 tags: 
   - Story-telling

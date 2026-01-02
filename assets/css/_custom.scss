@@ -18,3 +18,32 @@ html {
   background: transparent;
 }
 
+// Fix year-archive H2 link colors to match production
+.archive__item-title a {
+  color: #575b62 !important;
+}
+
+// Fix ToC/Session quick links header background to match production (brighter cyan)
+.toc .nav__title {
+  background: #0099cc !important;
+}
+
+// Fix ToC border and divider colors to match production (darker gray)
+.toc {
+  border-color: #d3d3d3 !important;
+  background-color: #f5f5f5 !important;
+}
+
+.toc__menu a {
+  border-bottom-color: #d3d3d3 !important;
+}
+
+// Fix HR color to match production (darker gray)
+hr {
+  border-top-color: #cccccc !important;
+}
+
+// Fix page content H2 border-bottom color to match production
+.page__content h2 {
+  border-bottom-color: #babdbd !important;
+}

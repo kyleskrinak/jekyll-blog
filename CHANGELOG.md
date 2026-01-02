@@ -2,15 +2,44 @@
 
 ## Unreleased
 
-### Removed
+### Added
 
-- **Visual Regression Workflow**: Removed `.github/workflows/visual-reveal.yml` from CI pipeline. Visual regression testing should be run locally via `npx playwright test` only, not in GitHub Actions automated workflows.
+- **Blog Post**: Published "AI-Assisted Modernization: Two Days, Ten Years Strong".
+- **Full-Page Visual Regression Testing**: Added `tests/full-visual-regression.spec.js` to test all 54+ pages for pixel-perfect visual matching between local and production builds. Includes 0.02 maxDiffPixelRatio tolerance, dynamic element hiding, and 15s DOM content load wait.
+- **Side-by-Side Comparison Tool**: Added `/compare/` development-only page for interactive visual QA (navigable with Previous/Next buttons and arrow keys). Excluded from sitemap and production builds via `_config_staging.yml` and `_config_gh_pages.yml`.
+- **Playwright Artifact Consolidation**: Unified test output directory structure under single `tmp/playwright/` root with `output/` and `snapshots/` subdirectories. Updated `.gitignore` to exclude test artifacts.
 
-## 2025-12-30
+### Changed
+
+- **Sitemap Configuration**: Refined `jekyll-sitemap` plugin exclusions to prevent internal asset files (PDFs, reveal.js speaker-view.html) from being indexed. Updated config to exclude `assets/files/` and `assets/reveal/plugin/notes/speaker-view.html` specifically while preserving reveal plugin functionality.
 
 ### Fixed
 
-- **CSS Color Corrections**: Fixed Air skin background colors to match live site values. Added custom SCSS overrides in `assets/css/_custom.scss`:
+- **CSS Color Corrections**: Fixed 5 additional color mismatches identified via visual regression testing:
+  - Archive item titles: `#575b62` (year-archive H2 links)
+  - ToC header background: `#0099cc` (Session quick links)
+  - ToC box styling: `#f5f5f5` background, `#d3d3d3` borders and dividers
+  - Page H2 underlines: `#babdbd` (matches production rgb(186, 187, 189))
+- **Reveal Layout Rendering**: Fixed broken reveal.js presentations by correcting overly broad asset exclusion. Changed `assets/reveal/plugin/notes` directory exclusion to target only `speaker-view.html` file, preserving reveal plugin functionality.
+
+### Removed
+
+- **Visual Regression Workflow**: Removed `.github/workflows/visual-reveal.yml` from CI pipeline. Visual regression testing should be run locally via `npx playwright test` only, not in GitHub Actions automated workflows.
+- **Unpublished Pages**: Marked `_pages/location.md` and `_pages/calendar.md` as `published: false`.
+- **Old Comparison Page**: Removed legacy `compare.html` file that was interfering with Jekyll-generated compare page.
+
+### Maintenance Notes
+
+- All local Jekyll builds pass without errors.
+- Visual regression suite confirms pixel-perfect local/production parity on all 54+ pages.
+- Compare tool provides real-time side-by-side QA for future color/style verification.
+- See `.github/CONTRIBUTING.md` for branching and testing workflows.
+
+## 2025-12-30
+
+### Removed
+
+- **Visual Regression Workflow**: Removed `.github/workflows/visual-reveal.yml` from CI pipeline. Visual regression testing should be run locally via `npx playwright test` only, not in GitHub Actions automated workflows.
   - Home page background: `#fff` → `#eeeeee` (Air skin default)
   - Footer background: light gray → `#0092ca` (Air skin blue)
   - Navigation bar background: `#fff` → `transparent` (for seamless header integration)
