@@ -4,13 +4,14 @@
 
 ### Added
 
-- **Blog Post**: Published "AI-Assisted Modernization: Two Days, Ten Years Strong".
+- **Blog Post**: Published "AI-Assisted Modernization: Two Days, Ten Years Strong" with header image (robot workflow diagram, 284KB JPEG). Includes comprehensive epilogue documenting post-publication QA work and an addendum crediting Copilot for drafting assistance while affirming authenticity of all sentiments and conclusions.
 - **Full-Page Visual Regression Testing**: Added `tests/full-visual-regression.spec.js` to test all 54+ pages for pixel-perfect visual matching between local and production builds. Includes 0.02 maxDiffPixelRatio tolerance, dynamic element hiding, and 15s DOM content load wait.
 - **Side-by-Side Comparison Tool**: Added `/compare/` development-only page for interactive visual QA (navigable with Previous/Next buttons and arrow keys). Excluded from sitemap and production builds via `_config_staging.yml` and `_config_gh_pages.yml`.
 - **Playwright Artifact Consolidation**: Unified test output directory structure under single `tmp/playwright/` root with `output/` and `snapshots/` subdirectories. Updated `.gitignore` to exclude test artifacts.
 
 ### Changed
 
+- **Front Matter Standardization**: Standardized all 33 blog posts to use singular `category:` field instead of plural `categories:`. Maintains clean URL paths (`/category/post-slug/`) and aligns with Jekyll conventions. Exception: 8 Reveal presentation posts with custom `permalink:` values exclude the `category` field to preserve URL structure (category field would override custom permalinks).
 - **Sitemap Configuration**: Refined `jekyll-sitemap` plugin exclusions to prevent internal asset files (PDFs, reveal.js speaker-view.html) from being indexed. Updated config to exclude `assets/files/` and `assets/reveal/plugin/notes/speaker-view.html` specifically while preserving reveal plugin functionality.
 
 ### Fixed
