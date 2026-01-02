@@ -2,7 +2,7 @@
 layout: single
 title: Jekyll, Hugo, and Me
 date: 2021-01-16 10:00 -0500
-categories:
+category:
   - Static Websites
 description: 
 classes: wide

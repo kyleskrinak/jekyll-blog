@@ -2,7 +2,7 @@
 title: DrupalCon Nashville 2018 Video Playlist
 comments: true
 date: 2018-05-13 08:26 -0500
-categories:
+category:
   - Drupal
 tags:
   - Drupalcon Nashville 2018

@@ -1,9 +1,16 @@
 // @ts-check
+const path = require('path');
 const { defineConfig } = require('@playwright/test');
+
+const ARTIFACTS_ROOT = path.join(__dirname, 'tmp', 'playwright');
+const OUTPUT_DIR = path.join(ARTIFACTS_ROOT, 'output');
+const SNAPSHOT_PATH_TEMPLATE = 'tmp/playwright/snapshots/{testFileName}-snapshots/{arg}{ext}';
 
 module.exports = defineConfig({
   testDir: 'tests',
   timeout: 60_000,
+  outputDir: OUTPUT_DIR,
+  snapshotPathTemplate: SNAPSHOT_PATH_TEMPLATE,
   expect: { toHaveScreenshot: { threshold: 0.02 } },
   use: {
     headless: true,

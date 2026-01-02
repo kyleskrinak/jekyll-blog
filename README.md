@@ -34,6 +34,15 @@ bundle exec jekyll serve --livereload --drafts \
 scripts/clean-build-proof.zsh
 ```
 
+### Post front matter (best practice)
+- Posts inherit defaults from `_config.yml` (layout: `single`, header overlay, author profile, read_time, comments, share, related).
+- Use `layout: single` (or omit) plus `classes: wide` when you want full-width content.
+- Include `title`, `category` (single value, e.g., `category: DevOps`), `tags` (array), and an `excerpt`; rely on defaults for the rest.
+- **Always use a single category value** to maintain clean URL paths (`/category/post-slug/` instead of nested paths).
+- **Exception:** Posts with custom `permalink:` values (e.g., Reveal presentations at `/presentations/...`) should **not** include a `category` field, as the category field overrides custom permalinks.
+- For a custom social preview image, set `image: /assets/...` (otherwise the default header overlay is used for OG/Twitter meta).
+- Only override defaults for special cases (e.g., Reveal layouts use `layout: reveal`).
+
 ## Workflow (repo hygiene)
 
 Workflow: main → feature → staging → main. Create a feature branch from main, PR to staging to verify, then PR staging to main to ship. More detail: .github/CONTRIBUTING.md.
@@ -202,11 +211,43 @@ npx playwright test --update-snapshots  # Update baselines after intentional cha
 
 **Before updating snapshots**: Run tests in a clean checkout and visually review changes.
 
-**Snapshots stored in:** `tests/reveal.spec.js-snapshots/`
+**Snapshots stored in:** `tmp/playwright/snapshots/`
 
 ---
 
-## Custom styling
+## Full-Page Visual Regression Testing
+
+Compare all pages between local and production builds for color/style mismatches:
+
+### Running the full suite:
+
+```zsh
+npx playwright test tests/full-visual-regression.spec.js
+```
+
+This test:
+- Fetches sitemap from both local and production
+- Compares screenshots at 2% pixel tolerance
+- Hides dynamic elements (comments, dates, metadata, social share buttons)
+- Waits for full DOM content load (15s timeout per page)
+- Reports pass/fail status for each of 54+ pages
+
+**Output:** Baseline snapshots stored in `tmp/playwright/snapshots/full-visual-regression.spec.js-snapshots/`
+
+### Manual side-by-side comparison (development tool)
+
+Access the interactive comparison tool at **http://localhost:4000/compare/** (dev only, not published to staging/production):
+
+- Left pane: local version
+- Right pane: production version
+- Navigate with **Previous/Next** buttons or arrow keys
+- Excludes compare page itself from sitemap
+
+**Note:** This tool is for visual QA only and is excluded from production builds via config.
+
+---
+
+## CSS Customization
 
 Place site-specific overrides here:
 

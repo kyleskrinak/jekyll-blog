@@ -4,7 +4,7 @@ title: Happy Third Lowcarbiversary
 excerpt: Join me as I celebrate three years of low-carb living. At the three-year mark, it’s safe to say the yo-yo dieting has stopped.
 header:
   overlay_image: "/assets/images/2014-08-2020-06-1200.jpg"
-categories:
+category:
 - LCHF
 classes: wide
 hidden: true

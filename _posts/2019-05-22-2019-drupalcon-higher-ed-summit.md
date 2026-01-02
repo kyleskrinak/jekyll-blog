@@ -3,7 +3,7 @@ layout: single
 toc: true
 toc_sticky: true
 title: 2019 DrupalCon Higher Ed Summit
-categories:
+category:
   - Drupal
 tags:
   - Drupalcon Seattle 2019

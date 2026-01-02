@@ -6,7 +6,7 @@ header:
   overlay_image: /assets/images/190111-historical-dress.JPG
   overlay_filter: rgba(128, 0, 0, 0.5)
   caption: image from [here](https://upload.wikimedia.org/wikipedia/commons/9/96/Clothes.jpg)
-categories:
+category:
   - LCHF
   - Personal productivity
 classes: wide

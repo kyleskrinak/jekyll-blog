@@ -3,3 +3,7 @@ url: "https://kyleskrinak.github.io"
 baseurl: ""   # user/org pages live at the root
 noindex: true
 canonical_base: https://kyle.skrinak.com
+
+# Exclude development tools
+exclude:
+  - _pages/compare.md
