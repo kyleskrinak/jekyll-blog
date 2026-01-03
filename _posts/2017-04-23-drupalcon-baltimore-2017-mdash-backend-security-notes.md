@@ -14,7 +14,7 @@ header:
     url: "https://drupal.org"
 ---
 
-Duke University <a href="https://security.duke.edu/">IT Security Office's</a> PDF is found here <a href="{{ site.baseurl }}/assets/files/Duke University Standard- Server Security.pdf">here</a>
+See the <a href="https://security.duke.edu/">Duke University IT Security Office</a> for comprehensive security standards documentation.
 
 1. Physical aspects:
 * Access-controlled server rooms
