@@ -246,6 +246,59 @@ Access the interactive comparison tool at **http://localhost:4000/compare/** (de
 
 ---
 
+## Interactive Feature Testing
+
+Comprehensive Playwright tests validate all interactive JavaScript features and Minimal Mistakes theme components using a single dedicated test page.
+
+### Running the test suite:
+
+```zsh
+npx playwright test tests/interactive-features.spec.js
+npx playwright test tests/interactive-features.spec.js --ui  # Interactive mode
+```
+
+### Test Strategy
+
+**Single Test Page Approach**: All tests use `/test-features/` (`_pages/test-features.md`), a dedicated page with:
+- All interactive features enabled in front matter (`author_profile: true`, `read_time: true`, `share: true`, `related: true`)
+- Comprehensive content (TOC, code blocks, image gallery, multiple sections)
+- Excluded from production builds (`published: false`, `sitemap: false`)
+
+**Benefits:**
+- **Single source of truth**: One page with all features in controlled environment
+- **Faster execution**: ~7 seconds for 16 tests vs. testing across multiple real pages
+- **Maintainable**: Changes to test page don't affect production content
+- **Comprehensive**: Tests both theme features and custom JavaScript libraries
+
+### Test Coverage (16 tests)
+
+**Core Interactive Features:**
+- Navigation menu (desktop & mobile hamburger overflow)
+- Gumshoe TOC scroll highlighting (active section detection)
+- SmoothScroll.js animations (TOC links, heading anchors)
+- Magnific Popup lightbox (single images & gallery navigation)
+- Heading anchor links
+- Code block copy buttons (placeholder for future implementation)
+
+**Minimal Mistakes Theme Features:**
+- Social share buttons (Twitter, Facebook, LinkedIn)
+- Author profile sidebar (avatar, social links)
+- Read time indicator
+- Category and tag links (page taxonomy)
+- Related posts section
+- Pagination controls (tested on `/blog/` archive)
+
+**Test Philosophy:**
+- Tests validate **user-facing behavior** (visibility, accessibility), not implementation details (CSS classes)
+- Graceful handling of conditional features (pagination only appears when needed)
+- Combined interaction test ensures features work together seamlessly
+
+### Output
+
+Test results and artifacts stored in `tmp/playwright/output/`
+
+---
+
 ## CSS Customization
 
 Place site-specific overrides here:
