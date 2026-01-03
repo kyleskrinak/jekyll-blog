@@ -63,7 +63,6 @@ Workflow: main → feature → staging → main. Create a feature branch from ma
 │  └─ reveal/               # Reveal.js assets and plugins
 ├─ _data/                   # YAML data files (navigation, ui text, etc.)
 ├─ scripts/                 # Helper scripts (clean/build/proof, asset checks)
-├─ docs/                    # Docs, notes, or exportable site docs (optional)
 ├─ _site/                   # Generated site output (ignored in Git)
 ├─ .github/workflows/       # CI workflows (linkwatch, nightly jobs)
 ├─ Gemfile                  # Ruby/Gems for Jekyll + tools

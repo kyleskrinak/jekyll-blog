@@ -2,6 +2,12 @@
 
 ## 2026-01-03
 
+### Removed
+
+- **Legacy Root Files and Directories**: Removed 13 unnecessary files/directories per issue #60 cleanup:
+  - Definitely unnecessary: `.travis.yml` (Travis CI replaced by GitHub Actions), `MM_OVERRIDES_REPORT.md` (temporary analysis), `Rakefile` (old build automation), `exclude-reveal.txt` (temporary exclusion), `banner.js` (unused asset), `test-results/` (replaced by `tmp/playwright/`), `docs/` (legacy baked site).
+  - Likely unnecessary: `.well-known/` (no active domain verification), `.htaccess` (not applicable to GitHub Pages/CloudFront), `Dockerfile` and `docker-compose.yml` (not using Docker locally), `.yamllint` (not actively linting YAML), `staticman.yml` (using Disqus, not Staticman).
+
 ### Fixed
 
 - **Linkwatch CI Script**: Fixed GitHub Actions script error in `.github/workflows/linkwatch.yml` where API response destructuring was incorrect. Changed from `const { issues }` to properly access `issues.data` from `github.rest.issues.listForRepo()` API response.
@@ -9,6 +15,7 @@
 
 ### Changed
 
+- **Project Layout Documentation**: Updated [README.md](README.md#L52-L73) to remove `docs/` entry from project layout diagram now that legacy docs directory is removed.
 - **Branch Creation Workflow**: Enhanced `scripts/new-post.zsh` to validate branch naming (`feature-content/*`), check for uncommitted changes, prune deleted remote branches, and verify local/origin alignment before branching. Provides clear error messages and workflow guidance.
 
 ## 2026-01-02
