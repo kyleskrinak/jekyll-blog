@@ -62,14 +62,14 @@ jobs:
               `Review the job logs for the failing URLs and update/ignore as appropriate.`;
 
             // Find an existing open issue with the exact title.
-            const {  issues } = await github.rest.issues.listForRepo({
+            const issues = await github.rest.issues.listForRepo({
               owner,
               repo,
               state: "open",
               per_page: 100
             });
 
-            const existing = issues.find(i => i.title === title);
+            const existing = issues.data.find(i => i.title === title);
 
             if (existing) {
               await github.rest.issues.createComment({
