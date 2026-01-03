@@ -1,6 +1,17 @@
 # Changelog
 
-## Unreleased
+## 2026-01-03
+
+### Fixed
+
+- **Linkwatch CI Script**: Fixed GitHub Actions script error in `.github/workflows/linkwatch.yml` where API response destructuring was incorrect. Changed from `const { issues }` to properly access `issues.data` from `github.rest.issues.listForRepo()` API response.
+- **Broken PDF Reference**: Removed broken internal PDF link from 2017 DrupalCon Baltimore post (`/assets/files/Duke University Standard- Server Security.pdf` did not exist). Updated to reference Duke University IT Security Office homepage instead.
+
+### Changed
+
+- **Branch Creation Workflow**: Enhanced `scripts/new-post.zsh` to validate branch naming (`feature-content/*`), check for uncommitted changes, prune deleted remote branches, and verify local/origin alignment before branching. Provides clear error messages and workflow guidance.
+
+## 2026-01-02
 
 ### Added
 
@@ -28,13 +39,6 @@
 - **Visual Regression Workflow**: Removed `.github/workflows/visual-reveal.yml` from CI pipeline. Visual regression testing should be run locally via `npx playwright test` only, not in GitHub Actions automated workflows.
 - **Unpublished Pages**: Marked `_pages/location.md` and `_pages/calendar.md` as `published: false`.
 - **Old Comparison Page**: Removed legacy `compare.html` file that was interfering with Jekyll-generated compare page.
-
-### Maintenance Notes
-
-- All local Jekyll builds pass without errors.
-- Visual regression suite confirms pixel-perfect local/production parity on all 54+ pages.
-- Compare tool provides real-time side-by-side QA for future color/style verification.
-- See `.github/CONTRIBUTING.md` for branching and testing workflows.
 
 ## 2025-12-30
 
