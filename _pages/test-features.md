@@ -18,19 +18,19 @@ toc: true
 toc_label: "Test Sections"
 toc_icon: "cog"
 header:
-  overlay_image: /assets/images/robot-workflow-header.jpg
+  overlay_image: /assets/images/181008-butter.JPG
   overlay_filter: 0.5
 gallery:
-  - url: /assets/images/robot-workflow-header.jpg
-    image_path: /assets/images/robot-workflow-header.jpg
+  - url: /assets/images/181008-butter.JPG
+    image_path: /assets/images/181008-butter.JPG
     alt: "Test image 1"
     title: "Test gallery image 1"
-  - url: /assets/images/robot-workflow-header.jpg
-    image_path: /assets/images/robot-workflow-header.jpg
+  - url: /assets/images/181008-butter.JPG
+    image_path: /assets/images/181008-butter.JPG
     alt: "Test image 2"
     title: "Test gallery image 2"
-  - url: /assets/images/robot-workflow-header.jpg
-    image_path: /assets/images/robot-workflow-header.jpg
+  - url: /assets/images/181008-butter.JPG
+    image_path: /assets/images/181008-butter.JPG
     alt: "Test image 3"
     title: "Test gallery image 3"
 ---
@@ -96,7 +96,7 @@ Testing lightbox/Magnific Popup functionality with image links:
 
 Single image test:
 
-[![Test single image](/assets/images/robot-workflow-header.jpg)](/assets/images/robot-workflow-header.jpg)
+[![Test single image](/assets/images/181008-butter.JPG)](/assets/images/181008-butter.JPG)
 
 ## Section 4: Long Content for Scrolling
 
