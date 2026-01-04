@@ -15,6 +15,7 @@ tags:
   - automation
 excerpt: "Comprehensive test page for validating all interactive features of the Minimal Mistakes theme."
 toc: true
+toc_sticky: true
 toc_label: "Test Sections"
 toc_icon: "cog"
 header:
