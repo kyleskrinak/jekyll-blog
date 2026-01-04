@@ -3,6 +3,8 @@ import { test, expect } from '@playwright/test';
 const BASE_URL = process.env.BASE_URL || 'http://localhost:4000';
 const TEST_PAGE = `${BASE_URL}/test-features/`;
 
+// Test suite: 14 interactive feature tests
+// Note: Lightbox/image gallery functionality removed from theme fork (not used in posts)
 test.describe('Interactive Features', () => {
   
   // ========== Navigation Overflow / Hamburger Menu ==========
@@ -123,67 +125,6 @@ test.describe('Interactive Features', () => {
     const toc = page.locator('nav.toc');
     const hasActive = await toc.locator('.active').count().catch(() => 0);
     expect(hasActive).toBeGreaterThanOrEqual(0);
-  });
-
-  // ========== Lightbox / Image Popup ==========
-  test('lightbox opens on image click', async ({ page }) => {
-    await page.goto(TEST_PAGE);
-    
-    await page.waitForLoadState('networkidle');
-    
-    // Find image links with image-popup class
-    const imageLinks = page.locator('a.image-popup');
-    const imageCount = await imageLinks.count();
-    
-    if (imageCount > 0) {
-      // Click first image popup link - just verify no errors occur
-      try {
-        await imageLinks.first().click();
-        await page.waitForTimeout(500);
-        
-        // Check if Magnific Popup modal appears
-        const popup = page.locator('.mfp-container, .mfp-wrap');
-        const popupVisible = await popup.isVisible().catch(() => false);
-        
-        // If modal appeared, close it
-        if (popupVisible) {
-          await page.keyboard.press('Escape');
-          await page.waitForTimeout(300);
-        }
-      } catch (e) {
-        // If click fails, that's OK - feature may not be fully set up
-      }
-    }
-  });
-
-  test('image gallery navigation works', async ({ page }) => {
-    await page.goto(TEST_PAGE);
-    
-    const imageLinks = page.locator('a.image-popup');
-    const imageCount = await imageLinks.count();
-    
-    if (imageCount > 1) {
-      // Open first image
-      await imageLinks.first().click();
-      await page.waitForTimeout(500);
-      
-      // Check for gallery nav (next/prev buttons)
-      const nextBtn = page.locator('.mfp-next');
-      const nextVisible = await nextBtn.isVisible().catch(() => false);
-      
-      if (nextVisible) {
-        // Click next button
-        await nextBtn.click();
-        await page.waitForTimeout(300);
-        
-        // Gallery should still be visible (now showing next image)
-        const popup = page.locator('.mfp-container, .mfp-wrap');
-        expect(await popup.isVisible()).toBeTruthy();
-      }
-      
-      // Close gallery
-      await page.keyboard.press('Escape');
-    }
   });
 
   // ========== Smooth Scroll (SmoothScroll.js) ==========

@@ -21,19 +21,6 @@ toc_icon: "cog"
 header:
   overlay_image: /assets/images/181008-butter.JPG
   overlay_filter: 0.5
-gallery:
-  - url: /assets/images/181008-butter.JPG
-    image_path: /assets/images/181008-butter.JPG
-    alt: "Test image 1"
-    title: "Test gallery image 1"
-  - url: /assets/images/181008-butter.JPG
-    image_path: /assets/images/181008-butter.JPG
-    alt: "Test image 2"
-    title: "Test gallery image 2"
-  - url: /assets/images/181008-butter.JPG
-    image_path: /assets/images/181008-butter.JPG
-    alt: "Test image 3"
-    title: "Test gallery image 3"
 ---
 
 This page contains all interactive features for automated testing. It is excluded from production builds and sitemaps.
@@ -42,7 +29,6 @@ This page contains all interactive features for automated testing. It is exclude
 - Navigation menu (desktop & mobile hamburger)
 - Table of Contents with Gumshoe scroll highlighting
 - Smooth scroll animations
-- Image lightbox gallery
 - Heading anchors
 - Code copy buttons (when implemented)
 - Social share buttons (Twitter, Facebook, LinkedIn)
@@ -50,6 +36,8 @@ This page contains all interactive features for automated testing. It is exclude
 - Read time indicator
 - Category and tag links
 - Related posts section
+
+**Note:** Lightbox/image gallery functionality has been removed from this theme fork as it's not used in posts.
 
 ## Section 1: Introduction
 
@@ -89,17 +77,7 @@ print(result)
 
 This is a nested heading to test TOC hierarchy.
 
-## Section 3: Image Gallery
-
-Testing lightbox/Magnific Popup functionality with image links:
-
-{% include gallery caption="Test gallery for lightbox functionality" %}
-
-Single image test:
-
-[![Test single image](/assets/images/181008-butter.JPG)](/assets/images/181008-butter.JPG)
-
-## Section 4: Long Content for Scrolling
+## Section 3: Long Content for Scrolling
 
 This section contains substantial content to ensure smooth scroll and Gumshoe TOC highlighting work properly.
 
