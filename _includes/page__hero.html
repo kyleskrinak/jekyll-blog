@@ -1,3 +1,17 @@
+<!--
+  CUSTOMIZATION NOTES (vs. Minimal Mistakes 4.27.3 upstream):
+
+  CTA Compatibility Fix:
+  This override supports both the newer `page.header.actions` array syntax
+  AND the legacy `page.header.cta_url` / `page.header.cta_label` syntax for
+  backwards compatibility with older posts.
+
+  - page.header.actions: Array of {url, label} objects (preferred)
+  - page.header.cta_url + cta_label: Legacy single-button syntax (fallback)
+
+  See lines 40-48 for the implementation.
+  Last reviewed: 2026-01-17 against MM 4.27.3
+-->
 {% capture overlay_img_path %}{{ page.header.overlay_image | relative_url }}{% endcapture %}
 
 {% if page.header.overlay_filter contains "gradient" %}

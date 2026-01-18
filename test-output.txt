@@ -1,0 +1,20 @@
+
+Running 14 tests using 1 worker
+
+  ✓   1 tests/interactive-features.spec.js:11:7 › Interactive Features › hamburger menu toggles on small viewports (599ms)
+  ✓   2 tests/interactive-features.spec.js:47:7 › Interactive Features › navigation menu displays correctly on desktop (177ms)
+  ✓   3 tests/interactive-features.spec.js:62:7 › Interactive Features › heading anchors are clickable and smooth scroll works (1.0s)
+  ✓   4 tests/interactive-features.spec.js:92:7 › Interactive Features › Gumshoe TOC updates active section on scroll (1.2s)
+  ✓   5 tests/interactive-features.spec.js:117:7 › Interactive Features › Gumshoe fires activation events (490ms)
+  ✓   6 tests/interactive-features.spec.js:131:7 › Interactive Features › smooth scroll animates when clicking internal links (471ms)
+⏭️  Copy button not yet implemented
+  ✓   7 tests/interactive-features.spec.js:165:7 › Interactive Features › copy button copies code block to clipboard (118ms)
+  ✓   8 tests/interactive-features.spec.js:203:7 › Interactive Features › social share buttons are visible and functional (633ms)
+  ✓   9 tests/interactive-features.spec.js:222:7 › Interactive Features › author profile sidebar displays correctly (18.8s)
+  ✓  10 tests/interactive-features.spec.js:244:7 › Interactive Features › read time indicator is displayed (18.9s)
+  ✓  11 tests/interactive-features.spec.js:270:7 › Interactive Features › category and tag links are displayed and clickable (673ms)
+  ✓  12 tests/interactive-features.spec.js:294:7 › Interactive Features › related posts section displays when enabled (654ms)
+  ✓  13 tests/interactive-features.spec.js:317:7 › Interactive Features › pagination controls work on archive pages (633ms)
+  ✓  14 tests/interactive-features.spec.js:344:7 › Interactive Features › all interactive features work together on a post (1.0s)
+
+  14 passed (46.5s)
