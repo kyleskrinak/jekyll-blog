@@ -1,5 +1,28 @@
 # Changelog
 
+## 2026-01-17
+
+### Removed
+
+- **Staticman Comment Providers**: Removed `_includes/comments-providers/staticman.html` and `staticman_v2.html`. These jQuery-based files would break on MM fork Phase 5 migration; removed from scope rather than converting to vanilla JS.
+- **Backup File**: Removed `_includes/tag-list.html.bak` from version control.
+- **Redundant Canonical URL**: Removed duplicate `<link rel="canonical">` from `_includes/head/custom.html`; already handled in `_includes/seo.html`.
+
+### Changed
+
+- **MM Version Reference**: Updated `_layouts/default.html` comment from 4.24.0 to 4.27.3 to reflect actual theme version in use.
+- **Gitignore**: Added `*.bak` and `*.backup` patterns to prevent backup files from being committed.
+- **Author Config**: Keep `author.name` and `author.bio` commented out in `_config.yml` to match production display (no name/bio under avatar). Empty strings cause template errors with MM fork.
+
+### Documentation
+
+- **seo.html**: Added header comment documenting customizations vs. upstream MM 4.27.3 (JSON-LD structured data, retained standard SEO features).
+- **page__hero.html**: Added header comment documenting CTA compatibility fix (supports both `page.header.actions` array and legacy `page.header.cta_url` syntax).
+
+### Related
+
+- Closes issue #67 (Theme Override Cleanup & MM Fork Phase 5 Preparation)
+
 ## 2026-01-03
 
 ### Fixed
