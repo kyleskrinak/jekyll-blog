@@ -4,4 +4,4 @@ Hello and thanks for stopping by. Despite being a full-on Drupal fan, I [started
 
 As for my interests; by day, I manage web development and system administration. Otherwise, I am a fan of low-carb eating, as the pages of this blog reflect. I use these topics as excuses for writing on my blog as an excuse to write in Markdown and NeoVim. And write.
 
-Currently, I am the Senior Manager of the Digital Experience Platform Team for [Gilead Sciences,](https://www.gilead.com/). Our team is responsible for the reliable hosting and management of Gilead's websites. Our main Content Management System is Sitecore and Azure and we also support PHP and static websites on Amazon Web Services.
+Currently, I am the Senior Manager of the Digital Experience Platform Team for [Gilead Sciences](https://www.gilead.com/). Our team is responsible for the reliable hosting and management of Gilead's websites. Our main Content Management System is Sitecore and Azure and we also support PHP and static websites on Amazon Web Services.
