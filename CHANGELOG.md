@@ -2,6 +2,15 @@
 
 ## 2026-01-17
 
+### Added
+
+- **Interactive Feature Tests**: Added comprehensive Playwright test suite (16 tests) covering all core interactive features:
+  - **Navigation**: Desktop menu, mobile hamburger overflow menu
+  - **JavaScript Libraries**: Gumshoe TOC scroll highlighting, SmoothScroll.js animations, Magnific Popup lightbox
+  - **Content Features**: Heading anchors, code blocks (copy button placeholder)
+  - **Minimal Mistakes Theme Features**: Social share buttons (Twitter/Facebook/LinkedIn), author profile sidebar, read time indicator, category/tag links, related posts section, pagination controls
+  - Created dedicated test page (`_pages/test-features.md`) with all interactive elements in a controlled environment, excluded from production builds via `published: false` and `sitemap: false`
+
 ### Removed
 
 - **Staticman Comment Providers**: Removed `_includes/comments-providers/staticman.html` and `staticman_v2.html`. These jQuery-based files would break on MM fork Phase 5 migration; removed from scope rather than converting to vanilla JS.
