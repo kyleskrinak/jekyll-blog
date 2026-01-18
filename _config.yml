@@ -106,9 +106,9 @@ analytics:
 
 # Site Author
 author:
-#  name             : ""
+  name             : ~
   avatar           : "https://s.gravatar.com/avatar/ff8a556b0c640770c8e933d7b5f57631?s=80"
-#  bio              : ""
+  bio              : ~
   location         : "<a style=\"display: inline-block\" href=\"https://www.google.com/maps/place/Apex,+NC/@35.7275871,-78.8999849,13z/data=!3m1!4b1!4m5!3m4!1s0x89ac92a3c19280d1:0x85cd817e17e28015!8m2!3d35.732652!4d-78.8502856\">Apex, NC</a>"
   email            :
   links:
@@ -230,8 +230,9 @@ sass:
 
 # Outputting
 permalink: /:categories/:title/
-paginate: 5 # amount of posts to show
-paginate_path: /page:num/
+# Pagination disabled - using year-archive instead
+# paginate: 5
+# paginate_path: /page:num/
 timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
@@ -239,7 +240,7 @@ timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 plugins:
   - jekyll-feed
   - jekyll-include-cache
-  - jekyll-paginate
+  # - jekyll-paginate  # disabled - using year-archive instead
   - jekyll-redirect-from
   - jekyll-seo-tag
   - jekyll-sitemap
@@ -256,7 +257,7 @@ jekyll_sitemap:
 
 # mimic GitHub Pages with --safe
 whitelist:
-  - jekyll-paginate
+  # - jekyll-paginate  # disabled
   - jekyll-sitemap
   - jekyll-feed
   - jekyll-include-cache
