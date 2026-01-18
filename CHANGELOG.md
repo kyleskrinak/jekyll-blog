@@ -1,21 +1,29 @@
 # Changelog
 
-## 2026-01-03
-
-### Added
-
-- **Interactive Feature Tests**: Added comprehensive Playwright test suite (16 tests) covering all core interactive features:
-  - **Navigation**: Desktop menu, mobile hamburger overflow menu
-  - **JavaScript Libraries**: Gumshoe TOC scroll highlighting, SmoothScroll.js animations, Magnific Popup lightbox
-  - **Content Features**: Heading anchors, code blocks (copy button placeholder)
-  - **Minimal Mistakes Theme Features**: Social share buttons (Twitter/Facebook/LinkedIn), author profile sidebar, read time indicator, category/tag links, related posts section, pagination controls
-  - Created dedicated test page (`_pages/test-features.md`) with all interactive elements in a controlled environment, excluded from production builds via `published: false` and `sitemap: false`
+## 2026-01-17
 
 ### Removed
 
-- **Legacy Root Files and Directories**: Removed 13 unnecessary files/directories per issue #60 cleanup:
-  - Definitely unnecessary: `.travis.yml` (Travis CI replaced by GitHub Actions), `MM_OVERRIDES_REPORT.md` (temporary analysis), `Rakefile` (old build automation), `exclude-reveal.txt` (temporary exclusion), `banner.js` (unused asset), `test-results/` (replaced by `tmp/playwright/`), `docs/` (legacy baked site).
-  - Likely unnecessary: `.well-known/` (no active domain verification), `.htaccess` (not applicable to GitHub Pages/CloudFront), `Dockerfile` and `docker-compose.yml` (not using Docker locally), `.yamllint` (not actively linting YAML), `staticman.yml` (using Disqus, not Staticman).
+- **Staticman Comment Providers**: Removed `_includes/comments-providers/staticman.html` and `staticman_v2.html`. These jQuery-based files would break on MM fork Phase 5 migration; removed from scope rather than converting to vanilla JS.
+- **Backup File**: Removed `_includes/tag-list.html.bak` from version control.
+- **Redundant Canonical URL**: Removed duplicate `<link rel="canonical">` from `_includes/head/custom.html`; already handled in `_includes/seo.html`.
+
+### Changed
+
+- **MM Version Reference**: Updated `_layouts/default.html` comment from 4.24.0 to 4.27.3 to reflect actual theme version in use.
+- **Gitignore**: Added `*.bak` and `*.backup` patterns to prevent backup files from being committed.
+- **Author Config**: Keep `author.name` and `author.bio` commented out in `_config.yml` to match production display (no name/bio under avatar). Empty strings cause template errors with MM fork.
+
+### Documentation
+
+- **seo.html**: Added header comment documenting customizations vs. upstream MM 4.27.3 (JSON-LD structured data, retained standard SEO features).
+- **page__hero.html**: Added header comment documenting CTA compatibility fix (supports both `page.header.actions` array and legacy `page.header.cta_url` syntax).
+
+### Related
+
+- Closes issue #67 (Theme Override Cleanup & MM Fork Phase 5 Preparation)
+
+## 2026-01-03
 
 ### Fixed
 
@@ -24,7 +32,6 @@
 
 ### Changed
 
-- **Project Layout Documentation**: Updated [README.md](README.md#L52-L73) to remove `docs/` entry from project layout diagram now that legacy docs directory is removed.
 - **Branch Creation Workflow**: Enhanced `scripts/new-post.zsh` to validate branch naming (`feature-content/*`), check for uncommitted changes, prune deleted remote branches, and verify local/origin alignment before branching. Provides clear error messages and workflow guidance.
 
 ## 2026-01-02

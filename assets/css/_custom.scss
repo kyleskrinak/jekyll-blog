@@ -47,3 +47,20 @@ hr {
 .page__content h2 {
   border-bottom-color: #babdbd !important;
 }
+
+// Fix masthead border to match production
+.masthead {
+  border-bottom: 1px solid #e0e0e0 !important;
+}
+
+// Fix author avatar border to match production
+.author__avatar img {
+  border: 1px solid #e0e0e0 !important;
+  padding: 5px;
+}
+
+// Hide author name and bio to match production (MM fork shows defaults we don't want)
+.author__name,
+.author__bio {
+  display: none !important;
+}
